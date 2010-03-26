@@ -13,11 +13,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.xml
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) if params[:id]
+    @user = User.find_by_key(params[:key]) if params[:key]
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
+      format.js { render :template => "/documents/show.js.erb" }
     end
   end
 

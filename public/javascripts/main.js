@@ -2,13 +2,21 @@
     var Writer = {
         document_id: undefined,
         user_id: undefined,
-        init: function() {
-             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
-             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
+        init: function(key) {
+            var t8_writer = document.createElement("div");
+                t8_writer.setAttribute("id","#T8Writer");
+                document.body.appendChild(t8_writer);
+//            Writer.Utilities.loadScript('http://localhost:3000/users/show.js?key='+key);
+            Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
+            Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
+            Writer.Utilities.loadScript('http://localhost:3000/documents/1.js');
         },
 
         exit: function() {
-
+            if (typeof Writer.document_id !== "undefined") {
+                Document.save();
+            }
+            document.body.removeChild(document.getElementById("#T8Writer"));
         }
     };
 
@@ -75,5 +83,5 @@
     };
     window["T8Writer"] = Writer;
     window["T8Document"] = Document;
-    Writer.init();
+    //Writer.init();
 })();

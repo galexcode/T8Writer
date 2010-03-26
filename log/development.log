@@ -345,3 +345,613 @@ Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:28:58) [G
 Rendering writer/show
 Rendered writer/_show (0.0ms)
 Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 22:13:02) [GET]
+  Parameters: {"id"=>"1256315", "f"=>"download"}
+
+ActionController::RoutingError (No route matches "/stylesheets/wse.phtml" with {:method=>:get}):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 22:13:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/=1256315" with {:method=>:get}):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:18:08) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Document with ID=show):
+  app/controllers/documents_controller.rb:16:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (54.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing DocumentsController#1 to js (for 127.0.0.1 at 2010-03-25 22:18:19) [GET]
+  Parameters: {"id"=>"show"}
+
+ActionController::UnknownAction (No action responded to 1. Actions: create, destroy, edit, index, new, show, and update):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-25 22:18:25) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 6040ms (View: 6018, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#create (for 127.0.0.1 at 2010-03-25 22:18:59) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"hOmeH30sXIPfR8rSHdnI6Sz23wqBKyR+EhaE5mFIKqA=", "document"=>{"title"=>"My First Documents", "user_id"=>"1", "contents"=>"\"say what you want to say, okay?"}}
+  [4;35;1mDocument Create (3.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-03-26 05:18:59', 'My First Documents', 1, '"say what you want to say, okay?', '2010-03-26 05:18:59')[0m
+Redirected to http://localhost:3000/documents/1
+Completed in 53ms (DB: 3) | 302 Found [http://localhost/documents]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-25 22:19:00) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 62ms (View: 31, DB: 1) | 200 OK [http://localhost/documents/1]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-25 22:19:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 109ms (View: 94, DB: 1) | 200 OK [http://localhost/documents/1/]
+
+
+Processing DocumentsController#1 to js (for 127.0.0.1 at 2010-03-25 22:19:22) [GET]
+  Parameters: {"id"=>"show"}
+
+ActionController::UnknownAction (No action responded to 1. Actions: create, destroy, edit, index, new, show, and update):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:19:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 18ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:20:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /javascripts/documents/show.js.erb
+
+ActionView::MissingTemplate (Missing template /javascripts/documents/show.js.erb in view path app/views):
+  app/controllers/documents_controller.rb:21:in `show'
+  app/controllers/documents_controller.rb:18:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:20:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:21:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /javascripts/documents/show.js.erb
+
+ActionView::MissingTemplate (Missing template /javascripts/documents/show.js.erb in view path app/views):
+  app/controllers/documents_controller.rb:21:in `show'
+  app/controllers/documents_controller.rb:18:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:21:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Rendered documents/_show (2.0ms)
+Completed in 146ms (View: 24, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:23:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Rendered documents/_show (2.0ms)
+Completed in 113ms (View: 50, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:24:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 82ms (View: 24, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:25:28) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 20ms (View: 15, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:26:30) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:27:25) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:27:55) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 18ms (View: 10, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:27:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 42ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing DocumentsController#edit (for 127.0.0.1 at 2010-03-25 22:28:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering template within layouts/documents
+Rendering documents/edit
+Completed in 28ms (View: 16, DB: 0) | 200 OK [http://localhost/documents/1/edit]
+
+
+Processing DocumentsController#update (for 127.0.0.1 at 2010-03-25 22:29:00) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"hOmeH30sXIPfR8rSHdnI6Sz23wqBKyR+EhaE5mFIKqA=", "id"=>"1", "document"=>{"title"=>"My First Documents", "contents"=>"say what you want to say, okay?"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mDocument Update (3.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-03-26 05:29:00', "contents" = 'say what you want to say, okay?' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/documents/1
+Completed in 53ms (DB: 4) | 302 Found [http://localhost/documents/1]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-25 22:29:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 46ms (View: 15, DB: 1) | 200 OK [http://localhost/documents/1]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:29:10) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:29:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 53ms (View: 22, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:29:28) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 26ms (View: 18, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:29:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 58ms (View: 32, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:29:42) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:29:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 52ms (View: 25, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:30:24) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (2.0ms)
+Completed in 33ms (View: 24, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:30:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 40ms (View: 15, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:31:02) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:31:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 37ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:32:48) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:32:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:33:01) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 13ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:33:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 24ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:35:36) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 17ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:35:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 38ms (View: 8, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-25 22:38:21) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 113ms (View: 102, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-03-25 22:38:39) [POST]
+  Parameters: {"user"=>{"password"=>"bubbac", "key"=>"6e062041a574a50256305cfb43b6b8f3"}, "commit"=>"Create", "authenticity_token"=>"hOmeH30sXIPfR8rSHdnI6Sz23wqBKyR+EhaE5mFIKqA="}
+  [4;36;1mUser Create (3.0ms)[0m   [0;1mINSERT INTO "users" ("updated_at", "key", "password", "created_at") VALUES('2010-03-26 05:38:39', '6e062041a574a50256305cfb43b6b8f3', 'bubbac', '2010-03-26 05:38:39')[0m
+Redirected to http://localhost:3000/users/1
+Completed in 45ms (DB: 3) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-03-25 22:38:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 46ms (View: 24, DB: 1) | 200 OK [http://localhost/users/1]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:43:34) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:43:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 40ms (View: 7, DB: 2) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:43:55) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:43:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 34ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 22:44:27) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:44:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 31ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1.js]
+
+
+Processing UsersController#show to js (for 127.0.0.1 at 2010-03-25 22:52:29) [GET]
+  Parameters: {"id"=>"show", "key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=show):
+  app/controllers/users_controller.rb:16:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (429.0ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#show to js (for 127.0.0.1 at 2010-03-25 22:52:30) [GET]
+  Parameters: {"id"=>"show"}
+
+SyntaxError (D:/writer/app/controllers/writer_controller.rb:10: syntax error, unexpected kEND, expecting $end):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show to js (for 127.0.0.1 at 2010-03-25 22:52:34) [GET]
+  Parameters: {"id"=>"show", "key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=show):
+  app/controllers/users_controller.rb:16:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (168.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#show to js (for 127.0.0.1 at 2010-03-25 22:52:35) [GET]
+  Parameters: {"id"=>"show"}
+
+SyntaxError (D:/writer/app/controllers/writer_controller.rb:10: syntax error, unexpected kEND, expecting $end):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (132.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show to js (for 127.0.0.1 at 2010-03-25 22:53:44) [GET]
+  Parameters: {"id"=>"show", "key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=show):
+  app/controllers/users_controller.rb:16:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (71.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#show to js (for 127.0.0.1 at 2010-03-25 22:53:44) [GET]
+  Parameters: {"id"=>"show"}
+
+SyntaxError (D:/writer/app/controllers/writer_controller.rb:10: syntax error, unexpected kEND, expecting $end):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#show to js (for 127.0.0.1 at 2010-03-25 22:55:22) [GET]
+  Parameters: {"id"=>"show", "key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=show):
+  app/controllers/users_controller.rb:16:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (74.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#show to js (for 127.0.0.1 at 2010-03-25 22:55:23) [GET]
+  Parameters: {"id"=>"show"}
+
+SyntaxError (D:/writer/app/controllers/writer_controller.rb:10: syntax error, unexpected kEND, expecting $end):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (65.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentsController#show to js (for 127.0.0.1 at 2010-03-25 22:55:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/show.js.erb
+Completed in 39ms (View: 24, DB: 0) | 200 OK [http://localhost/documents/1.js]
