@@ -1,0 +1,347 @@
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (4.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100325044418)
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(255), "password" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100325044418')[0m
+Migrating to CreateDocuments (20100325044523)
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "documents" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100325044523')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100325044418)
+Migrating to CreateDocuments (20100325044523)
+Migrating to AddUserIdToDocuments (20100325045524)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mALTER TABLE "documents" ADD "user_id" integer[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100325045524')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("documents")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-24 21:59:11) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 2569ms (View: 2556, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-03-24 21:59:19) [GET]
+Rendering template within layouts/users
+Rendering users/new
+Completed in 69ms (View: 34, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100325044418)
+Migrating to CreateDocuments (20100325044523)
+Migrating to AddUserIdToDocuments (20100325045524)
+Migrating to AddPrimaryKeys (20100325045955)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_id" ON "users" ("id")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCREATE UNIQUE INDEX "index_documents_on_id" ON "documents" ("id")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100325045955')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("documents")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_documents_on_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_info('index_users_on_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100325044418)
+Migrating to CreateDocuments (20100325044523)
+Migrating to AddUserIdToDocuments (20100325045524)
+Migrating to AddPrimaryKeys (20100325045955)
+Migrating to AddContentsToDocuments (20100325050405)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "documents" ADD "contents" text[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100325050405')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("documents")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_documents_on_id')[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_info('index_users_on_id')[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-03-24 22:08:50) [GET]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 93ms (View: 81, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 21:03:51) [GET]
+
+ActionController::RoutingError (No route matches "/writer/show.js" with {:method=>:get}):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 21:05:46) [GET]
+
+ActionController::RoutingError (No route matches "/writer/show.js" with {:method=>:get}):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 21:06:32) [GET]
+
+ActionController::RoutingError (No route matches "/writer/show.js" with {:method=>:get}):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:11:53) [GET]
+  Parameters: {"id"=>"show"}
+
+ActionView::MissingTemplate (Missing template writer/show.erb in view path app/views):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:12:37) [GET]
+  Parameters: {"id"=>"show"}
+
+ArgumentError (too few arguments):
+  app/controllers/writer_controller.rb:7:in `format'
+  app/controllers/writer_controller.rb:7:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (360.0ms)
+Rendered rescues/_request_and_response (5.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:14:16) [GET]
+  Parameters: {"id"=>"show"}
+
+ArgumentError (too few arguments):
+  app/controllers/writer_controller.rb:7:in `format'
+  app/controllers/writer_controller.rb:7:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (108.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:17:24) [GET]
+  Parameters: {"id"=>"show"}
+
+ArgumentError (too few arguments):
+  app/controllers/writer_controller.rb:7:in `format'
+  app/controllers/writer_controller.rb:7:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (140.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:17:37) [GET]
+  Parameters: {"id"=>"show"}
+
+ArgumentError (too few arguments):
+  app/controllers/writer_controller.rb:7:in `format'
+  app/controllers/writer_controller.rb:7:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (145.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:18:29) [GET]
+  Parameters: {"id"=>"show"}
+
+ArgumentError (too few arguments):
+  app/controllers/writer_controller.rb:7:in `format'
+  app/controllers/writer_controller.rb:7:in `show'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (236.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-03-25 21:18:55) [GET]
+
+ActionController::RoutingError (No route matches "/writer/show.js.erb" with {:method=>:get}):
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:20:03) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (3.0ms)
+Completed in 30ms (View: 25, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:20:09) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:26:43) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-25 21:28:58) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
