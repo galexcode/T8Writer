@@ -14,12 +14,18 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id]) if params[:id]
-    @user = User.find_by_key(params[:key]) if params[:key]
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html { render :template => "/users/show.html.erb" }
       format.xml  { render :xml => @user }
-      format.js { render :template => "/documents/show.js.erb" }
+    end
+  end
+
+  def documents
+    @user = User.find_by_key(params[:key]) if params[:key]
+    @documents = @user.documents
+    respond_to do |format|
+      format.js { render :template => "/users/documents.js.erb" }
     end
   end
 
@@ -29,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html # news.html.erb
       format.xml  { render :xml => @user }
     end
   end

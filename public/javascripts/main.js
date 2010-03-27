@@ -1,15 +1,21 @@
 (function(){
     var Writer = {
+        current_document: undefined,
         document_id: undefined,
         user_id: undefined,
         init: function(key) {
             var t8_writer = document.createElement("div");
                 t8_writer.setAttribute("id","#T8Writer");
                 document.body.appendChild(t8_writer);
-//            Writer.Utilities.loadScript('http://localhost:3000/users/show.js?key='+key);
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
-            Writer.Utilities.loadScript('http://localhost:3000/documents/1.js');
+            Writer.Modes.selectDocument(key);
+        },
+
+        openDocument: function(id) {
+            Writer.document_id = id;
+            Writer.current_document = new Document(id);
+            Writer.Utilities.loadScript('http://localhost:3000/documents/'+id+'/edit.js');
         },
 
         exit: function() {
@@ -62,8 +68,8 @@
 
         },
 
-        selectDoc: function(){
-
+        selectDocument: function(key){
+            Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+key);
         }        
     };
 
@@ -71,16 +77,18 @@
         this.title = undefined;
         this.contents = undefined;
         this.id = id;
-        this.prototype.save = function() {
-
-        };
-        this.prototype.revert = function() {
-
-        };
-        this.prototype.email = function() {
-
-        };
     };
+    Document.prototype = {
+        save: function() {
+
+        },
+        revert: function() {
+
+        },
+        email: function() {
+
+        }
+    }
     window["T8Writer"] = Writer;
     window["T8Document"] = Document;
     //Writer.init();

@@ -5,7 +5,7 @@ class DocumentsController < ApplicationController
     @documents = Document.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { render :partial => "/documents/index.html.erb", :locals => {:documents => @documents}}
       format.xml  { render :xml => @documents }
     end
   end
@@ -18,7 +18,6 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @document }
-      format.js { render :template => "/documents/show.js.erb" }
     end
   end
 
@@ -36,6 +35,10 @@ class DocumentsController < ApplicationController
   # GET /documents/1/edit
   def edit
     @document = Document.find(params[:id])
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.js { render :template => "/documents/edit.js.erb" }
+    end
   end
 
   # POST /documents
