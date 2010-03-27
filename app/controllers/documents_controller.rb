@@ -49,7 +49,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.save
         flash[:notice] = 'Document was successfully created.'
-        format.html { redirect_to(@document) }
+        #format.html { redirect_to(@document) }
         format.xml  { render :xml => @document, :status => :created, :location => @document }
       else
         format.html { render :action => "new" }
@@ -58,6 +58,17 @@ class DocumentsController < ApplicationController
     end
   end
 
+  def save
+    @document = Document.find(params[:id])
+    respond_to do |format|
+      if @document.update_attributes(params[:document])
+        format.js { render :js => "T8Writer.current_document.save.success();" }
+      else
+        format.js { render :js => "T8Writer.current_document.save.errors('#{@document.errors})';" }
+      end
+
+    end
+  end
   # PUT /documents/1
   # PUT /documents/1.xml
   def update
