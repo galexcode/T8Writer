@@ -4509,3 +4509,1074 @@ Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 15:53:19)
   [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
 Rendering /documents/edit.js.erb
 Completed in 57ms (View: 13, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 22:31:22) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 22:31:22) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 22:31:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 45ms (View: 11, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 22:36:14) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 22:36:15) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 51ms (View: 14, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 22:36:17) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 22:52:40) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 22:52:40) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (50.0ms)
+Completed in 102ms (View: 59, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 22:52:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 31ms (View: 8, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 22:53:23) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 22:53:23) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 51ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 22:53:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 22:53:49) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 22:53:49) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 56ms (View: 15, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 22:53:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 25ms (View: 6, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 22:56:41) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 22:56:42) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 15, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 22:56:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:04:56) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:04:56) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 56ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:07:26) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:07:26) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:07:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 33ms (View: 8, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:10:30) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:10:30) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:10:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 27ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:12:07) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:12:07) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 51ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:12:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:12:49) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:12:49) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 14, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:12:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:13:17) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:13:17) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 13, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:13:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 45ms (View: 8, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:13:55) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:13:55) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 52ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:13:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 14ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:14:57) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:14:57) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 51ms (View: 14, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:15:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 74ms (View: 13, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:15:36) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:15:36) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 51ms (View: 13, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:15:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 44ms (View: 10, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:16:40) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:16:41) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (4.0ms)
+Completed in 23ms (View: 5, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:16:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 42ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:17:52) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:17:52) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 54ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:17:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 32ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:18:37) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:18:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (4.0ms)
+Completed in 23ms (View: 6, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:18:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 32ms (View: 8, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:19:19) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:19:20) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 53ms (View: 15, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:19:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 44ms (View: 11, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-27 23:25:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 46ms (View: 26, DB: 1) | 200 OK [http://localhost/documents/1]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:28:06) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 13ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:28:07) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (13.0ms)
+Completed in 228ms (View: 18, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:28:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:28:49) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:28:49) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 40ms (View: 9, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:28:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 23ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:30:23) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:30:23) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 45ms (View: 11, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:30:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 27ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:30:52) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:30:52) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 45ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:30:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:32:01) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:32:01) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (105.0ms)
+Completed in 143ms (View: 111, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:32:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 6, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:32:57) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:32:57) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 47ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:32:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 41ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-27 23:41:40) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-27 23:41:40) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 53ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-27 23:41:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 43ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 12:19:29) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (128.0ms)
+Completed in 940ms (View: 860, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 12:19:30) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (63.0ms)
+Completed in 683ms (View: 297, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 12:19:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (14.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 119ms (View: 39, DB: 14) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 12:21:19) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 136ms (View: 75, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 12:21:21) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (16.0ms)
+Completed in 79ms (View: 22, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 12:21:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 45ms (View: 11, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 12:24:38) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 12:24:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 46ms (View: 12, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 12:24:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 12:45:31) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (17.0ms)
+Completed in 30ms (View: 25, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 12:45:32) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 49ms (View: 19, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 12:48:29) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 12:48:29) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (4.0ms)
+Completed in 30ms (View: 7, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 13:25:06) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (2.0ms)
+Completed in 34ms (View: 19, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 13:25:06) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (51.0ms)
+Completed in 141ms (View: 87, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 13:25:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (59.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 90ms (View: 7, DB: 59) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 13:25:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 15ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 14:48:17) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (34.0ms)
+Completed in 46ms (View: 44, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 14:48:17) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 55ms (View: 28, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 14:48:47) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (28.0ms)
+Completed in 39ms (View: 35, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 14:48:47) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (4.0ms)
+Completed in 25ms (View: 8, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 14:50:48) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (13.0ms)
+Completed in 30ms (View: 26, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 14:50:48) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 44ms (View: 12, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 14:51:56) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (20.0ms)
+Completed in 62ms (View: 22, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 14:51:57) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (4.0ms)
+Completed in 108ms (View: 105, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 14:52:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 15:22:53) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (3.0ms)
+Completed in 22ms (View: 17, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 15:24:09) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (4.0ms)
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 15:24:09) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 46ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 15:25:11) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 15:25:11) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 46ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 15:25:58) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (4.0ms)
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 15:25:58) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (52.0ms)
+Completed in 91ms (View: 58, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 15:26:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:06:22) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 129ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:06:23) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 46ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 16:06:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 39ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:09:25) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:09:25) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 45ms (View: 13, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 16:09:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:10:39) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:10:39) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 48ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 16:10:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:10:55) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mDocument Update (25.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-03-28 23:10:56', "contents" = 'That man should labour and sorrow
+and learn and forget, and return
+to the dark valley whence he came
+and begin his labours anew<textarea id="T8Writer_CommandPrompt"></textarea><textarea id="T8Writer_CommandPrompt"></textarea>' WHERE "id" = 1[0m
+Completed in 122ms (View: 5, DB: 26) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:10:56) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 30ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:11:26) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:11:27) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 169ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:12:32) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:12:32) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 66ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 16:12:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 40ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:12:54) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mDocument Update (3.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-03-28 23:12:54', "contents" = 'That man should labour and sorrow
+and learn and forget, and return
+to the dark valley whence he came
+and begin his labours anew<textarea id="T8Writer_CommandPrompt"></textarea><textarea id="T8Writer_CommandPrompt"></textarea><textarea id="T8Writer_CommandPrompt"></textarea><textarea id="T8Writer_CommandPrompt"></textarea>' WHERE "id" = 1[0m
+Completed in 77ms (View: 5, DB: 4) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:12:55) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea><textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 44ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:38:55) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 20ms (View: 14, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:38:56) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 47ms (View: 12, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 16:38:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:39:34) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-03-28 23:39:34', "contents" = 'That man should labour and sorrow
+and learn and forget, and return
+to the dark valley whence he came
+and begin his labours anew<textarea id="T8Writer_CommandPrompt"></textarea>' WHERE "id" = 1[0m
+Completed in 38ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-28 16:40:02) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-28 16:40:02) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (172.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (182.0ms)
+Completed in 223ms (View: 17, DB: 173) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-28 16:40:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 50ms (View: 26, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:40:42) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-28 16:41:20) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"That man should labour and sorrow\nand learn and forget, and return\nto the dark valley whence he came\nand begin his labours anew<textarea id=\"T8Writer_CommandPrompt\"></textarea>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 68ms (View: 49, DB: 0) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=That%20man%20should%20labour%20and%20sorrow%0Aand%20learn%20and%20forget%2C%20and%20return%0Ato%20the%20dark%20valley%20whence%20he%20came%0Aand%20begin%20his%20labours%20anew%3Ctextarea%20id%3D%22T8Writer_CommandPrompt%22%3E%3C%2Ftextarea%3E]

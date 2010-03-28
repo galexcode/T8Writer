@@ -48,20 +48,60 @@
             document.body.appendChild(link);
         },
 
-        /**
-         *
-         * @param keyCode = number, key
-         */
-        captureKeyPress: function(keyCode){
-
+        listenForEnter: function(e) {
+            var evt = e || window.event;
+            if (evt.keyCode == 13) {
+                Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
+                var command = document.getElementById("T8Writer_CommandPrompt").value;
+                if (Writer.Modes.enterCommand.commands[command]) {
+                    Writer.Modes.enterCommand.commands[command]();
+                    document.getElementById("T8Writer_Contents").removeChild(document.getElementById("T8Writer_CommandPrompt"));
+                }
+            }
         },
 
-        /**
-         *
-         * @param keyCodes = array, keyCodes
-         */
-        captureKeyCombo: function(keyCodes) {
+        listenForPeriod: function(e) {
+            var evt = e || window.event;
+            if(evt.keyCode == 460 || evt.charCode == 46) {
+                Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForPeriod);
+                Writer.Modes.enterCommand();
+            }
+        },
 
+        listenForAlt: function(e) {
+            var evt = e || window.event;
+            if(evt.altKey) {
+                Writer.Utilities.removeEvent(document,"keydown",Writer.Utilities.listenForAlt);
+                Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForPeriod);
+            }
+        },
+
+        captureKeyCombo: function() {
+            Writer.Utilities.addEvent(document,"keydown",Writer.Utilities.listenForAlt);
+        },
+
+        // addEvent and removeEvent courtesy of Peter Paul Koch
+        // http://www.quirksmode.org/blog/archives/2005/10/_and_the_winner_1.html
+        addEvent: function(obj,type,fn) {
+            if (obj.addEventListener)
+                obj.addEventListener( type, fn, false );
+            else if (obj.attachEvent)
+            {
+                obj["e"+type+fn] = fn;
+                obj[type+fn] = function() { obj["e"+type+fn]( window.event ); };
+                obj.attachEvent( "on"+type, obj[type+fn] );
+            }
+        },
+
+        removeEvent: function(obj,type,fn) {
+            if (obj.removeEventListener)
+                obj.removeEventListener( type, fn, false );
+            else if (obj.detachEvent)
+            {
+                obj.detachEvent( "on"+type, obj[type+fn] );
+                obj[type+fn] = null;
+                obj["e"+type+fn] = null;
+            }
         }
     };
     Writer.Modes = {
@@ -72,13 +112,28 @@
                 document.getElementById("T8Writer_Contents").onfocus = function(){
                     Writer.Modes.write();
                 }
-            }
+            };
 
+            // listen for command mode
+            Writer.Utilities.captureKeyCombo();
         },
 
         selectDocument: function(key){
             Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+key);
-        }        
+        },
+
+        enterCommand: function() {
+            document.getElementById("T8Writer_Contents").innerHTML += "<textarea id='T8Writer_CommandPrompt'></textarea>";
+            document.getElementById("T8Writer_CommandPrompt").focus();
+            Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
+        }
+    };
+    Writer.Modes.enterCommand.commands = {
+        "save": function(){ Writer.current_document.save(); },
+        "create": function(){},
+        "exit": function(){},
+        "revert": function(){}
+        
     };
     Writer.Effects = {
         fadeInExtras: function(duration) {
@@ -91,9 +146,12 @@
             interval,
             j;
             interval = setInterval(function(){
+                if (parseFloat(extras[0].style.opacity) == end_opacity) {
+                    clearInterval(interval);
+                    return;
+                }
                 for (j = 0; j < extras.length; j++) {
                     extras[j].style.opacity = parseFloat(extras[j].style.opacity) + 0.05;
-                    if (parseFloat(extras[j].style.opacity) == end_opacity) clearInterval(interval);
                 }
             },(duration / 20));
         },
@@ -108,9 +166,12 @@
             interval,
             j;
             interval = setInterval(function(){
+                if (parseFloat(extras[0].style.opacity) == end_opacity) {
+                    clearInterval(interval);
+                    return;
+                }
                 for (j = 0; j < extras.length; j++) {
                     extras[j].style.opacity = parseFloat(extras[j].style.opacity) - 0.05;
-                    if (parseFloat(extras[j].style.opacity) == end_opacity) clearInterval(interval);
                 }
             },(duration / 20));
         }
@@ -124,7 +185,7 @@
     Document.prototype = {
         save: function() {
             document.getElementById("T8Writer_Messages").innerHTML = "Saving document&hellip;";
-            this.contents = document.getElementById("T8Writer_Contents").value;
+            this.contents = document.getElementById("T8Writer_Contents").innerHTML;
             Writer.Utilities.loadScript('http://localhost:3000/documents/'+this.id+'/save.js?_method=put&document[title]='+encodeURIComponent(this.title)+'&document[contents]='+encodeURIComponent(this.contents));
         },
         revert: function() {
