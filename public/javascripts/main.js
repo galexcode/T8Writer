@@ -97,7 +97,6 @@
         }
     };
     Writer.createDocument.success = function(id,title) {
-        alert(title);
         document.getElementById('T8Writer_Messages').innerHTML = "Successfully created document '"+Writer.createDocument.title+"'";
         setTimeout(function(){
             if (document.getElementById('T8Writer_Messages'))

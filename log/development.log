@@ -7939,3 +7939,54 @@ Processing DocumentsController#show (for 127.0.0.1 at 2010-03-29 11:15:25) [GET]
 Rendering template within layouts/documents
 Rendering documents/show
 Completed in 32ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/12]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-29 11:17:35) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 18ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-29 11:17:35) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 67ms (View: 15, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-29 11:17:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 24ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-29 11:17:46) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"‌To Do: creating new documents with a user id, updating page contents after creating new document. saving new document with title after creating new document<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Completed in 17ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=%E2%80%8CTo%20Do%3A%20creating%20new%20documents%20with%20a%20user%20id%2C%20updating%20page%20contents%20after%20creating%20new%20document.%20saving%20new%20document%20with%20title%20after%20creating%20new%20document%3Cbr%3E]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-03-29 11:17:46) [GET]
+  Parameters: {"title"=>"kerouac", "user_id"=>"1"}
+  [4;35;1mDocument Create (1.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-03-29 18:17:46', 'kerouac', 1, NULL, '2010-03-29 18:17:46')[0m
+Completed in 76ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/new.js?user_id=1&title=kerouac]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-29 11:17:48) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
+Rendering /documents/edit.js.erb
+Completed in 38ms (View: 18, DB: 0) | 200 OK [http://localhost/documents/13/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-29 11:18:05) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (58.0ms)
+Completed in 182ms (View: 99, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
