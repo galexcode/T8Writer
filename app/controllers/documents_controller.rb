@@ -27,6 +27,15 @@ class DocumentsController < ApplicationController
     @document = Document.new
 
     respond_to do |format|
+      format.js {
+        @document.user_id = params[:user_id] if params[:user_id]
+        @document.title = params[:title] if params[:title]
+        if @document.save
+          render :js => "T8Writer.createDocument.success(#{@document.id});"
+        else
+          render :js => "T8Writer.CreateDocument.errors('#{@document.errors})';"
+        end
+      }
       format.html # new.html.erb
       format.xml  { render :xml => @document }
     end

@@ -1,1 +1,3 @@
 document.getElementById("T8Writer_Form").innerHTML = "<%= escape_javascript(render :partial => "/documents/index.html.erb", :locals => {:documents => @documents}) %>" + document.getElementById("T8Writer_Form").innerHTML;
+T8Writer.user_id = <%= @user.id %>;
+T8Writer.Effects.attachEffects();        

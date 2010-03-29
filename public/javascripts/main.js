@@ -60,15 +60,8 @@
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
         },
-        onLoad: function() {
+        onLoad: function() {            
             Writer.Modes.selectDocument();
-
-            document.getElementById("T8Writer_Contents").onblur = function(){
-                Writer.Effects.fadeInExtras(1500);
-                document.getElementById("T8Writer_Contents").onfocus = function(){
-                    Writer.Modes.write();
-                }
-            };
         },
 
         openDocument: function(id) {
@@ -79,7 +72,16 @@
         },
 
         createDocument: function(title) {
-            title = title || "untitled";
+            function proceed() {
+                Writer.Utilities.loadScript('http://localhost:3000/documents/new.js?user_id='+Writer.user_id+"&title="+title);    
+            }
+            this.title = title || "untitled";
+            if (typeof Writer.document_id !== "undefined") {
+                Writer.current_document.observer.subscribe(proceed);
+                Writer.current_document.save();
+            } else {
+                proceed();
+            }
         },
 
         exit: function() {
@@ -93,6 +95,24 @@
                 proceed();
             }                         
         }
+    };
+    Writer.createDocument.success = function(id) {
+        document.getElementById('T8Writer_Messages').innerHTML = "Successfully created document '"+Writer.createDocument.title+"'";
+        setTimeout(function(){
+            if (document.getElementById('T8Writer_Messages'))
+                document.getElementById('T8Writer_Messages').innerHTML = "";
+        },3000);
+        Writer.current_document = new Document(id);
+        Writer.current_document.id = id;
+        Writer.current_document.title = Writer.createDocument.title;
+        Writer.openDocument(Writer.current_document.id);
+        Writer.current_document.save();
+    };
+    Writer.createDocument.errors = function(errs) {
+        document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to create " + Writer.createDocument.title + ": "+errs+".";
+        setTimeout(function(){
+            document.getElementById('T8Writer_Messages').innerHTML = "";
+        },3000);
     };
 
     Writer.Utilities = {
@@ -214,6 +234,16 @@
         
     };
     Writer.Effects = {
+        attachEffects: function() {    
+            document.getElementById("T8Writer_Contents").onblur = function(){
+                Writer.Effects.fadeInExtras(1500);
+            };
+            document.getElementById("T8Writer_Contents").onfocus = function(){
+                Writer.Effects.fadeOutExtras(3000);
+                Writer.Modes.write();
+            };
+        },
+
         fadeInExtras: function(duration) {
             var extras = [
                 document.getElementById("T8Writer_Title"),
