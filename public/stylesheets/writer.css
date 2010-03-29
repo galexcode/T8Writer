@@ -1,0 +1,109 @@
+#T8Writer div, #T8Writer p, #T8Writer form, #T8Writer textarea, #T8Writer ul, #T8Writer li, #T8Writer a, #T8Writer h2 {
+    border: 0;
+    clear: none;
+    color: #666;
+    float: none;
+    font-family: Junction,Arial,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    height: auto;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    text-transform: none;
+    width: auto;
+}
+#T8Writer ul, #T8Writer li {
+    list-style-type: none;
+}
+
+#T8Writer #T8Writer_Overlay {
+    background: rgba(255,255,255,0.8);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+}
+    #T8Writer #T8Writer_Container {
+        background: rgba(255,255,255,0.9);
+        border: 1px solid rgba(204,204,204,0.8);
+        bottom: 20px;
+        margin: 0 -480px;
+        position: absolute;
+        right: 50%;
+        top: 20px;
+        width: 960px;
+        -moz-border-radius: 20px;
+        -moz-box-shadow: 0 0 120px #b5b5b5;
+    }
+        #T8Writer #T8Writer_Title {
+            font-size: 21px;
+            margin: 20px 60px;
+        }
+        #T8Writer #T8Writer_Form {
+            background: transparent;
+            bottom: 60px;
+            left: 60px;
+            position: absolute;
+            right: 60px;
+            top: 80px;
+        }
+            #T8Writer #T8Writer_Documents {
+                border: 1px dotted #d8d8d8;
+                float: right;
+                margin-bottom: 20px;
+                width: 228px;
+            }
+                #T8Writer #T8Writer_Documents li {
+                    border-bottom: 1px dotted #d8d8d8;
+                    line-height: 1;
+                    padding: 5px;
+                }
+                    #T8Writer #T8Writer_Documents a {
+                        color: #999;
+                        text-decoration: none;
+                    }
+                    #T8Writer #T8Writer_Documents a:hover {
+                        color: #666;
+                    }
+                #T8Writer #T8Writer_Documents li:last-child {
+                    border: 0;
+                }
+            #T8Writer #T8Writer_Contents {
+                background: transparent;
+                border: 1px dotted #d8d8d8;
+                color: #757575;
+                display: block;
+                float: left;
+                font-size: 14px;
+                height: 100%;
+                margin: 0;
+                outline: 0;
+                padding: 5px;
+                width: 578px;
+            }
+                #T8Writer #T8Writer_Contents strong {
+                    font-weight: bold;
+                }
+                #T8Writer #T8Writer_Contents em {
+                    font-style: italic;
+                }
+                #T8Writer #T8Writer_Contents #T8Writer_CommandPrompt {
+                    background-color: #e5e5e5;
+                    display: inline;
+                    height: 21px;
+                    width: auto;
+                }
+            #T8Writer #T8Writer_Messages {
+                border: 1px dotted #d8d8d8;
+                clear: right;
+                float: right;
+                height: auto;
+                min-height: 120px;
+                width: 228px;
+            }

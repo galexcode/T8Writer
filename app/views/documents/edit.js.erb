@@ -1,0 +1,8 @@
+document.getElementById("T8Writer_Title").innerHTML = "<%= escape_javascript(@document.title) %>";
+document.getElementById("T8Writer_Contents").innerHTML = "<%= escape_javascript(@document.contents) %>";
+T8Writer.current_document.title = "<%= escape_javascript(@document.title) %>";
+T8Writer.current_document.contents = "<%= escape_javascript(@document.contents) %>";
+document.getElementById("T8Writer_Messages").innerHTML = "";
+document.getElementById("T8Writer_Contents").focus();
+T8Writer.Effects.fadeInExtras(1500);
+T8Writer.Modes.write();
