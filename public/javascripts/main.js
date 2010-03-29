@@ -1,15 +1,74 @@
 (function(){
+    Array.prototype.forEach = function(fn, thisObj) {
+        var scope = thisObj || window;
+        for ( var i=0, j=this.length; i < j; ++i ) {
+            fn.call(scope, this[i], i, this);
+        }
+    };
+    Array.prototype.filter = function(fn, thisObj) {
+        var scope = thisObj || window;
+        var a = [];
+        for ( var i=0, j=this.length; i < j; ++i ) {
+            if ( !fn.call(scope, this[i], i, this) ) {
+                continue;
+            }
+            a.push(this[i]);
+        }
+        return a;
+    };
+
+    function Observer() {
+        this.fns = [];
+    }
+    Observer.prototype = {
+        subscribe: function(fn) {
+            this.fns.push(fn);
+        },
+        unsubscribe: function(fn) {
+            this.fns = this.fns.filter(
+                function(el) {
+                    if (el !== fn) {
+                        return el;
+                    }
+                }
+            );
+        },
+        fire: function(o,thisObj) {
+            var scope = thisObj || window;
+            this.fns.forEach(
+                function(el) {
+                    el.call(scope,o);
+                }
+            )
+        }
+    };
+
+
     var Writer = {
         current_document: undefined,
         document_id: undefined,
+        key: undefined,
         user_id: undefined,
+        load_observer: new Observer(),
         init: function(key) {
+            Writer.key = key;
+
             var t8_writer = document.createElement("div");
                 t8_writer.setAttribute("id","T8Writer");
                 document.body.appendChild(t8_writer);
+            Writer.load_observer.subscribe(Writer.onLoad);
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
-            Writer.Modes.selectDocument(key);
+        },
+        onLoad: function() {
+            Writer.Modes.selectDocument();
+
+            document.getElementById("T8Writer_Contents").onblur = function(){
+                Writer.Effects.fadeInExtras(1500);
+                document.getElementById("T8Writer_Contents").onfocus = function(){
+                    Writer.Modes.write();
+                }
+            };
         },
 
         openDocument: function(id) {
@@ -19,11 +78,20 @@
             Writer.Utilities.loadScript('http://localhost:3000/documents/'+id+'/edit.js');
         },
 
+        createDocument: function(title) {
+            title = title || "untitled";
+        },
+
         exit: function() {
-            if (typeof Writer.document_id !== "undefined") {
-                Document.save();
+            function proceed() {
+                document.body.removeChild(document.getElementById("T8Writer"));
             }
-            document.body.removeChild(document.getElementById("#T8Writer"));
+            if (typeof Writer.document_id !== "undefined") {
+                Writer.current_document.observer.subscribe(proceed);
+                Writer.current_document.save();
+            } else {
+                proceed();
+            }                         
         }
     };
 
@@ -36,7 +104,7 @@
             var script = document.createElement("script");
                 script.setAttribute("type","text/javascript");
                 script.setAttribute("src",sUrl);
-            document.body.appendChild(script);
+            document.getElementById("T8Writer").appendChild(script);
             //document.body.removeChild(document.body.childNodes[document.body.childNodes.length-1]);
         },
 
@@ -53,10 +121,16 @@
             if (evt.keyCode == 13) {
                 Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
                 var command = document.getElementById("T8Writer_CommandPrompt").value;
-                if (Writer.Modes.enterCommand.commands[command]) {
-                    Writer.Modes.enterCommand.commands[command]();
-                    document.getElementById("T8Writer_Contents").removeChild(document.getElementById("T8Writer_CommandPrompt"));
+                for (var i in Writer.Modes.enterCommand.commands) {
+                    if (command.indexOf(i) != -1) {
+                        document.getElementById("T8Writer_Contents").removeChild(
+                                document.getElementById("T8Writer_CommandPrompt")
+                        );
+                        Writer.Modes.enterCommand.commands[i](command);
+                        Writer.Modes.write();
+                    }
                 }
+                Writer.Utilities.cancelDefault(e);
             }
         },
 
@@ -78,6 +152,13 @@
 
         captureKeyCombo: function() {
             Writer.Utilities.addEvent(document,"keydown",Writer.Utilities.listenForAlt);
+        },
+
+        cancelDefault: function(e) {
+            if (e && e.preventDefault)
+                e.preventDefault();
+            else if (window.event && window.event.returnValue)
+                window.eventReturnValue = false;
         },
 
         // addEvent and removeEvent courtesy of Peter Paul Koch
@@ -105,34 +186,31 @@
         }
     };
     Writer.Modes = {
-        write: function(){
-            Writer.Effects.fadeOutExtras(3000);
-            document.getElementById("T8Writer_Contents").onblur = function(){
-                Writer.Effects.fadeInExtras(1500);
-                document.getElementById("T8Writer_Contents").onfocus = function(){
-                    Writer.Modes.write();
-                }
-            };
-
+        write: function(){            
             // listen for command mode
             Writer.Utilities.captureKeyCombo();
         },
 
-        selectDocument: function(key){
-            Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+key);
+        selectDocument: function(){
+            Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+Writer.key);
         },
 
         enterCommand: function() {
             document.getElementById("T8Writer_Contents").innerHTML += "<textarea id='T8Writer_CommandPrompt'></textarea>";
             document.getElementById("T8Writer_CommandPrompt").focus();
             Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
+            return false;
         }
     };
     Writer.Modes.enterCommand.commands = {
         "save": function(){ Writer.current_document.save(); },
-        "create": function(){},
-        "exit": function(){},
-        "revert": function(){}
+        "create": function(command){
+            var title = command.substring(command.indexOf("create")+7,command.length);
+            Writer.createDocument(title);
+        },
+        "exit": function(){ Writer.exit(); },
+        "revert": function(){},
+        "open": function(){}
         
     };
     Writer.Effects = {
@@ -181,6 +259,7 @@
         this.title = undefined;
         this.contents = undefined;
         this.id = id;
+        this.observer = new Observer();
     };
     Document.prototype = {
         save: function() {
@@ -198,8 +277,10 @@
     Document.prototype.save.success = function() {
         document.getElementById('T8Writer_Messages').innerHTML = T8Writer.current_document.title + ' successfully saved.';
         setTimeout(function(){
-            document.getElementById('T8Writer_Messages').innerHTML = "";
+            if (document.getElementById('T8Writer_Messages'))
+                document.getElementById('T8Writer_Messages').innerHTML = "";
         },3000);
+        T8Writer.current_document.observer.fire();
     };
     Document.prototype.save.errors = function(errs) {
         document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to save "+
