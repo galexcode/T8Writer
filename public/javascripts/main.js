@@ -60,7 +60,8 @@
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
         },
-        onLoad: function() {            
+        onLoad: function() {
+            T8Writer.Effects.attachEffects(); 
             Writer.Modes.selectDocument();
         },
 
@@ -73,9 +74,8 @@
 
         createDocument: function(title) {
             function proceed() {
-                Writer.Utilities.loadScript('http://localhost:3000/documents/new.js?user_id='+Writer.user_id+"&title="+title);    
+                Writer.Utilities.loadScript('http://localhost:3000/documents/new.js?user_id='+Writer.user_id+"&title="+encodeURIComponent(title));    
             }
-            this.title = title || "untitled";
             if (typeof Writer.document_id !== "undefined") {
                 Writer.current_document.observer.subscribe(proceed);
                 Writer.current_document.save();
@@ -96,7 +96,8 @@
             }                         
         }
     };
-    Writer.createDocument.success = function(id) {
+    Writer.createDocument.success = function(id,title) {
+        alert(title);
         document.getElementById('T8Writer_Messages').innerHTML = "Successfully created document '"+Writer.createDocument.title+"'";
         setTimeout(function(){
             if (document.getElementById('T8Writer_Messages'))
@@ -104,9 +105,8 @@
         },3000);
         Writer.current_document = new Document(id);
         Writer.current_document.id = id;
-        Writer.current_document.title = Writer.createDocument.title;
+        Writer.current_document.title = title;
         Writer.openDocument(Writer.current_document.id);
-        Writer.current_document.save();
     };
     Writer.createDocument.errors = function(errs) {
         document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to create " + Writer.createDocument.title + ": "+errs+".";

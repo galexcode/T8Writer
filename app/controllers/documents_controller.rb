@@ -31,7 +31,7 @@ class DocumentsController < ApplicationController
         @document.user_id = params[:user_id] if params[:user_id]
         @document.title = params[:title] if params[:title]
         if @document.save
-          render :js => "T8Writer.createDocument.success(#{@document.id});"
+          render :js => "T8Writer.createDocument.success(#{@document.id},'#{@document.title}');"
         else
           render :js => "T8Writer.CreateDocument.errors('#{@document.errors})';"
         end

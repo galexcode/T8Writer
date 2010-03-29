@@ -1,7 +1,5 @@
-<ul id="T8Writer_Documents" style="opacity: 1;">
 <% documents.each do |document| %>
     <li>
         <a href="#documents/1/edit" onclick="T8Writer.openDocument(<%= document.id %>);return false;"><%= document.title %></a>
     </li>
 <% end %>
-</ul>
