@@ -7990,3 +7990,71 @@ Rendering /users/documents.js.erb
   [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
 Rendered documents/_index (58.0ms)
 Completed in 182ms (View: 99, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-29 11:18:31) [GET]
+  Parameters: {"id"=>"13"}
+  [4;35;1mDocument Load (9.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 31ms (View: 10, DB: 9) | 200 OK [http://localhost/documents/13]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-29 17:57:23) [GET]
+  Parameters: {"id"=>"13", "document"=>{"title"=>"kerouac", "contents"=>""}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-03-30 00:57:23', "contents" = '' WHERE "id" = 13[0m
+Completed in 27ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/13/save.js?_method=put&document[title]=kerouac&document[contents]=]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-29 17:57:38) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (4.0ms)
+Completed in 21ms (View: 17, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-29 17:57:39) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (16.0ms)
+Completed in 66ms (View: 18, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-29 17:57:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 39ms (View: 5, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-03-29 21:09:37) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 15ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-03-29 21:09:37) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 92ms (View: 14, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-03-29 21:09:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 42ms (View: 18, DB: 0) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-03-29 21:11:42) [GET]
+  Parameters: {"id"=>"1", "document"=>{"title"=>"My First Document", "contents"=>"‌To Do: deleting JS vars upon exit (or at least upon reload from bookmarklet); auto save.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-03-30 04:11:42', "contents" = '‌To Do: deleting JS vars upon exit (or at least upon reload from bookmarklet); auto save.<br>' WHERE "id" = 1[0m
+Completed in 34ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/1/save.js?_method=put&document[title]=My%20First%20Document&document[contents]=%E2%80%8CTo%20Do%3A%20deleting%20JS%20vars%20upon%20exit%20(or%20at%20least%20upon%20reload%20from%20bookmarklet)%3B%20auto%20save.%3Cbr%3E]

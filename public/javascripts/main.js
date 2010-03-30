@@ -1,4 +1,7 @@
 (function(){
+    /*
+     * Some OOP help, courtesy of Dustin Diaz
+     */
     Array.prototype.forEach = function(fn, thisObj) {
         var scope = thisObj || window;
         for ( var i=0, j=this.length; i < j; ++i ) {
@@ -43,40 +46,70 @@
         }
     };
 
-
+    /*
+     * the main T8Writer singleton,
+     * referenced from outside as T8Writer
+     */
     var Writer = {
         current_document: undefined,
-        document_id: undefined,
         key: undefined,
         user_id: undefined,
-        load_observer: new Observer(),
+        load_observer: new Observer(), // listen for the initial script to be loaded
+
+        /**
+         * this function gets called by bookmarklet
+         * @param key random (but unique) md5 hash representing user. passed in by bookmarklet
+         */
         init: function(key) {
             Writer.key = key;
-
+            // create container element #T8Writer, so we can easily remove
+            // entire plugin from DOM
             var t8_writer = document.createElement("div");
                 t8_writer.setAttribute("id","T8Writer");
                 document.body.appendChild(t8_writer);
-            Writer.load_observer.subscribe(Writer.onLoad);
+
+            Writer.load_observer.subscribe(Writer.onLoad);  // notify onLoad() function when show.js loads
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
         },
+
+        /**
+         * callback when initial markup is loaded from show.js (show.html.erb)
+         */
         onLoad: function() {
-            T8Writer.Effects.attachEffects(); 
+            // apply fadeIn and fadeOut functionality
+            T8Writer.Effects.attachEffects();
+            // load user's prior documents
             Writer.Modes.selectDocument();
         },
 
+        /**
+         *
+         * @param id document ID (integer)
+         */
         openDocument: function(id) {
-            Writer.document_id = id;
+            // create new instance of Document class
             Writer.current_document = new Document(id);
+            // status message
             document.getElementById("T8Writer_Messages").innerHTML = "Loading document&hellip;";
+            // load document to be edited, passing in ID
             Writer.Utilities.loadScript('http://localhost:3000/documents/'+id+'/edit.js');
         },
 
+        /**
+         *
+         * @param title (string), passed in from 'create' command
+         */
         createDocument: function(title) {
+            // this is what we do once any unsaved document has been saved
             function proceed() {
+                // create new document with title and user's id
                 Writer.Utilities.loadScript('http://localhost:3000/documents/new.js?user_id='+Writer.user_id+"&title="+encodeURIComponent(title));    
             }
-            if (typeof Writer.document_id !== "undefined") {
+            // check to see if there's an open document...
+            // ...if so, save it before creating a new one.
+            if (typeof Writer.current_document !== "undefined") {
+                // run proceed() function once save has finished
                 Writer.current_document.observer.subscribe(proceed);
                 Writer.current_document.save();
             } else {
@@ -84,11 +117,20 @@
             }
         },
 
+        /**
+         * close the damn thing
+         */
         exit: function() {
+            // create new document with title and user's id
             function proceed() {
+                // remove #T8Writer (wrapper) element
                 document.body.removeChild(document.getElementById("T8Writer"));
+                // TODO: Delete all JS variables (e.g. window["T8Writer"])
             }
-            if (typeof Writer.document_id !== "undefined") {
+            // check to see if there's an open document...
+            // ...if so, save it before creating a new one.
+            if (typeof Writer.current_document !== "undefined") {
+                // run proceed() function once save has finished
                 Writer.current_document.observer.subscribe(proceed);
                 Writer.current_document.save();
             } else {
@@ -96,45 +138,76 @@
             }                         
         }
     };
+
+    /**
+     * callback for successful document creation
+     * @param id (integer) ID of new document
+     * @param title (string) the title we gave the new document
+     */
     Writer.createDocument.success = function(id,title) {
+        // status message
         document.getElementById('T8Writer_Messages').innerHTML = "Successfully created document '"+Writer.createDocument.title+"'";
+        // clear status after 3s
         setTimeout(function(){
             if (document.getElementById('T8Writer_Messages'))
                 document.getElementById('T8Writer_Messages').innerHTML = "";
         },3000);
+        // create instance of Document class to mirror backend
         Writer.current_document = new Document(id);
         Writer.current_document.id = id;
         Writer.current_document.title = title;
+        // load our newly created document
         Writer.openDocument(Writer.current_document.id);
     };
+
+    /**
+     * callback for failed document creation
+     * @param errs Array? error message passed from Rails' unsuccessful creation
+     * TODO: logging!
+     */
     Writer.createDocument.errors = function(errs) {
+        // status message
         document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to create " + Writer.createDocument.title + ": "+errs+".";
+        // clear status after 3s
         setTimeout(function(){
-            document.getElementById('T8Writer_Messages').innerHTML = "";
+            if (document.getElementById('T8Writer_Messages'))
+                document.getElementById('T8Writer_Messages').innerHTML = "";
         },3000);
     };
 
+
+    /*
+     * Utility functions
+     */
     Writer.Utilities = {
         /**
          *
-         * @param sUrl = string, url
+         * @param sUrl = (string) url of JS file to load
          */
         loadScript: function(sUrl) {
             var script = document.createElement("script");
                 script.setAttribute("type","text/javascript");
                 script.setAttribute("src",sUrl);
             document.getElementById("T8Writer").appendChild(script);
-            //document.body.removeChild(document.body.childNodes[document.body.childNodes.length-1]);
+            // TODO: delete tag after script has been executed
         },
 
+        /**
+         *
+         * @param lHref (string) url of stylesheet to load
+         */
         loadStyle: function(lHref) {
             var link = document.createElement("link");
                 link.setAttribute("type","text/css");
                 link.setAttribute("rel","stylesheet");
                 link.setAttribute("href",lHref);
-            document.body.appendChild(link);
+            document.getElementById("T8Writer").appendChild(link);
         },
 
+        /**
+         * capture 'enter' keypress, signals submission in cmd mode
+         * @param e
+         */
         listenForEnter: function(e) {
             var evt = e || window.event;
             if (evt.keyCode == 13) {
@@ -153,14 +226,23 @@
             }
         },
 
+        /**
+         * capture '.' keypress, signals launch of cmd mode (when 'alt' is held down)
+         * @param e
+         */
         listenForPeriod: function(e) {
             var evt = e || window.event;
             if(evt.keyCode == 460 || evt.charCode == 46) {
                 Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForPeriod);
+                // command mode!
                 Writer.Modes.enterCommand();
             }
         },
 
+        /**
+         * capture 'alt' keydown, if '.' is pressed, launch cmd mode
+         * @param e
+         */
         listenForAlt: function(e) {
             var evt = e || window.event;
             if(evt.altKey) {
@@ -173,6 +255,10 @@
             Writer.Utilities.addEvent(document,"keydown",Writer.Utilities.listenForAlt);
         },
 
+        /**
+         * does what it says. cancels default action from evt. prevents firefox from adding <br _moz_dirty>
+         * @param e
+         */
         cancelDefault: function(e) {
             if (e && e.preventDefault)
                 e.preventDefault();
@@ -204,31 +290,46 @@
             }
         }
     };
+
+    /*
+     * defines modes of operation for T8Writer
+     */
     Writer.Modes = {
-        write: function(){            
+        write: function(){
+            // more will come, but for now fadeOut is attached earlier.
+            
             // listen for command mode
             Writer.Utilities.captureKeyCombo();
         },
 
         selectDocument: function(){
+            // open list of user's documents.
+            // to call this selectDocument MODE is maybe a little artificial
             Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+Writer.key);
         },
 
         enterCommand: function() {
+            // create command prompt textarea
             document.getElementById("T8Writer_Contents").innerHTML += "<textarea id='T8Writer_CommandPrompt'></textarea>";
             document.getElementById("T8Writer_CommandPrompt").focus();
+            
             Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
             return false;
         }
     };
     Writer.Modes.enterCommand.commands = {
-        "save": function(){ Writer.current_document.save(); },
+        "save": function(){
+            // since this was a user-requested save (as opposed to automatic),  
+            // we set the doCache boolean to true
+            Writer.current_document.save(true);
+        },
         "create": function(command){
+            // title = everything after "create "
             var title = command.substring(command.indexOf("create")+7,command.length);
             Writer.createDocument(title);
         },
         "exit": function(){ Writer.exit(); },
-        "revert": function(){},
+        "revert": function(){ Writer.current_document.revert(); },
         "open": function(){}
         
     };
@@ -244,14 +345,16 @@
         },
 
         fadeInExtras: function(duration) {
+            // array of elements to fade in
             var extras = [
                 document.getElementById("T8Writer_Title"),
                 document.getElementById("T8Writer_Documents"),
                 document.getElementById("T8Writer_Messages")
             ],
-            end_opacity = 1,
+            end_opacity = 1, // we finish at fully opaque
             interval,
             j;
+            // add .5% opacity 20x (every 1/20th of supplied duration)
             interval = setInterval(function(){
                 if (parseFloat(extras[0].style.opacity) == end_opacity) {
                     clearInterval(interval);
@@ -264,14 +367,16 @@
         },
 
         fadeOutExtras: function(duration) {
+            // array of elements to fade in
             var extras = [
                 document.getElementById("T8Writer_Title"),
                 document.getElementById("T8Writer_Documents"),
                 document.getElementById("T8Writer_Messages")
             ],
-            end_opacity = 0,
+            end_opacity = 0, // we finish at fully transparent
             interval,
             j;
+            // subtract .5% opacity 20x (every 1/20th of supplied duration)
             interval = setInterval(function(){
                 if (parseFloat(extras[0].style.opacity) == end_opacity) {
                     clearInterval(interval);
@@ -284,40 +389,88 @@
         }
     };
 
+    // Document constructor
     var Document = function(id) {
         this.title = undefined;
         this.contents = undefined;
         this.id = id;
         this.observer = new Observer();
+        this.cache = {
+            contents: undefined    
+        };
     };
     Document.prototype = {
-        save: function() {
+        /**
+         *
+         * @param doCache (boolean) indicates whether we should cache this save point
+         */
+        save: function(doCache) {
+            // status message
+            // TODO: since the Message area is seperate from the Document class
+            // I should really handle this with observers
             document.getElementById("T8Writer_Messages").innerHTML = "Saving document&hellip;";
+            // get current text
             this.contents = document.getElementById("T8Writer_Contents").innerHTML;
+            // if user requested this save explicitly, cache document for later revert
+            if (doCache === true) {
+                this.cache.contents = this.contents;   
+            }
+            // tell the server to save it
             Writer.Utilities.loadScript('http://localhost:3000/documents/'+this.id+'/save.js?_method=put&document[title]='+encodeURIComponent(this.title)+'&document[contents]='+encodeURIComponent(this.contents));
         },
         revert: function() {
-
+            // if we have a cached version of this document (we should!), retrieve it
+            if (typeof this.cache.contents !== "undefined") {
+                // status message
+                document.getElementById("T8Writer_Messages").innerHTML = "Reverting to last save point&hellip;";
+                // retrieve cached version
+                document.getElementById("T8Writer_Contents").innerHTML = this.cache.contents;
+                // status message
+                document.getElementById("T8Writer_Messages").innerHTML = "Successfully reverted document.";
+            } else {
+                // status message
+                document.getElementById("T8Writer_Messages").innerHTML = "Document has not been changed since last save.";
+            }
+            // clear status after 3s
+            setTimeout(function(){
+                if (document.getElementById('T8Writer_Messages'))
+                    document.getElementById('T8Writer_Messages').innerHTML = "";
+            },3000);
         },
         email: function() {
 
         }
     };
+
+    /**
+     * callback for successful save
+     */
     Document.prototype.save.success = function() {
+        // status message
         document.getElementById('T8Writer_Messages').innerHTML = T8Writer.current_document.title + ' successfully saved.';
+        // clear status after 3s
         setTimeout(function(){
             if (document.getElementById('T8Writer_Messages'))
                 document.getElementById('T8Writer_Messages').innerHTML = "";
         },3000);
+        // tell anyone who's listening that document has been saved
         T8Writer.current_document.observer.fire();
     };
+
+    /**
+     * callback for failed save attempt
+     * @param errs Array? passed by Rails
+     */
     Document.prototype.save.errors = function(errs) {
+        // status message
         document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to save "+
                 T8Writer.current_document.title + ": "+errs+".";
+        // clear status message after 3s
         setTimeout(function(){
             document.getElementById('T8Writer_Messages').innerHTML = "";
         },3000);
     };
     window["T8Writer"] = Writer;
+    // really only left in here for debugging purposes
     window["T8Document"] = Document;
 })();
