@@ -1,2 +1,4 @@
-document.getElementById("T8Writer_Documents").innerHTML = "<%= escape_javascript(render :partial => "/documents/index.html.erb", :locals => {:documents => @documents}) %>";
-T8Writer.user_id = <%= @user.id %>;       
+(function(){
+    document.getElementById("T8Writer_Documents").innerHTML = "<%= escape_javascript(render :partial => "/documents/index.html.erb", :locals => {:documents => @documents}) %>";
+    T8Writer.user_id = <%= @user.id %>;
+})();

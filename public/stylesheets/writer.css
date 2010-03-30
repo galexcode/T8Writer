@@ -66,9 +66,11 @@
                 }
                     #T8Writer #T8Writer_Documents a {
                         color: #999;
+                        display: block;
                         text-decoration: none;
                     }
-                    #T8Writer #T8Writer_Documents a:hover {
+                    #T8Writer #T8Writer_Documents a:hover, #T8Writer #T8Writer_Documents a:focus {
+                        background-color: #f6f6f6;
                         color: #666;
                     }
                 #T8Writer #T8Writer_Documents li:last-child {

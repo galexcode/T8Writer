@@ -55,6 +55,7 @@
         key: undefined,
         user_id: undefined,
         load_observer: new Observer(), // listen for the initial script to be loaded
+        auto_save: undefined,
 
         /**
          * this function gets called by bookmarklet
@@ -88,6 +89,7 @@
          * @param id document ID (integer)
          */
         openDocument: function(id) {
+            clearInterval(Writer.auto_save);
             // create new instance of Document class
             Writer.current_document = new Document(id);
             // status message
@@ -121,6 +123,8 @@
          * close the damn thing
          */
         exit: function() {
+            clearInterval(Writer.auto_save);
+            
             // create new document with title and user's id
             function proceed() {
                 // remove #T8Writer (wrapper) element
@@ -136,6 +140,12 @@
             } else {
                 proceed();
             }                         
+        },
+
+        autoSave: function() {
+             Writer.auto_save = setInterval(function(){
+                Writer.current_document.save();
+             },45000);
         }
     };
 
