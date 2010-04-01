@@ -1,4 +1,89 @@
 (function(){
+    /* characterize.js
+     author: Kyle Jacobson
+     last edited: December, 2008
+     */
+
+    //
+    // USAGE:
+    // var faulty_str = "I mean... you know---right?";
+    // var corrected_str = punctuateStr(faulty_str);
+    //
+
+    function punctuateStr(current_str) {
+        // variables indicating whether a quotation is open;
+        var open_double = false,
+            open_single = false,
+            current_char = undefined;
+
+        // loop through the characters in a strng;
+        for (i = 0; i < current_str.length; i++) {
+            // find the current character;
+            if (current_str[i])
+                current_char = current_str[i];
+            else
+                current_char = current_str.substr(i,1);
+
+            // if a foot mark or back-tick is found;
+            if (current_char == "\'" || current_char == "\`") {
+                // check if this is likely meant to be an apostrophe
+                if (i != 0 && current_str.substr(i-1,1) != " " && current_str.substr(i-1,1) != "\"" && i != current_str.length-1 && current_str.substr(i+1,1) != " " && current_str[i+1] != "\"") {
+                    current_str = current_str.substring(0,i) + "&rsquo;" + current_str.substring(i+1,current_str.length);
+                } else {
+                    if (!open_single) {
+                        // if there is no open single-quoted string, print an opening single quote;
+                        current_str = current_str.substring(0,i) + "&lsquo;" + current_str.substring(i+1,current_str.length);
+                        open_single = true;
+                    } else {
+                        // if there IS an open single-quoted string, print a closing single quote;
+                        current_str = current_str.substring(0,i) + "&rsquo;" + current_str.substring(i+1,current_str.length);
+                        open_single = false;
+                    }
+                }
+            } else
+            if (current_char == "\"") {
+                if (!open_double) {
+                    // if there is no open double-quoted string, print an opening double quote;
+                    current_str = current_str.substring(0,i) + "&ldquo;" + current_str.substring(i+1,current_str.length);
+                    open_double = true;
+                } else {
+                    // if there IS an open double-quoted string, print an opening double quote;
+                    current_str = current_str.substring(0,i) + "&rdquo;" + current_str.substring(i+1,current_str.length);
+                    open_double = false;
+                }
+            } else
+            // if there a minus sign is found;
+            if (current_char == "\-") {
+                // check if the user entered three minus signs, i.e., and EM dash;
+                if (current_str.substr(i-1,1) == "\-" && current_str.substr(i-2,1) == "\-") {
+                    current_str = current_str.substring(0,i-2) + "&#8202;&mdash;&#8202;" + current_str.substring(i+1,current_str.length);
+                } else
+                // check if the user entered two minus signs, i.e.m an EN dash;
+                if (current_str.substr(i-1,1) == "\-" && current_str.substr(i-2,1) != "\-" && current_str.substr(i+1,1) != "\-") {
+                    current_str = current_str.substring(0,i-1) + "&#8202;&ndash;&#8202;" + current_str.substring(i+1,current_str.length);
+                } else
+                // check if the user likely intended a minus sign;
+                if (current_str.substr(i-1,1).match(/[0-9]/) && current_str.substr(i+1,1).match(/[0-9]/)) {
+                    current_str = current_str.substring(0,i) + "&#8202;&ndash;&#8202;" + current_str.substring(i+1,current_str.length);
+                } else
+                // check if the user likely intended a hyphen;
+                if (current_str.substr(i-1,1).match(/[A-Za-z]/) && current_str.substr(i+1,1).match(/[A-Za-z]/)) {
+                    current_str = current_str.substring(0,i) + "&#45;" + current_str.substring(i+1,current_str.length);
+                }
+            } else
+            // if a period is found;
+            if (current_char == ".") {
+                // check if this is the third of three periods, i.e. an ellipsis;
+                if (current_str.substr(i-1,1) == "." && current_str.substr(i-2,1) == ".") {
+                    current_str = current_str.substring(0,i-2) + "&hellip;" + current_str.substring(i+1,current_str.length);
+                }
+            }
+            current_char = current_str[i];
+        }
+        return current_str;
+    }
+
+    
     /*
      * Some OOP help, courtesy of Dustin Diaz
      */
@@ -56,6 +141,7 @@
         user_id: undefined,
         load_observer: new Observer(), // listen for the initial script to be loaded
         auto_save: undefined,
+        auto_punctuate: undefined,
 
         /**
          * this function gets called by bookmarklet
@@ -146,6 +232,12 @@
              Writer.auto_save = setInterval(function(){
                 Writer.current_document.save();
              },45000);
+        },
+
+        autoPunctuate: function() {
+             Writer.auto_punctuate = setInterval(function(){
+                document.getElementById("T8Writer_Contents").innerHTML = punctuateStr(document.getElementById("T8Writer_Contents").innerHTML);
+             },3000);
         }
     };
 
@@ -298,6 +390,21 @@
                 obj[type+fn] = null;
                 obj["e"+type+fn] = null;
             }
+        },
+
+        focusAtEnd: function() {
+            setTimeout(function(){
+                document.getElementById("T8Writer_Contents").focus();
+                var txt_node, selection, range;
+                // TODO: we need to make sure this is a text node.
+                txt_node = document.getElementById("T8Writer_Contents").childNodes[0];
+                selection = window.getSelection();
+                range = document.createRange();
+                range.selectNode(txt_node);
+                range.collapse(false);
+                selection.removeAllRanges();
+                selection.addRange(range);
+            },10);
         }
     };
 
@@ -348,7 +455,7 @@
             document.getElementById("T8Writer_Contents").onblur = function(){
                 Writer.Effects.fadeInExtras(1500);
             };
-            document.getElementById("T8Writer_Contents").onfocus = function(){
+            document.getElementById("T8Writer_Contents").onfocus = function(e){
                 Writer.Effects.fadeOutExtras(3000);
                 Writer.Modes.write();
             };

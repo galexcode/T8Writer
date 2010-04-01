@@ -6,5 +6,8 @@
     T8Writer.current_document.cache.contents = "<%= escape_javascript(@document.contents) %>";
     document.getElementById("T8Writer_Messages").innerHTML = "";
     document.getElementById("T8Writer_Contents").focus();
+    T8Writer.Utilities.focusAtEnd();
+    //T8Writer.Utilities.setCaret();
     T8Writer.autoSave();
+    //T8Writer.autoPunctuate();
 })();
