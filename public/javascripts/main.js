@@ -237,6 +237,8 @@
         autoPunctuate: function() {
              Writer.auto_punctuate = setInterval(function(){
                 document.getElementById("T8Writer_Contents").innerHTML = punctuateStr(document.getElementById("T8Writer_Contents").innerHTML);
+                document.getElementById("T8Writer_Contents").focus();
+                T8Writer.Utilities.focusAtEnd();
              },3000);
         }
     };
