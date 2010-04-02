@@ -90,9 +90,9 @@
                 padding: 5px;
                 width: 578px;
             }
-            #T8Writer #T8Writer_Contents:focus {
+            /*#T8Writer #T8Writer_Contents:focus {
                 outline: 1px dotted;
-            }
+            }*/
                 #T8Writer #T8Writer_Contents strong {
                     font-weight: bold;
                 }

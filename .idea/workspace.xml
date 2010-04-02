@@ -24,10 +24,10 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="236" column="20" selection-start="9854" selection-end="9866" vertical-scroll-proportion="0.0">
+            <state line="236" column="64" selection-start="10185" selection-end="10185" vertical-scroll-proportion="0.37127846">
               <folding />
             </state>
           </provider>
@@ -60,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="edit.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/documents/edit.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.2925532">
+            <state line="7" column="34" selection-start="543" selection-end="543" vertical-scroll-proportion="-4.7727275">
               <folding />
             </state>
           </provider>
@@ -81,7 +81,7 @@
       <file leaf-file-name="writer.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="46" selection-start="2756" selection-end="2756" vertical-scroll-proportion="-14.375">
+            <state line="81" column="26" selection-start="2407" selection-end="2407" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -111,8 +111,8 @@
         <option value="$PROJECT_DIR$/app/controllers/documents_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/writer/_show.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
-        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/app/views/documents/edit.js.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
       </list>
     </option>
   </component>
@@ -564,14 +564,14 @@
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1260" height="760" extended-state="0" />
+    <frame x="1" y="1" width="1280" height="760" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959083" sideWeight="0.6597774" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24557166" sideWeight="0.6597774" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290938" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -613,11 +613,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/dragdrop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/writer_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="12" selection-start="194" selection-end="194" vertical-scroll-proportion="0.0" />
@@ -677,13 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="46" selection-start="2756" selection-end="2756" vertical-scroll-proportion="-14.375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/documents.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="4" selection-start="17" selection-end="17" vertical-scroll-proportion="-0.6818182">
@@ -691,16 +679,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="20" selection-start="9854" selection-end="9866" vertical-scroll-proportion="0.0">
+        <state line="81" column="26" selection-start="2407" selection-end="2407" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/documents/edit.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="659" selection-end="659" vertical-scroll-proportion="0.2925532">
+        <state line="7" column="34" selection-start="543" selection-end="543" vertical-scroll-proportion="-4.7727275">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="236" column="64" selection-start="10185" selection-end="10185" vertical-scroll-proportion="0.37127846">
           <folding />
         </state>
       </provider>

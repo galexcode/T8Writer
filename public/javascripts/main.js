@@ -1,42 +1,37 @@
 (function(){
-    /* characterize.js
-     author: Kyle Jacobson
-     last edited: December, 2008
-     */
-
     //
-    // USAGE:
-    // var faulty_str = "I mean... you know---right?";
-    // var corrected_str = punctuateStr(faulty_str);
-    //
+// USAGE:
+// var faulty_str = "I mean... you know---right?";
+// var corrected_str = punctuateStr(faulty_str);
+//
 
-    function punctuateStr(current_str) {
+    String.prototype.punctuate = function() {
         // variables indicating whether a quotation is open;
         var open_double = false,
             open_single = false,
-            current_char = undefined;
+            current_str = this,
+            current_char;
 
         // loop through the characters in a strng;
         for (i = 0; i < current_str.length; i++) {
             // find the current character;
-            if (current_str[i])
-                current_char = current_str[i];
-            else
-                current_char = current_str.substr(i,1);
+            if (current_str[i]) current_char = current_str[i];
+            else current_char = current_str.substr(i,1);
 
             // if a foot mark or back-tick is found;
             if (current_char == "\'" || current_char == "\`") {
                 // check if this is likely meant to be an apostrophe
                 if (i != 0 && current_str.substr(i-1,1) != " " && current_str.substr(i-1,1) != "\"" && i != current_str.length-1 && current_str.substr(i+1,1) != " " && current_str[i+1] != "\"") {
-                    current_str = current_str.substring(0,i) + "&rsquo;" + current_str.substring(i+1,current_str.length);
+                    // right single quote (apostrophe)
+                    current_str = current_str.substring(0,i) + "\u2019" + current_str.substring(i+1,current_str.length);
                 } else {
                     if (!open_single) {
                         // if there is no open single-quoted string, print an opening single quote;
-                        current_str = current_str.substring(0,i) + "&lsquo;" + current_str.substring(i+1,current_str.length);
+                        current_str = current_str.substring(0,i) + "\u2018" + current_str.substring(i+1,current_str.length);
                         open_single = true;
                     } else {
                         // if there IS an open single-quoted string, print a closing single quote;
-                        current_str = current_str.substring(0,i) + "&rsquo;" + current_str.substring(i+1,current_str.length);
+                        current_str = current_str.substring(0,i) + "\u2019" + current_str.substring(i+1,current_str.length);
                         open_single = false;
                     }
                 }
@@ -44,44 +39,44 @@
             if (current_char == "\"") {
                 if (!open_double) {
                     // if there is no open double-quoted string, print an opening double quote;
-                    current_str = current_str.substring(0,i) + "&ldquo;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i) + "\u201C;" + current_str.substring(i+1,current_str.length);
                     open_double = true;
                 } else {
                     // if there IS an open double-quoted string, print an opening double quote;
-                    current_str = current_str.substring(0,i) + "&rdquo;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i) + "\u201D" + current_str.substring(i+1,current_str.length);
                     open_double = false;
                 }
             } else
             // if there a minus sign is found;
             if (current_char == "\-") {
-                // check if the user entered three minus signs, i.e., and EM dash;
+                // check if the user entered three minus signs, i.e., and EM dash;  &#8202;&mdash;&#8202;
                 if (current_str.substr(i-1,1) == "\-" && current_str.substr(i-2,1) == "\-") {
-                    current_str = current_str.substring(0,i-2) + "&#8202;&mdash;&#8202;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i-2) + "\u2014" + current_str.substring(i+1,current_str.length);
                 } else
-                // check if the user entered two minus signs, i.e.m an EN dash;
+                // check if the user entered two minus signs, i.e.m an EN dash &#8202;&ndash;&#8202;;
                 if (current_str.substr(i-1,1) == "\-" && current_str.substr(i-2,1) != "\-" && current_str.substr(i+1,1) != "\-") {
-                    current_str = current_str.substring(0,i-1) + "&#8202;&ndash;&#8202;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i-1) + "\u2013" + current_str.substring(i+1,current_str.length);
                 } else
-                // check if the user likely intended a minus sign;
+                // check if the user likely intended a minus sign; &#8202;&ndash;&#8202;
                 if (current_str.substr(i-1,1).match(/[0-9]/) && current_str.substr(i+1,1).match(/[0-9]/)) {
-                    current_str = current_str.substring(0,i) + "&#8202;&ndash;&#8202;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i) + "\u2212" + current_str.substring(i+1,current_str.length);
                 } else
-                // check if the user likely intended a hyphen;
+                // check if the user likely intended a hyphen;&#45;
                 if (current_str.substr(i-1,1).match(/[A-Za-z]/) && current_str.substr(i+1,1).match(/[A-Za-z]/)) {
-                    current_str = current_str.substring(0,i) + "&#45;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i) + "\u2010" + current_str.substring(i+1,current_str.length);
                 }
             } else
             // if a period is found;
             if (current_char == ".") {
-                // check if this is the third of three periods, i.e. an ellipsis;
+                // check if this is the third of three periods, i.e. an ellipsis;   &hellip;
                 if (current_str.substr(i-1,1) == "." && current_str.substr(i-2,1) == ".") {
-                    current_str = current_str.substring(0,i-2) + "&hellip;" + current_str.substring(i+1,current_str.length);
+                    current_str = current_str.substring(0,i-2) + "\u2026" + current_str.substring(i+1,current_str.length);
                 }
             }
             current_char = current_str[i];
         }
         return current_str;
-    }
+    };
 
     
     /*
@@ -139,6 +134,7 @@
         current_document: undefined,
         key: undefined,
         user_id: undefined,
+        command_prompt: document.createElement("textarea"),
         load_observer: new Observer(), // listen for the initial script to be loaded
         auto_save: undefined,
         auto_punctuate: undefined,
@@ -164,6 +160,8 @@
          * callback when initial markup is loaded from show.js (show.html.erb)
          */
         onLoad: function() {
+            // lets have command prompt ready from the beginning
+            Writer.command_prompt.setAttribute("id","T8Writer_CommandPrompt");
             // apply fadeIn and fadeOut functionality
             T8Writer.Effects.attachEffects();
             // load user's prior documents
@@ -236,10 +234,11 @@
 
         autoPunctuate: function() {
              Writer.auto_punctuate = setInterval(function(){
-                document.getElementById("T8Writer_Contents").innerHTML = punctuateStr(document.getElementById("T8Writer_Contents").innerHTML);
-                document.getElementById("T8Writer_Contents").focus();
-                T8Writer.Utilities.focusAtEnd();
-             },3000);
+                var coords = T8Writer.Utilities.captureCursor();
+                document.getElementById("T8Writer_Contents").childNodes[0].nodeValue = document.getElementById("T8Writer_Contents").childNodes[0].nodeValue.punctuate();
+
+                T8Writer.Utilities.resetCursor(coords);
+             },4500);
         }
     };
 
@@ -320,7 +319,7 @@
                 for (var i in Writer.Modes.enterCommand.commands) {
                     if (command.indexOf(i) != -1) {
                         document.getElementById("T8Writer_Contents").removeChild(
-                                document.getElementById("T8Writer_CommandPrompt")
+                                Writer.command_prompt
                         );
                         Writer.Modes.enterCommand.commands[i](command);
                         Writer.Modes.write();
@@ -394,17 +393,36 @@
             }
         },
 
-        focusAtEnd: function() {
+        captureCursor: function() {
+            var selection = window.getSelection(), range = undefined;
+            // Get range (standards)
+            if(selection.getRangeAt !== undefined) {
+                range = selection.getRangeAt(0);
+            }
+            return [range.startContainer,range.startOffset,range.endOffset];
+        },
+
+        resetCursor: function(coords) {
+            document.getElementById("T8Writer_Contents").focus();
+            // timeout while we wait for cursor to be positioned normally after focus so there's no conflict here
             setTimeout(function(){
-                document.getElementById("T8Writer_Contents").focus();
                 var txt_node, selection, range;
                 // TODO: we need to make sure this is a text node.
                 txt_node = document.getElementById("T8Writer_Contents").childNodes[0];
+                // new selection
                 selection = window.getSelection();
+                // range
                 range = document.createRange();
-                range.selectNode(txt_node);
-                range.collapse(false);
+                if (!(coords instanceof Array)) {
+                    range.selectNode(txt_node);
+                    // collapse range to end of contents
+                    range.collapse(false);
+                } else {
+                    range.setStart(coords[0],coords[1]);
+                    range.setEnd(coords[0],coords[2]);
+                }
                 selection.removeAllRanges();
+                // apply range (move cursor)
                 selection.addRange(range);
             },10);
         }
@@ -415,6 +433,8 @@
      */
     Writer.Modes = {
         write: function(){
+            T8Writer.autoPunctuate();  
+            T8Writer.autoSave();
             // more will come, but for now fadeOut is attached earlier.
             
             // listen for command mode
@@ -428,8 +448,10 @@
         },
 
         enterCommand: function() {
-            // create command prompt textarea
-            document.getElementById("T8Writer_Contents").innerHTML += "<textarea id='T8Writer_CommandPrompt'></textarea>";
+            clearInterval(Writer.auto_save);
+            clearInterval(Writer.auto_punctuate);
+            // insert command prompt textarea
+            document.getElementById("T8Writer_Contents").appendChild(Writer.command_prompt);
             document.getElementById("T8Writer_CommandPrompt").focus();
             
             Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
