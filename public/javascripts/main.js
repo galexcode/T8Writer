@@ -137,7 +137,7 @@
         command_prompt: document.createElement("textarea"),
         load_observer: new Observer(), // listen for the initial script to be loaded
         auto_save: undefined,
-        auto_punctuate: undefined,
+        idle_counter: undefined,
 
         /**
          * this function gets called by bookmarklet
@@ -237,13 +237,14 @@
         },
 
         autoPunctuate: function() {
-             Writer.auto_punctuate = setInterval(function(){
-                var coords = T8Writer.Utilities.captureCursor();
-                // TODO: this childNodes[0] thing is not sustainable!
-                document.getElementById("T8Writer_Contents").childNodes[0].nodeValue = document.getElementById("T8Writer_Contents").childNodes[0].nodeValue.punctuate();
+            var coords = T8Writer.Utilities.captureCursor(), text_nodes, i;
+            // TODO: this childNodes[0] thing is not sustainable!
+            text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
+            for (i = 0; i < text_nodes.length; i++) {
+                text_nodes[i].nodeValue = text_nodes[i].nodeValue.punctuate();    
+            }
 
-                T8Writer.Utilities.resetCursor(coords);
-             },4500);
+            T8Writer.Utilities.resetCursor(coords);
         }
     };
 
@@ -412,16 +413,17 @@
             document.getElementById("T8Writer_Contents").focus();
             // timeout while we wait for cursor to be positioned normally after focus so there's no conflict here
             setTimeout(function(){
-                var txt_node, selection, range;
+                var text_nodes, text_node, selection, range;
                 // TODO: we need to make sure this is a text node.
-                txt_node = document.getElementById("T8Writer_Contents").childNodes[0];
+                text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
+                text_node = text_nodes[text_nodes.length-1];
                 // new selection
                 selection = window.getSelection();
                 // range
                 range = document.createRange();
                 // if we've passed in an array indicating the previous selection, use it
                 if (!(coords instanceof Array)) {
-                    range.selectNode(txt_node);
+                    range.selectNode(text_node);
                     // collapse range to end of contents
                     range.collapse(false);
                 } else {
@@ -432,6 +434,38 @@
                 // apply range (move cursor)
                 selection.addRange(range);
             },10);
+        },
+
+        /**
+         * we want to get all of the text nodes within #T8Writer_Contents
+         * so we can run punctuation correction on them
+         * @param node. HTMLNode. The node among whose children we want to find text nodes
+         */
+        getTextNodes: function(node) {
+            var text_nodes = [], i;
+            for (i = 0; i < node.childNodes.length; i++) {
+                if (node.childNodes[i].nodeType == 3)
+                    text_nodes.push(node.childNodes[i]);
+            }
+            return text_nodes;
+        },
+
+        /**
+         * wait for a user in writer mode to go 5s without typing, then correct punctuation (Writer.autoPunctuate)
+         */
+        isIdle: function() {
+            var counter = 0;
+            Writer.Utilities.addEvent(document, "keypress", function(){
+                counter = 0;
+            });
+            Writer.idle_counter = setInterval(function(){
+                counter += 1;
+                if (counter == 5) {
+                    console.log("5 seconds idle time");
+                    Writer.autoPunctuate();
+                    counter = 0;
+                }
+            },1000);
         }
     };
 
@@ -456,7 +490,7 @@
                 return false;
             }
 
-            Writer.autoPunctuate();
+            Writer.Utilities.isIdle();
             Writer.autoSave();
             // more will come, but for now fadeOut is attached earlier.
             
@@ -468,9 +502,9 @@
         navigate: function() {
             /*if (document.getElementById("T8Writer_NewDocument").style.display == "block")
                 document.getElementById("T8Writer_NewDocument").style.display = "none";*/
-            
+
+            clearInterval(Writer.idle_counter);
             clearInterval(Writer.auto_save);
-            clearInterval(Writer.auto_punctuate);
         },
 
         selectDocument: function(){
@@ -480,8 +514,8 @@
         },
 
         enterCommand: function() {
+            clearInterval(Writer.idle_counter);
             clearInterval(Writer.auto_save);
-            clearInterval(Writer.auto_punctuate);
             // insert command prompt textarea
             document.getElementById("T8Writer_Contents").appendChild(Writer.command_prompt);
             document.getElementById("T8Writer_CommandPrompt").focus();
@@ -509,6 +543,7 @@
     Writer.Effects = {
         attachEffects: function() {    
             document.getElementById("T8Writer_Contents").onblur = function(){
+                Writer.autoPunctuate();
                 Writer.Effects.fadeInExtras(1500);
                 Writer.Modes.navigate();
             };
