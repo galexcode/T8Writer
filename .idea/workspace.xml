@@ -24,10 +24,10 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="211" column="44" selection-start="9146" selection-end="9146" vertical-scroll-proportion="0.54844606">
+            <state line="447" column="42" selection-start="18644" selection-end="18644" vertical-scroll-proportion="-6.5416665">
               <folding />
             </state>
           </provider>
@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="writer.css" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="writer.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="154" column="63" selection-start="5000" selection-end="5000" vertical-scroll-proportion="-19.666666">
+            <state line="35" column="17" selection-start="897" selection-end="897" vertical-scroll-proportion="0.11921708">
               <folding />
             </state>
           </provider>
@@ -120,8 +120,8 @@
         <option value="$PROJECT_DIR$/app/controllers/documents_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/documents/edit.js.erb" />
         <option value="$PROJECT_DIR$/app/views/writer/_show.html.erb" />
-        <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
+        <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
       </list>
     </option>
   </component>
@@ -704,16 +704,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="154" column="63" selection-start="5000" selection-end="5000" vertical-scroll-proportion="-19.666666">
+        <state line="447" column="42" selection-start="18644" selection-end="18644" vertical-scroll-proportion="-6.5416665">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="211" column="44" selection-start="9146" selection-end="9146" vertical-scroll-proportion="0.54844606">
+        <state line="35" column="17" selection-start="897" selection-end="897" vertical-scroll-proportion="0.11921708">
           <folding />
         </state>
       </provider>

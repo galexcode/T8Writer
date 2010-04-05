@@ -466,8 +466,8 @@
 
         // this is when we're accessing the "chrome", i.e. actions outside of the text field
         navigate: function() {
-            if (document.getElementById("T8Writer_NewDocument").style.display == "block")
-                document.getElementById("T8Writer_NewDocument").style.display = "none";
+            /*if (document.getElementById("T8Writer_NewDocument").style.display == "block")
+                document.getElementById("T8Writer_NewDocument").style.display = "none";*/
             
             clearInterval(Writer.auto_save);
             clearInterval(Writer.auto_punctuate);
