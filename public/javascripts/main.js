@@ -10,7 +10,7 @@
         var open_double = false,
             open_single = false,
             current_str = this,
-            current_char;
+            current_char, i;
 
         // loop through the characters in a strng;
         for (i = 0; i < current_str.length; i++) {
@@ -160,6 +160,9 @@
          * callback when initial markup is loaded from show.js (show.html.erb)
          */
         onLoad: function() {
+            // attach events
+            // X button
+            document.getElementById("exitT8Writer").onclick = T8Writer.exit;
             // lets have command prompt ready from the beginning
             Writer.command_prompt.setAttribute("id","T8Writer_CommandPrompt");
             // apply fadeIn and fadeOut functionality
@@ -235,6 +238,7 @@
         autoPunctuate: function() {
              Writer.auto_punctuate = setInterval(function(){
                 var coords = T8Writer.Utilities.captureCursor();
+                // TODO: this childNodes[0] thing is not sustainable!
                 document.getElementById("T8Writer_Contents").childNodes[0].nodeValue = document.getElementById("T8Writer_Contents").childNodes[0].nodeValue.punctuate();
 
                 T8Writer.Utilities.resetCursor(coords);
@@ -402,6 +406,7 @@
             return [range.startContainer,range.startOffset,range.endOffset];
         },
 
+        // TODO: "coords" is actually coords AND relevant node. better name? separate args?
         resetCursor: function(coords) {
             document.getElementById("T8Writer_Contents").focus();
             // timeout while we wait for cursor to be positioned normally after focus so there's no conflict here
@@ -413,6 +418,7 @@
                 selection = window.getSelection();
                 // range
                 range = document.createRange();
+                // if we've passed in an array indicating the previous selection, use it
                 if (!(coords instanceof Array)) {
                     range.selectNode(txt_node);
                     // collapse range to end of contents
@@ -432,13 +438,36 @@
      * defines modes of operation for T8Writer
      */
     Writer.Modes = {
+        createDocument: function() {
+            document.getElementById("T8Writer_NewDocument").style.display = "block";
+            document.getElementById("T8Writer_NewDocTitle").select();
+            document.getElementById("T8Writer_NewDocument").onsubmit = function() {
+                var title = document.getElementById("T8Writer_NewDocTitle").value;
+                Writer.createDocument(title);
+                document.getElementById("T8Writer_NewDocument").style.display = "none";
+                
+                return false;
+            };
+        },
+
         write: function(){
-            T8Writer.autoPunctuate();  
-            T8Writer.autoSave();
+            if (typeof Writer.current_document === "undefined") {
+                Writer.Modes.createDocument();
+                return false;
+            }
+
+            Writer.autoPunctuate();
+            Writer.autoSave();
             // more will come, but for now fadeOut is attached earlier.
             
             // listen for command mode
             Writer.Utilities.captureKeyCombo();
+        },
+
+        // this is when we're accessing the "chrome", i.e. actions outside of the text field
+        navigate: function() {
+            clearInterval(Writer.auto_save);
+            clearInterval(Writer.auto_punctuate);
         },
 
         selectDocument: function(){
@@ -478,6 +507,7 @@
         attachEffects: function() {    
             document.getElementById("T8Writer_Contents").onblur = function(){
                 Writer.Effects.fadeInExtras(1500);
+                Writer.Modes.navigate();
             };
             document.getElementById("T8Writer_Contents").onfocus = function(e){
                 Writer.Effects.fadeOutExtras(3000);
