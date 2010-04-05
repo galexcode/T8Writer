@@ -413,7 +413,7 @@
             document.getElementById("T8Writer_Contents").focus();
             // timeout while we wait for cursor to be positioned normally after focus so there's no conflict here
             setTimeout(function(){
-                var text_nodes, text_node, selection, range;
+                var text_nodes, text_node, selection, range, node_length;
                 // TODO: we need to make sure this is a text node.
                 text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
                 text_node = text_nodes[text_nodes.length-1];
@@ -427,6 +427,21 @@
                     // collapse range to end of contents
                     range.collapse(false);
                 } else {
+                    // sometimes we end up replacing multiple characters (---, ..., etc.) with one
+                    // this means that our node might be shorter than when we captured cursor.
+                    if (coords[0].nodeType == 3) {
+                        node_length = coords[0].nodeValue.length;
+                    } else
+                    if (coords[0].nodeType == 1) {
+                        node_length = coords[0].innerHTML.length;
+                    }
+                    // if so, we need to adjust
+                    if (!isNaN(node_length)) {
+                        if (coords[1] > node_length)
+                            coords[1] = node_length;
+                        if (coords[2] > node_length)
+                            coords[2] = node_length;
+                    }
                     range.setStart(coords[0],coords[1]);
                     range.setEnd(coords[0],coords[2]);
                 }
