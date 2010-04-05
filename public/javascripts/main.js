@@ -211,6 +211,7 @@
          */
         exit: function() {
             clearInterval(Writer.auto_save);
+            clearInterval(Writer.auto_punctuate);
             
             // create new document with title and user's id
             function proceed() {
@@ -444,7 +445,6 @@
             document.getElementById("T8Writer_NewDocument").onsubmit = function() {
                 var title = document.getElementById("T8Writer_NewDocTitle").value;
                 Writer.createDocument(title);
-                document.getElementById("T8Writer_NewDocument").style.display = "none";
                 
                 return false;
             };
@@ -466,6 +466,9 @@
 
         // this is when we're accessing the "chrome", i.e. actions outside of the text field
         navigate: function() {
+            if (document.getElementById("T8Writer_NewDocument").style.display == "block")
+                document.getElementById("T8Writer_NewDocument").style.display = "none";
+            
             clearInterval(Writer.auto_save);
             clearInterval(Writer.auto_punctuate);
         },

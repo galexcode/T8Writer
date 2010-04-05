@@ -18913,3 +18913,39 @@ Processing DocumentsController#save (for 127.0.0.1 at 2010-04-04 21:38:42) [GET]
   Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list", "contents"=>"TODO:<br>reload documents list when new document is created.<br>need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen<br>"}}
   [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
 Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list&document[contents]=TODO%3A%3Cbr%3Ereload%20documents%20list%20when%20new%20document%20is%20created.%3Cbr%3Eneed%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-04-04 21:46:50) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-04-04 21:46:50) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 41ms (View: 12, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-04-04 21:46:52) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 32ms (View: 8, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-04-04 21:47:45) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list", "contents"=>"TODO:<br>-reload documents list when new document is created.<br>-need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen<br>-smooth out command line<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (54.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-04-05 04:47:45', "contents" = 'TODO:<br>-reload documents list when new document is created.<br>-need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen<br>-smooth out command line<br>' WHERE "id" = 14[0m
+Completed in 95ms (View: 5, DB: 54) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list&document[contents]=TODO%3A%3Cbr%3E-reload%20documents%20list%20when%20new%20document%20is%20created.%3Cbr%3E-need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%3Cbr%3E-smooth%20out%20command%20line%3Cbr%3E]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-04-04 21:47:59) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list", "contents"=>"TODO:<br>-reload documents list when new document is created.<br>-need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen<br>-smooth out command line<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 55ms (View: 24, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list&document[contents]=TODO%3A%3Cbr%3E-reload%20documents%20list%20when%20new%20document%20is%20created.%3Cbr%3E-need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%3Cbr%3E-smooth%20out%20command%20line%3Cbr%3E]
