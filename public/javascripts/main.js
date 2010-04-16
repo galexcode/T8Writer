@@ -219,6 +219,8 @@
             
             // create new document with title and user's id
             function proceed() {
+                // restore title
+                document.title = document.title.substring(0,document.title.indexOf(" __/---/\u203E\u203E"));                
                 // remove #T8Writer (wrapper) element
                 document.body.removeChild(document.getElementById("T8Writer"));
                 // Delete all JS variables (e.g. window["T8Writer"])   
