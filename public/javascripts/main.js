@@ -1,5 +1,5 @@
 (function(){
-    //
+//
 // USAGE:
 // var faulty_str = "I mean... you know---right?";
 // var corrected_str = punctuateStr(faulty_str);
@@ -42,7 +42,7 @@
                     current_str = current_str.substring(0,i) + "\u201C;" + current_str.substring(i+1,current_str.length);
                     open_double = true;
                 } else {
-                    // if there IS an open double-quoted string, print an opening double quote;
+                    // if there IS an open double-quoted string, print a closing double quote;
                     current_str = current_str.substring(0,i) + "\u201D" + current_str.substring(i+1,current_str.length);
                     open_double = false;
                 }
@@ -154,6 +154,8 @@
             Writer.load_observer.subscribe(Writer.onLoad);  // notify onLoad() function when show.js loads
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
+
+            Writer.Utilities.updateTitle();
         },
 
         /**
@@ -166,7 +168,7 @@
             // lets have command prompt ready from the beginning
             Writer.command_prompt.setAttribute("id","T8Writer_CommandPrompt");
             // apply fadeIn and fadeOut functionality
-            T8Writer.Effects.attachEffects();
+            Writer.Effects.attachEffects();
             // load user's prior documents
             Writer.Modes.selectDocument();
         },
@@ -180,7 +182,7 @@
             // create new instance of Document class
             Writer.current_document = new Document(id);
             // status message
-            document.getElementById("T8Writer_Messages").innerHTML = "Loading document&hellip;";
+            Writer.Utilities.statusMsg("Loading document&hellip;",false);
             // load document to be edited, passing in ID
             Writer.Utilities.loadScript('http://localhost:3000/documents/'+id+'/edit.js');
         },
@@ -244,7 +246,7 @@
                 text_nodes[i].nodeValue = text_nodes[i].nodeValue.punctuate();    
             }
 
-            T8Writer.Utilities.resetCursor(coords);
+            Writer.Utilities.resetCursor(coords);
         }
     };
 
@@ -255,12 +257,7 @@
      */
     Writer.createDocument.success = function(id,title) {
         // status message
-        document.getElementById('T8Writer_Messages').innerHTML = "Successfully created document '"+Writer.createDocument.title+"'";
-        // clear status after 3s
-        setTimeout(function(){
-            if (document.getElementById('T8Writer_Messages'))
-                document.getElementById('T8Writer_Messages').innerHTML = "";
-        },3000);
+        Writer.Utilities.statusMsg("Successfully created document &lsquo;"+Writer.createDocument.title+"&rsquo;",true,3000);
         // create instance of Document class to mirror backend
         Writer.current_document = new Document(id);
         Writer.current_document.id = id;
@@ -276,12 +273,8 @@
      */
     Writer.createDocument.errors = function(errs) {
         // status message
-        document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to create " + Writer.createDocument.title + ": "+errs+".";
-        // clear status after 3s
-        setTimeout(function(){
-            if (document.getElementById('T8Writer_Messages'))
-                document.getElementById('T8Writer_Messages').innerHTML = "";
-        },3000);
+        Writer.Utilities.statusMsg("The following errors occurred while attempting to create " +
+           Writer.createDocument.title + ": "+errs+".",true,3000);
     };
 
 
@@ -289,6 +282,38 @@
      * Utility functions
      */
     Writer.Utilities = {
+        /**
+         *
+         * @param msg = (string) message to be displayed in status box
+         * @param clearIt = (boolean) indicates whether to clear the status after timeout
+         */
+        statusMsg: function(msg,clearIt,timeout) {
+            // status message
+            document.getElementById("T8Writer_Messages").innerHTML = msg;
+
+            if (clearIt) {
+                // clear status after timeout seconds
+                setTimeout(function(){
+                    if (document.getElementById('T8Writer_Messages'))
+                        document.getElementById('T8Writer_Messages').innerHTML = "";
+                },timeout);
+            }
+        },
+
+        updateTitle: function() {
+            var T8_pos = document.title.indexOf("T8Writer active."),
+                editing_pos = document.title.indexOf(" Editing: ");
+            if (T8_pos == -1) {
+                document.title += " __/---/\u203E\u203E T8Writer active.";
+                T8_pos = document.title.length - 16;
+            }
+
+            if (editing_pos != -1) {
+                document.title = document.title.substring(0,editing_pos);
+            }
+            document.title += " Editing: \u201C" + Writer.current_document.title + "\u201D";
+        },
+
         /**
          *
          * @param sUrl = (string) url of JS file to load
@@ -476,7 +501,6 @@
             Writer.idle_counter = setInterval(function(){
                 counter += 1;
                 if (counter == 5) {
-                    console.log("5 seconds idle time");
                     Writer.autoPunctuate();
                     counter = 0;
                 }
@@ -630,9 +654,9 @@
          */
         save: function(doCache) {
             // status message
-            // TODO: since the Message area is seperate from the Document class
+            // TODO: since the Message area is separate from the Document class
             // I should really handle this with observers
-            document.getElementById("T8Writer_Messages").innerHTML = "Saving document&hellip;";
+            Writer.Utilities.statusMsg("Saving document&hellip;",false);
             // get current text
             this.contents = document.getElementById("T8Writer_Contents").innerHTML;
             // if user requested this save explicitly, cache document for later revert
@@ -646,20 +670,15 @@
             // if we have a cached version of this document (we should!), retrieve it
             if (typeof this.cache.contents !== "undefined") {
                 // status message
-                document.getElementById("T8Writer_Messages").innerHTML = "Reverting to last save point&hellip;";
+                Writer.Utilities.statusMsg("Reverting to last save point&hellip;",false);
                 // retrieve cached version
                 document.getElementById("T8Writer_Contents").innerHTML = this.cache.contents;
                 // status message
-                document.getElementById("T8Writer_Messages").innerHTML = "Successfully reverted document.";
+                Writer.Utilities.statusMsg("Successfully reverted document.",true,3000);
             } else {
                 // status message
-                document.getElementById("T8Writer_Messages").innerHTML = "Document has not been changed since last save.";
+                Writer.Utilities.statusMsg("Document has not been changed since last save.",true,3000);
             }
-            // clear status after 3s
-            setTimeout(function(){
-                if (document.getElementById('T8Writer_Messages'))
-                    document.getElementById('T8Writer_Messages').innerHTML = "";
-            },3000);
         },
         email: function() {
 
@@ -671,14 +690,9 @@
      */
     Document.prototype.save.success = function() {
         // status message
-        document.getElementById('T8Writer_Messages').innerHTML = T8Writer.current_document.title + ' successfully saved.';
-        // clear status after 3s
-        setTimeout(function(){
-            if (document.getElementById('T8Writer_Messages'))
-                document.getElementById('T8Writer_Messages').innerHTML = "";
-        },3000);
+        Writer.Utilities.statusMsg(T8Writer.current_document.title + ' successfully saved.',true,3000);
         // tell anyone who's listening that document has been saved
-        T8Writer.current_document.observer.fire();
+        Writer.current_document.observer.fire();
     };
 
     /**
@@ -687,12 +701,8 @@
      */
     Document.prototype.save.errors = function(errs) {
         // status message
-        document.getElementById('T8Writer_Messages').innerHTML = "The following errors occurred while attempting to save "+
-                T8Writer.current_document.title + ": "+errs+".";
-        // clear status message after 3s
-        setTimeout(function(){
-            document.getElementById('T8Writer_Messages').innerHTML = "";
-        },3000);
+        Writer.Utilities.statusMsg("The following errors occurred while attempting to save "+
+                Writer.current_document.title + ": "+errs+".",true,3000);
     };
     window["T8Writer"] = Writer;
     // really only left in here for debugging purposes

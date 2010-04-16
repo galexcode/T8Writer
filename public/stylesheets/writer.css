@@ -21,6 +21,12 @@
 #T8Writer ul, #T8Writer li {
     list-style-type: none;                              
 }
+::-moz-selection {
+	background: #d5d5d5;
+}
+::selection {
+	background: #d5d5d5;
+}
 
 #T8Writer #T8Writer_Overlay {
     background: rgba(255,255,255,0.8);
