@@ -136,6 +136,7 @@
         user_id: undefined,
         command_prompt: document.createElement("textarea"),
         load_observer: new Observer(), // listen for the initial script to be loaded
+        exit_observer: new Observer(), // listen for exit function completion
         auto_save: undefined,
         idle_counter: undefined,
 
@@ -152,6 +153,7 @@
                 document.body.appendChild(t8_writer);
 
             Writer.load_observer.subscribe(Writer.onLoad);  // notify onLoad() function when show.js loads
+            Writer.exit_observer.subscribe(T8Exit); // notify T8Exit() function when exit is called
             Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
             Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
 
@@ -219,7 +221,8 @@
             function proceed() {
                 // remove #T8Writer (wrapper) element
                 document.body.removeChild(document.getElementById("T8Writer"));
-                // TODO: Delete all JS variables (e.g. window["T8Writer"])
+                // Delete all JS variables (e.g. window["T8Writer"])   
+                Writer.exit_observer.fire();
             }
             // check to see if there's an open document...
             // ...if so, save it before creating a new one.
@@ -229,7 +232,7 @@
                 Writer.current_document.save();
             } else {
                 proceed();
-            }                         
+            }
         },
 
         autoSave: function() {
@@ -311,7 +314,9 @@
             if (editing_pos != -1) {
                 document.title = document.title.substring(0,editing_pos);
             }
-            document.title += " Editing: \u201C" + Writer.current_document.title + "\u201D";
+
+            if (typeof Writer.current_document !== "undefined")
+                document.title += " Editing: \u201C" + Writer.current_document.title + "\u201D";
         },
 
         /**
@@ -707,4 +712,12 @@
     window["T8Writer"] = Writer;
     // really only left in here for debugging purposes
     window["T8Document"] = Document;
+
+    window["T8Exit"] = function() {
+        delete window["T8Writer"];
+        delete window["T8Document"];
+        document.body.removeChild(
+            document.getElementById("T8Writer_Init")
+        );
+    };
 })();
