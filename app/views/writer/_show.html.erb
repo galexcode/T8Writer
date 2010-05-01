@@ -1,20 +1,32 @@
 <div id="T8Writer_Overlay">
-    <div id="T8Writer_Container">
-        <h2 id="T8Writer_Title" style="opacity: 1;">Welcome to T8Writer</h2>
-        <form id="T8Writer_Form">
-              <ul id="T8Writer_Documents" style="opacity: 1;" tabindex="2"></ul>
-              <div id="T8Writer_Contents" contenteditable="true" tabindex="1">&#8204</div>
-              <p id="T8Writer_Messages" style="opacity: 1;"></p>
-        </form>
-        <form id="T8Writer_NewDocument" action="#new">
-            <label for="T8Writer_NewDocTitle">What would you like to name your document?</label>
-            <input id="T8Writer_NewDocTitle" type="text" value="Untitled 1"/>
-            <button id="T8Writer_SubmitTitle" type="submit">Save</button>
-        </form>
+	<div id="T8Writer_Container">
+		<h2 id="T8Writer_Title" style="opacity: 1;">Welcome to T8Writer</h2>
+		<form id="T8Writer_Form">
+			<ul id="T8Writer_Documents" style="opacity: 1;" tabindex="2"></ul>
+			<div id="T8Writer_Contents" contenteditable="true" tabindex="1">&#8204</div>
+			<p id="T8Writer_Messages" style="opacity: 1;"></p>
+			<div id="T8Writer_Controls" style="opacity: 1;">
+				<h3>Current document:</h3>
+				<button id="T8Writer_Save">Save</button>
+				<button id="T8Writer_Revert">Revert</button>
+				<button id="T8Writer_Email" class="disabled">Email</button>
+
+				<h3>New document:</h3>
+				<button id="T8Writer_Create">Create</button>
+				
+				<h3>T8Writer:</h3>
+				<button id="T8Writer_Help" class="disabled">Help</button>
+			</div>
+		</form>
+		<form id="T8Writer_NewDocument" action="#new">
+			<label for="T8Writer_NewDocTitle">What would you like to name your document?</label>
+			<input id="T8Writer_NewDocTitle" type="text" value="Untitled 1"/>
+			<button id="T8Writer_SubmitTitle" type="submit">Save</button>
+		</form>
 		<form id="T8Writer_Command" action="#new">
 			<label for="T8Writer_CommandPrompt">Type your command and hit enter</label>
 			<input id="T8Writer_CommandPrompt" type="text" value=""/>
 		</form>
-        <a id="exitT8Writer" href="#save_and_exit" title="Save and exit T8Writer">x</a>
-    </div>
+		<a id="exitT8Writer" href="#save_and_exit" title="Save and exit T8Writer">x</a>
+	</div>
 </div>

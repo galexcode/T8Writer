@@ -78,7 +78,7 @@
 		return current_str;
 	};
 
-	
+
 	/*
 	 * Some OOP help, courtesy of Dustin Diaz
 	 */
@@ -126,6 +126,9 @@
 		}
 	};
 
+
+
+
 	/*
 	 * the main T8Writer singleton,
 	 * referenced from outside as T8Writer
@@ -164,9 +167,44 @@
 		 * callback when initial markup is loaded from show.js (show.html.erb)
 		 */
 		onLoad: function() {
+			Writer.Elements = {
+				// structure
+				"self": document.getElementById("T8Writer"),
+				"overlay": document.getElementById("T8Writer_Overlay"),
+				"container": document.getElementById("T8Writer_Container"),
+				"form": document.getElementById("T8Writer_Form"),
+
+				// actions
+				"command_form": document.getElementById("T8Writer_Command"),
+				"command_prompt": document.getElementById("T8Writer_CommandPrompt"),
+				"new_document_form": document.getElementById("T8Writer_NewDocument"),
+				"new_document_title": document.getElementById("T8Writer_NewDocTitle"),
+
+				// document
+				"title": document.getElementById("T8Writer_Title"),
+				"contents": document.getElementById("T8Writer_Contents"),
+
+				// chrome
+				"documents": document.getElementById("T8Writer_Documents"),
+				"messages": document.getElementById("T8Writer_Messages"),
+
+				// controls
+				"save": document.getElementById("T8Writer_Save"),
+				"revert": document.getElementById("T8Writer_Revert"),
+				"email": document.getElementById("T8Writer_Email"),
+				"create": document.getElementById("T8Writer_Create"),
+				"help": document.getElementById("T8Writer_Help"),
+				"exit": document.getElementById("exitT8Writer")
+			};
+
+
 			// attach events
+			Writer.Elements["save"].onclick = Writer.Modes.enterCommand.commands["save"];
+			Writer.Elements["revert"].onclick = Writer.Modes.enterCommand.commands["revert"];
+			Writer.Elements["create"].onclick = Writer.Modes.createDocument;
+
 			// X button
-			document.getElementById("exitT8Writer").onclick = T8Writer.exit;
+			Writer.Elements["exit"].onclick = T8Writer.exit;
 			// apply fadeIn and fadeOut functionality
 			Writer.Effects.attachEffects();
 			// load user's prior documents
@@ -220,7 +258,7 @@
 				// restore title
 				document.title = document.title.substring(0,document.title.indexOf(" __/---/\u203E\u203E"));
 				// remove #T8Writer (wrapper) element
-				document.body.removeChild(document.getElementById("T8Writer"));
+				document.body.removeChild(Writer.Elements["self"]);
 				// Delete all JS variables (e.g. window["T8Writer"])   
 				Writer.exit_observer.fire();
 			}
@@ -268,7 +306,7 @@
 		// load our newly created document
 		Writer.openDocument(Writer.current_document.id);
 		// remove the title prompt
-		document.getElementById("T8Writer_NewDocument").style.display = "none";
+		Writer.Elements["new_document_form"].style.display = "none";
 		// reload user's prior documents
 		Writer.Modes.selectDocument();
 	};
@@ -296,13 +334,13 @@
 		 */
 		statusMsg: function(msg,clearIt,timeout) {
 			// status message
-			document.getElementById("T8Writer_Messages").innerHTML = msg;
+			Writer.Elements["messages"].innerHTML = msg;
 
 			if (clearIt) {
 				// clear status after timeout seconds
 				setTimeout(function(){
-					if (document.getElementById('T8Writer_Messages'))
-						document.getElementById('T8Writer_Messages').innerHTML = "";
+					if (Writer.Elements["messages"])
+						Writer.Elements["messages"].innerHTML = "";
 				},timeout);
 			}
 		},
@@ -355,11 +393,11 @@
 			var evt = e || window.event;
 			if (evt.keyCode == 13) {
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
-				var command = document.getElementById("T8Writer_CommandPrompt").value;
+				var command = Writer.Elements["command_prompt"].value;
 				for (var i in Writer.Modes.enterCommand.commands) {
 					if (command.indexOf(i) != -1) {
 						// hide command prompt form
-						document.getElementById("T8Writer_Command").style.display = "none";
+						Writer.Elements["command_form"].style.display = "none";
 
 						Writer.Modes.enterCommand.commands[i](command);
 						Writer.Modes.write();
@@ -524,10 +562,10 @@
 	 */
 	Writer.Modes = {
 		createDocument: function() {
-			document.getElementById("T8Writer_NewDocument").style.display = "block";
-			document.getElementById("T8Writer_NewDocTitle").select();
-			document.getElementById("T8Writer_NewDocument").onsubmit = function() {
-				var title = document.getElementById("T8Writer_NewDocTitle").value;
+			Writer.Elements["new_document_form"].style.display = "block";
+			Writer.Elements["new_document_title"].select();
+			Writer.Elements["new_document_form"].onsubmit = function() {
+				var title = Writer.Elements["new_document_title"].value;
 				Writer.createDocument(title);
 				
 				return false;
@@ -558,7 +596,7 @@
 
 		selectDocument: function(){
 			// clear current list
-			document.getElementById("T8Writer_Documents").innerHTML = "";
+			Writer.Elements["documents"].innerHTML = "";
 			// open list of user's documents.
 			// to call this selectDocument MODE is maybe a little artificial
 			Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+Writer.key);
@@ -570,8 +608,8 @@
 
 			Writer.Utilities.captureCursor();
 			// show command prompt form
-			document.getElementById("T8Writer_Command").style.display = "block";
-			document.getElementById("T8Writer_CommandPrompt").select();
+			Writer.Elements["command_form"].style.display = "block";
+			Writer.Elements["command_prompt"].select();
 			
 			Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
 			return false;
@@ -610,8 +648,8 @@
 			// array of elements to fade in
 			var extras = [
 				document.getElementById("T8Writer_Title"),
-				document.getElementById("T8Writer_Documents"),
-				document.getElementById("T8Writer_Messages")
+				Writer.Elements["documents"],
+				Writer.Elements["messages"]
 			],
 			end_opacity = 1, // we finish at fully opaque
 			interval,
@@ -632,8 +670,8 @@
 			// array of elements to fade in
 			var extras = [
 				document.getElementById("T8Writer_Title"),
-				document.getElementById("T8Writer_Documents"),
-				document.getElementById("T8Writer_Messages")
+				Writer.Elements["documents"],
+				Writer.Elements["messages"]
 			],
 			end_opacity = 0, // we finish at fully transparent
 			interval,
@@ -671,15 +709,19 @@
 			// TODO: since the Message area is separate from the Document class
 			// I should really handle this with observers
 			Writer.Utilities.statusMsg("Saving document&hellip;",false);
+
 			// get current title
 			this.title = document.getElementById("T8Writer_Title").innerHTML;
+
 			// get current text
 			this.contents = document.getElementById("T8Writer_Contents").innerHTML;
+
 			// if user requested this save explicitly, cache document for later revert
 			if (doCache === true) {
 				this.cache.title = this.title;
 				this.cache.contents = this.contents;   
 			}
+
 			// tell the server to save it
 			Writer.Utilities.loadScript('http://localhost:3000/documents/'+this.id+'/save.js?_method=put&document[title]='+encodeURIComponent(this.title)+'&document[contents]='+encodeURIComponent(this.contents));
 		},
@@ -688,8 +730,10 @@
 			if (typeof this.cache.contents !== "undefined") {
 				// status message
 				Writer.Utilities.statusMsg("Reverting to last save point&hellip;",false);
+
 				// retrieve cached version
 				document.getElementById("T8Writer_Contents").innerHTML = this.cache.contents;
+
 				// status message
 				Writer.Utilities.statusMsg("Successfully reverted document.",true,3000);
 			} else {
@@ -708,8 +752,10 @@
 	Document.prototype.save.success = function() {
 		// status message
 		Writer.Utilities.statusMsg(T8Writer.current_document.title + ' successfully saved.',true,3000);
+
 		// tell anyone who's listening that document has been saved
 		Writer.current_document.observer.fire();
+
 		// reload user's prior documents
 		if (document.getElementById("T8Writer") !== null)
 			Writer.Modes.selectDocument();

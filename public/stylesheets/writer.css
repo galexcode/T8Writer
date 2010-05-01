@@ -1,5 +1,5 @@
 #T8Writer div, #T8Writer p, #T8Writer form, #T8Writer textarea, #T8Writer ul, #T8Writer li, #T8Writer a, #T8Writer h2,
-#T8Writer input, #T8Writer label, #T8Writer button {
+#T8Writer h3, #T8Writer input, #T8Writer label, #T8Writer button {
 	background: transparent;
 	border: 0;
 	clear: none;
@@ -109,9 +109,43 @@
 				clear: right;
 				float: right;
 				height: auto;
+				margin-bottom: 20px;
 				min-height: 120px;
 				width: 228px;
 			}
+			#T8Writer #T8Writer_Controls {
+				float: right;
+				margin-left: 20px;
+				width: 230px;
+			}
+				#T8Writer #T8Writer_Controls h3 {
+					color: #999;
+				}
+				#T8Writer button {
+					background-color: #eee;
+					border: 2px solid #e5e5e5;
+					border-radius: 5px;
+					color: #999;
+					cursor: pointer;
+					margin: 0 0 10px;
+					padding: 3px;
+					-moz-border-radius: 5px;
+				}
+				#T8Writer button:focus, #T8Writer button:active {
+					outline-color: #ccc;
+				}
+				#T8Writer button:hover, #T8Writer button:focus {
+					border-color: #ccc;
+					color: #666;
+				}
+				#T8Writer #T8Writer_Email, #T8Writer #T8Writer_Help {
+					color: #ccc;
+				}
+				#T8Writer button.disabled:hover, #T8Writer button.disabled:focus, #T8Writer button.disabled:active {
+					border-color: #e5e5e5;
+					color: #ccc;
+					outline: 0;
+				}
 		#T8Writer #T8Writer_NewDocument, #T8Writer #T8Writer_Command {
 			background: #f5f5f5;
 			border: 2px solid #e5e5e5;
