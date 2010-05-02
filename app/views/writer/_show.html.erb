@@ -15,7 +15,7 @@
 				<button id="T8Writer_Create">Create</button>
 				
 				<h3>T8Writer:</h3>
-				<button id="T8Writer_Help" class="disabled">Help</button>
+				<button id="T8Writer_Help">Help</button>
 			</div>
 		</form>
 		<form id="T8Writer_NewDocument" action="#new">
@@ -27,7 +27,7 @@
 			<label for="T8Writer_CommandPrompt">Type your command and hit enter</label>
 			<input id="T8Writer_CommandPrompt" type="text" value=""/>
 		</form>
-		<a id="exitT8Writer" href="#save_and_exit" title="Save and exit T8Writer">x</a>
+		<button id="exitT8Writer" title="Save and exit T8Writer">x</button>
 	</div>
 	<div id="T8Writer_HelpInfo">
 		<h3>Getting started with T8Writer</h3>
@@ -36,19 +36,40 @@
 			To create your first document, simply click inside the blank text area
 			or click on the &ldquo;Create&rdquo; button in the lower right. You&rsquo;ll
 			be prompted to enter the title of your new document. Just type it in and click
-			&ldquo;Submit&rdquo;. The title, which will appear above the text field is editable.
+			&ldquo;Submit&rdquo;. The title, which will appear above the text field, is editable.
 			Just click on it to edit it at any time.
 		</p>
+		<h4>Autosave</h4>
+		<p>
+			T8Writer will automatically save your document every 45 seconds, so that you&rsquo;re work isn&rsquo;t lost.
+			Don&rsquo;t worry though: you can always revert your document to the last state that you saved explicitly.
+		</p>
+
 		<h3>The command line</h3>
 		<p>
 			T8writer is all about flow. Since you&rsquo;ll spend most of your time typing, T8Writer
 			gives you commands you can type, like &ldquo;save&rdquo;, &ldquo;exit&rdquo;, and &ldquo;revert&rdquo;.
 		</p>
 		<p>
-			To activate the command line, type <kbd>alt</kbd> + <kbd>.</kbd>; then, type your command and hit <kbd>enter</kbd>.
+			To activate the command line, type <kbd>alt</kbd> + <kbd>.</kbd> ; then, type your command and hit <kbd>enter</kbd>.
 		</p>
-		<ul>
-			<li></li>
-		</ul>
+		<p>
+			The following is a list of commands available in T8Writer:
+		</p>
+		<dl>
+			<dt>save</dt>
+			<dd>Saves the current document. Also sets the state for the next reversion.</dd>
+
+			<dt>revert</dt>
+			<dd>Reverts the current document to its state as of the last user&#45;requested save.</dd>
+
+			<dt>create [document title]</dt>
+			<dd>Creates a new document with title specified. E.g. &ldquo;create mydocument1&rdquo;.</dd>
+
+			<dt>exit</dt>
+			<dd>Saves the current document and exits T8Writer</dd>
+		</dl>
+
+		<button id="closeT8WriterHelp" title="Close help">x</button>
 	</div>
 </div>

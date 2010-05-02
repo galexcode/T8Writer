@@ -174,6 +174,10 @@
 				"container": document.getElementById("T8Writer_Container"),
 				"form": document.getElementById("T8Writer_Form"),
 
+				// help
+				"help_info": document.getElementById("T8Writer_HelpInfo"),
+				"close_help": document.getElementById("closeT8WriterHelp"),
+
 				// actions
 				"command_form": document.getElementById("T8Writer_Command"),
 				"command_prompt": document.getElementById("T8Writer_CommandPrompt"),
@@ -202,6 +206,7 @@
 			Writer.Elements["save"].onclick = Writer.Modes.enterCommand.commands["save"];
 			Writer.Elements["revert"].onclick = Writer.Modes.enterCommand.commands["revert"];
 			Writer.Elements["create"].onclick = Writer.Modes.createDocument;
+			Writer.Elements["help"].onclick = Writer.Modes.help;
 
 			// X button
 			Writer.Elements["exit"].onclick = T8Writer.exit;
@@ -585,6 +590,28 @@
 			Writer.Utilities.captureKeyCombo();
 		},
 
+		help: function() {
+			var closeHelp = function() {
+				Writer.Elements["help_info"].style.display = "none";
+				Writer.Modes.navigate();
+			},
+			captureKey = function(e) {
+				var evt = e || window.event;
+				if (evt.keyCode == 27) {
+					closeHelp();
+				}
+				Writer.Utilities.cancelDefault(e);
+			};
+
+			Writer.Elements["help_info"].style.display = "block";
+			Writer.Elements["close_help"].onclick = closeHelp;
+			Writer.Utilities.addEvent(
+				Writer.Elements["overlay"],
+				"keypress",
+				captureKey
+			);
+		},
+
 		// this is when we're accessing the "chrome", i.e. actions outside of the text field
 		navigate: function() {
 			/*if (document.getElementById("T8Writer_NewDocument").style.display == "block")
@@ -629,7 +656,6 @@
 		"exit": function(){ Writer.exit(); },
 		"revert": function(){ Writer.current_document.revert(); },
 		"open": function(){}
-		
 	};
 	Writer.Effects = {
 		attachEffects: function() {	

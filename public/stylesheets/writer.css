@@ -1,5 +1,5 @@
 #T8Writer div, #T8Writer p, #T8Writer form, #T8Writer textarea, #T8Writer ul, #T8Writer li, #T8Writer a, #T8Writer h2,
-#T8Writer h3, #T8Writer h4, #T8Writer input, #T8Writer label, #T8Writer button {
+#T8Writer h3, #T8Writer h4, #T8Writer input, #T8Writer label, #T8Writer button, #T8Writer dl, #T8Writer dt, #T8Writer dd {
 	background: transparent;
 	border: 0;
 	clear: none;
@@ -111,7 +111,7 @@
 				float: right;
 				height: auto;
 				margin-bottom: 20px;
-				min-height: 120px;
+				min-height: 60px;
 				width: 228px;
 			}
 			#T8Writer #T8Writer_Controls {
@@ -122,7 +122,7 @@
 				#T8Writer #T8Writer_Controls h3 {
 					color: #999;
 				}
-				#T8Writer button {
+				#T8Writer #T8Writer_Controls button {
 					background-color: #eee;
 					border: 2px solid #e5e5e5;
 					border-radius: 5px;
@@ -132,17 +132,21 @@
 					padding: 3px;
 					-moz-border-radius: 5px;
 				}
-				#T8Writer button:focus, #T8Writer button:active {
+				#T8Writer #T8Writer_Controls button:focus,
+				#T8Writer #T8Writer_Controls button:active {
 					outline-color: #ccc;
 				}
-				#T8Writer button:hover, #T8Writer button:focus {
+				#T8Writer #T8Writer_Controls button:hover,
+				#T8Writer #T8Writer_Controls button:focus {
 					border-color: #ccc;
 					color: #666;
 				}
-				#T8Writer #T8Writer_Email, #T8Writer #T8Writer_Help {
+				#T8Writer #T8Writer_Controls button.disabled {
 					color: #ccc;
 				}
-				#T8Writer button.disabled:hover, #T8Writer button.disabled:focus, #T8Writer button.disabled:active {
+				#T8Writer #T8Writer_Controls button.disabled:hover,
+				#T8Writer #T8Writer_Controls button.disabled:focus,
+				#T8Writer #T8Writer_Controls button.disabled:active {
 					border-color: #e5e5e5;
 					color: #ccc;
 					outline: 0;
@@ -194,8 +198,9 @@
 				padding: 4px 5px;
 				-moz-border-radius: 5px;
 			}
-		#T8Writer #exitT8Writer {
+		#T8Writer #exitT8Writer, #T8Writer #closeT8WriterHelp {
 			color: #CCC;
+			cursor: pointer;
 			display: block;
 			font-family: Futura, "Futura Lt BT", sans-serif;
 			font-size: 24px;
@@ -218,26 +223,46 @@
 		display: none;
 		left: 50%;
 		margin-left: -300px;
-		padding: 20px;
+		padding: 10px 20px 20px;
 		position: absolute;
 		width: 600px;
 		-moz-border-radius: 0 0 20px 20px;
 	}
+		#T8Writer #closeT8WriterHelp {
+			top: 10px;
+		}
+		#T8Writer #closeT8WriterHelp:focus, #T8Writer #closeT8WriterHelp:hover {
+			color: #e5e5e5;
+		}
 		#T8Writer #T8Writer_HelpInfo h3 {
 			color: #e5e5e5;
 			font-size: 18px;
 			line-height: 1em;
-			margin-bottom: 10px;
+			margin: 10px 0;
 			text-shadow: 0 1px 2px #9c9c9c;
 		}
 		#T8Writer #T8Writer_HelpInfo h4 {
 			color: #ccc;
+			font-size: 13px;
 			font-weight: bold;
 		}
-		#T8Writer #T8Writer_HelpInfo p, #T8Writer #T8Writer_HelpInfo ul {
+		#T8Writer #T8Writer_HelpInfo p, #T8Writer #T8Writer_HelpInfo dl {
 			color: #ccc;
 			font-size: 13px;
+			margin-bottom: 10px;
 		}
+		#T8Writer #T8Writer_HelpInfo dl {
+			border-top: 1px dotted #4c4c4c;
+		}
+			#T8Writer #T8Writer_HelpInfo dt {
+				color: #8ec6cf;
+			}
+			#T8Writer #T8Writer_HelpInfo dd {
+				border-bottom: 1px dotted #4c4c4c;
+				color: #ccc;
+				line-height: 1em;
+				padding: 0 0 5px 30px;
+			}
 		#T8Writer kbd {
 			background-color: #222;
 			border: 1px solid #ccc;
