@@ -23015,3 +23015,115 @@ Rendering /users/documents.js.erb
   [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
 Rendered documents/_index (13.0ms)
 Completed in 73ms (View: 21, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:21:49) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (12.0ms)
+Completed in 40ms (View: 34, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:21:49) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 48ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:22:01) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:22:01) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 49ms (View: 16, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:32:28) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (14.0ms)
+Completed in 90ms (View: 83, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:32:28) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 59ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:33:24) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (36.0ms)
+Completed in 66ms (View: 59, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:33:24) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 47ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:39:14) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (15.0ms)
+Completed in 44ms (View: 36, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:39:14) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 49ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:46:36) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (7.0ms)
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:46:36) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 28ms (View: 8, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-01 17:50:37) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (11.0ms)
+Completed in 31ms (View: 27, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-01 17:50:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 47ms (View: 14, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]

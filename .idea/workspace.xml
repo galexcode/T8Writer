@@ -30,7 +30,7 @@
       <file leaf-file-name="_show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/writer/_show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="59" selection-start="755" selection-end="755" vertical-scroll-proportion="-11.590909">
+            <state line="47" column="77" selection-start="2162" selection-end="2162" vertical-scroll-proportion="-24.40909">
               <folding />
             </state>
           </provider>
@@ -57,7 +57,7 @@
       <file leaf-file-name="writer.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="31" selection-start="3328" selection-end="3328" vertical-scroll-proportion="0.9490662">
+            <state line="228" column="29" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.516129">
               <folding />
             </state>
           </provider>
@@ -87,8 +87,8 @@
         <option value="$PROJECT_DIR$/app/views/documents/edit.js.erb" />
         <option value="$PROJECT_DIR$/app/views/users/documents.js.erb" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
-        <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
         <option value="$PROJECT_DIR$/app/views/writer/_show.html.erb" />
+        <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
       </list>
     </option>
   </component>
@@ -633,14 +633,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/writer/_show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="59" selection-start="755" selection-end="755" vertical-scroll-proportion="-11.590909">
+        <state line="47" column="77" selection-start="2162" selection-end="2162" vertical-scroll-proportion="-24.40909">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="31" selection-start="3328" selection-end="3328" vertical-scroll-proportion="0.9490662">
+        <state line="228" column="29" selection-start="5279" selection-end="5279" vertical-scroll-proportion="0.516129">
           <folding />
         </state>
       </provider>
