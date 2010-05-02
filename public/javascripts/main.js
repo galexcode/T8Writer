@@ -773,7 +773,7 @@
 				Writer.Utilities.statusMsg("Document has not been changed since last save.",true,3000);
 			}
 		},
-		email: function() {
+		email: function(address) {
 
 		}
 	};
