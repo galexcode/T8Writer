@@ -36,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="602" column="50" selection-start="19723" selection-end="19723" vertical-scroll-proportion="0.0">
+            <state line="600" column="18" selection-start="19651" selection-end="19651" vertical-scroll-proportion="0.53480476">
               <folding />
             </state>
           </provider>
@@ -54,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="writer.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="writer.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="42" selection-start="3544" selection-end="3544" vertical-scroll-proportion="1.0441426">
+            <state line="121" column="63" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -87,8 +87,8 @@
         <option value="$PROJECT_DIR$/app/views/documents/edit.js.erb" />
         <option value="$PROJECT_DIR$/app/views/users/documents.js.erb" />
         <option value="$PROJECT_DIR$/app/views/writer/_show.html.erb" />
-        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
+        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
       </list>
     </option>
   </component>
@@ -631,16 +631,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="602" column="50" selection-start="19723" selection-end="19723" vertical-scroll-proportion="0.0">
+        <state line="121" column="63" selection-start="2711" selection-end="2711" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="42" selection-start="3544" selection-end="3544" vertical-scroll-proportion="1.0441426">
+        <state line="600" column="18" selection-start="19651" selection-end="19651" vertical-scroll-proportion="0.53480476">
           <folding />
         </state>
       </provider>

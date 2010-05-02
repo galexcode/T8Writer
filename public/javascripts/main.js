@@ -594,6 +594,11 @@
 			var closeHelp = function() {
 				Writer.Elements["help_info"].style.display = "none";
 				Writer.Modes.navigate();
+				Writer.Utilities.removeEvent(
+					document,
+					"keypress",
+					captureKey
+				);
 			},
 			captureKey = function(e) {
 				var evt = e || window.event;
@@ -606,7 +611,7 @@
 			Writer.Elements["help_info"].style.display = "block";
 			Writer.Elements["close_help"].onclick = closeHelp;
 			Writer.Utilities.addEvent(
-				Writer.Elements["overlay"],
+				document,
 				"keypress",
 				captureKey
 			);
@@ -653,6 +658,7 @@
 			var title = command.substring(command.indexOf("create")+7,command.length);
 			Writer.createDocument(title);
 		},
+		"help": function() { Writer.Modes.help() },
 		"exit": function(){ Writer.exit(); },
 		"revert": function(){ Writer.current_document.revert(); },
 		"open": function(){}
