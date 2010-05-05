@@ -24,9 +24,13 @@ class UsersController < ApplicationController
   def documents
     @user = User.find_by_key(params[:key]) if params[:key]
     @documents = @user.documents
-    respond_to do |format|
-      format.js { render :template => "/users/documents.js.erb" }
-    end
+	respond_to do |format|
+		if (@documents.count > 0)
+			format.js { render :template => "/users/documents.js.erb" }
+		else
+			format.js { render :js => "(function(){T8Writer.Modes.help();})();" }
+		end
+	end
   end
 
   # GET /users/new

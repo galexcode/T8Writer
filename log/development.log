@@ -23445,3 +23445,1090 @@ Rendering /users/documents.js.erb
   [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
 Rendered documents/_index (8.0ms)
 Completed in 46ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-02 23:28:13) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (16.0ms)
+Completed in 35ms (View: 31, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-02 23:28:13) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 50ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:28:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 41ms (View: 11, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:28:31) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 4) [0m
+Rendering /documents/edit.js.erb
+Completed in 27ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/4/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:28:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/3/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:28:34) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
+Rendering /documents/edit.js.erb
+Completed in 39ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/13/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:28:37) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 43ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:29:03) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 4) [0m
+Rendering /documents/edit.js.erb
+Completed in 40ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/4/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:29:04) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/3/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-02 23:29:06) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 25ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-02 23:32:24) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 31ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-02 23:38:16) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 14ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-02 23:38:16) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 49ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-03 00:04:16) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-03 00:04:16) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 47ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-03 00:04:20) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 25ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-03 00:05:06) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>- deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-03 07:05:06', "contents" = 'TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>- deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>' WHERE "id" = 14[0m
+Completed in 91ms (View: 14, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%20deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-03 00:05:06) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 47ms (View: 13, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-03 00:05:17) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (43.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-03 07:05:17', "contents" = 'TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>' WHERE "id" = 14[0m
+Completed in 110ms (View: 6, DB: 44) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-03 00:05:17) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (12.0ms)
+Completed in 71ms (View: 16, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-03 00:05:24) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 89ms (View: 4, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 14:45:49) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (54.0ms)
+Completed in 212ms (View: 198, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 14:45:51) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (7.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (13.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (130.0ms)
+Completed in 828ms (View: 232, DB: 20) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 14:46:07) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 91ms (View: 33, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 14:47:25) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 24ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 14:47:26) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (6.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (78.0ms)
+Completed in 238ms (View: 90, DB: 7) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 14:47:36) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 37ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 14:48:20) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 39ms (View: 5, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 14:48:20) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 61ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 14:49:05) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 18ms (View: 2, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 14:49:05) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 25ms (View: 7, DB: 0) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 14:49:50) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 33ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 14:49:50) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 46ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 14:59:00) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 14:59:00) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 83ms (View: 47, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 14:59:23) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 52ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 15:01:52) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:01:52) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 161ms (View: 9, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 15:01:56) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 25ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:02:23) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 30ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:02:23) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 44ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:03:02) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 50ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:03:02) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (13.0ms)
+Completed in 69ms (View: 18, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:03:08) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 19ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:03:08) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 33ms (View: 9, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:03:47) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 43ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:03:47) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 56ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 15:04:41) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:04:41) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 212ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 15:04:54) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 15:05:15) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
+Rendering /documents/edit.js.erb
+Completed in 44ms (View: 11, DB: 0) | 200 OK [http://localhost/documents/13/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:05:44) [GET]
+  Parameters: {"id"=>"13", "document"=>{"title"=>"long document<br>", "contents"=>"<p>\n“When you have small, distributed battery-powered sensors, you want to \ncollect all biometric data,” says Ken Fyfe, one of the pioneers of \nwearable tracking devices. In the mid-’90s, Fyfe was teaching \nengineering at the University of Alberta in Edmonton, where his \nspecialty was acoustics and vibration. He was also a runner, in a family\n of runners. His sons were national competitors at 400 and 800 meters. \nAt the time, runners who wanted to know more about the mechanics of \ntheir performance — their stride, their cadence, the way their motion \nchanged as they grew tired — had to go into a lab and be filmed. “You \nwould run in a room on a treadmill with reflective stickers on your \nhips, knees, ankles and feet,” Fyfe recalls.\t\t</p><p>\nTaking video of people in motion, and then analyzing the video, seemed \nlike a roundabout way to get data. Why not use an accelerometer, which \ncan directly measure changes in speed and direction? Accelerometers had \nlong been used in industry and cost several hundred dollars each. Then \naccelerometers were developed to trigger the air bags in cars. Massive \npurchases in the automotive industry drove the cost down. The size and \npower demands shrank, too. Suddenly, it seemed less crazy to put an \naccelerometer on your body.\t\t</p><p>\nFyfe guessed that there would be plenty of interest in something like a \npersonal speedometer, a wearable instrument that displayed how far you’d\n gone and your average speed. So he tried to invent one. “I worked on it\n every weekend for three years,” Fyfe says. He put accelerometers into a\n molded plastic insert. The insert fit into a shoe, and data were \ntransmitted wirelessly to a sports watch. But there was a problem. The \nnumbers produced by a motion sensor don’t necessarily say anything about\n a runner’s pace and distance. They give you the acceleration of a \nrunner’s foot — that’s all. Some method — a formula or algorithm — is \nneeded to translate the data into the information you want, and the \nmethod must work for almost everybody under a wide range of conditions: \nstopping and starting, jumping over a curb, limping because of an \ninjury. Developing these algorithms took up most of Fyfe’s time during \nthe years he perfected his system.\t\t</p><p>\nThanks to faster computers and clever mathematical techniques, Fyfe and \nother inventors are turning messy data from cheap sensors into \nmeaningful information. “The real expertise you need is signal \nprocessing and statistical analysis,” says James Park, the chief \nexecutive and co-founder of Fitbit, a company that makes a tracker \nreleased late last year. The Fitbit tracker is two inches long, half an \ninch wide and shaped like a thick paperclip. It tracks movement, and if \nyou wear it in a little elastic wristband at night, it can also track \nyour hours of sleep. (You are not completely still when sleeping. Your \npattern of movement, however, can be correlated with sleeping and \nwaking, just as the acceleration of a runner’s foot reveals speed.) Park\n and his partner, Eric Friedman, first showed their prototype at a San \nFrancisco business conference in the summer of 2008. Five weeks later, \nPark and Friedman, who are both 33, had $2 million in venture capital, \nand they were flying back and forth to Singapore to arrange production. \nLast winter they shipped their first devices.\t\t</p><p>\nAt nearly the same time, Philips, the consumer electronics company, \nbegan selling its own tiny accelerometer-based self-tracker, called \nDirectLife, which, like the Fitbit, is meant to be carried on the body \nat all times. Zeo, a company based in Newton, Mass., released a tracker \ncontained in a small headband, which picks up electrical signals from \nthe brain, and uses them to compile the kind of detailed record of light\n sleep, deep sleep and REM sleep that, until now, was available only if \nyou spent the night in a sleep-research clinic. Lately I’ve been running\n into people who say they wear it every night. And Nike recently \nannounced that its Nike+ system, one of the first personal speedometers,\n has been used by more than 2.5 million runners since its release in \n2006.\t\t</p>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
+  [4;36;1mDocument Update (30.0ms)[0m   [0;1mUPDATE "documents" SET "title" = 'long document<br>', "updated_at" = '2010-05-04 22:05:44', "contents" = '<p>
+“When you have small, distributed battery-powered sensors, you want to 
+collect all biometric data,” says Ken Fyfe, one of the pioneers of 
+wearable tracking devices. In the mid-’90s, Fyfe was teaching 
+engineering at the University of Alberta in Edmonton, where his 
+specialty was acoustics and vibration. He was also a runner, in a family
+ of runners. His sons were national competitors at 400 and 800 meters. 
+At the time, runners who wanted to know more about the mechanics of 
+their performance — their stride, their cadence, the way their motion 
+changed as they grew tired — had to go into a lab and be filmed. “You 
+would run in a room on a treadmill with reflective stickers on your 
+hips, knees, ankles and feet,” Fyfe recalls.		</p><p>
+Taking video of people in motion, and then analyzing the video, seemed 
+like a roundabout way to get data. Why not use an accelerometer, which 
+can directly measure changes in speed and direction? Accelerometers had 
+long been used in industry and cost several hundred dollars each. Then 
+accelerometers were developed to trigger the air bags in cars. Massive 
+purchases in the automotive industry drove the cost down. The size and 
+power demands shrank, too. Suddenly, it seemed less crazy to put an 
+accelerometer on your body.		</p><p>
+Fyfe guessed that there would be plenty of interest in something like a 
+personal speedometer, a wearable instrument that displayed how far you’d
+ gone and your average speed. So he tried to invent one. “I worked on it
+ every weekend for three years,” Fyfe says. He put accelerometers into a
+ molded plastic insert. The insert fit into a shoe, and data were 
+transmitted wirelessly to a sports watch. But there was a problem. The 
+numbers produced by a motion sensor don’t necessarily say anything about
+ a runner’s pace and distance. They give you the acceleration of a 
+runner’s foot — that’s all. Some method — a formula or algorithm — is 
+needed to translate the data into the information you want, and the 
+method must work for almost everybody under a wide range of conditions: 
+stopping and starting, jumping over a curb, limping because of an 
+injury. Developing these algorithms took up most of Fyfe’s time during 
+the years he perfected his system.		</p><p>
+Thanks to faster computers and clever mathematical techniques, Fyfe and 
+other inventors are turning messy data from cheap sensors into 
+meaningful information. “The real expertise you need is signal 
+processing and statistical analysis,” says James Park, the chief 
+executive and co-founder of Fitbit, a company that makes a tracker 
+released late last year. The Fitbit tracker is two inches long, half an 
+inch wide and shaped like a thick paperclip. It tracks movement, and if 
+you wear it in a little elastic wristband at night, it can also track 
+your hours of sleep. (You are not completely still when sleeping. Your 
+pattern of movement, however, can be correlated with sleeping and 
+waking, just as the acceleration of a runner’s foot reveals speed.) Park
+ and his partner, Eric Friedman, first showed their prototype at a San 
+Francisco business conference in the summer of 2008. Five weeks later, 
+Park and Friedman, who are both 33, had $2 million in venture capital, 
+and they were flying back and forth to Singapore to arrange production. 
+Last winter they shipped their first devices.		</p><p>
+At nearly the same time, Philips, the consumer electronics company, 
+began selling its own tiny accelerometer-based self-tracker, called 
+DirectLife, which, like the Fitbit, is meant to be carried on the body 
+at all times. Zeo, a company based in Newton, Mass., released a tracker 
+contained in a small headband, which picks up electrical signals from 
+the brain, and uses them to compile the kind of detailed record of light
+ sleep, deep sleep and REM sleep that, until now, was available only if 
+you spent the night in a sleep-research clinic. Lately I’ve been running
+ into people who say they wear it every night. And Nike recently 
+announced that its Nike+ system, one of the first personal speedometers,
+ has been used by more than 2.5 million runners since its release in 
+2006.		</p>' WHERE "id" = 13[0m
+Completed in 94ms (View: 3, DB: 31) | 200 OK [http://localhost/documents/13/save.js?_method=put&document[title]=long%20document%3Cbr%3E&document[contents]=%3Cp%3E%0A%E2%80%9CWhen%20you%20have%20small%2C%20distributed%20battery-powered%20sensors%2C%20you%20want%20to%20%0Acollect%20all%20biometric%20data%2C%E2%80%9D%20says%20Ken%20Fyfe%2C%20one%20of%20the%20pioneers%20of%20%0Awearable%20tracking%20devices.%20In%20the%20mid-%E2%80%9990s%2C%20Fyfe%20was%20teaching%20%0Aengineering%20at%20the%20University%20of%20Alberta%20in%20Edmonton%2C%20where%20his%20%0Aspecialty%20was%20acoustics%20and%20vibration.%20He%20was%20also%20a%20runner%2C%20in%20a%20family%0A%20of%20runners.%20His%20sons%20were%20national%20competitors%20at%20400%20and%20800%20meters.%20%0AAt%20the%20time%2C%20runners%20who%20wanted%20to%20know%20more%20about%20the%20mechanics%20of%20%0Atheir%20performance%20%E2%80%94%20their%20stride%2C%20their%20cadence%2C%20the%20way%20their%20motion%20%0Achanged%20as%20they%20grew%20tired%20%E2%80%94%20had%20to%20go%20into%20a%20lab%20and%20be%20filmed.%20%E2%80%9CYou%20%0Awould%20run%20in%20a%20room%20on%20a%20treadmill%20with%20reflective%20stickers%20on%20your%20%0Ahips%2C%20knees%2C%20ankles%20and%20feet%2C%E2%80%9D%20Fyfe%20recalls.%09%09%3C%2Fp%3E%3Cp%3E%0ATaking%20video%20of%20people%20in%20motion%2C%20and%20then%20analyzing%20the%20video%2C%20seemed%20%0Alike%20a%20roundabout%20way%20to%20get%20data.%20Why%20not%20use%20an%20accelerometer%2C%20which%20%0Acan%20directly%20measure%20changes%20in%20speed%20and%20direction%3F%20Accelerometers%20had%20%0Along%20been%20used%20in%20industry%20and%20cost%20several%20hundred%20dollars%20each.%20Then%20%0Aaccelerometers%20were%20developed%20to%20trigger%20the%20air%20bags%20in%20cars.%20Massive%20%0Apurchases%20in%20the%20automotive%20industry%20drove%20the%20cost%20down.%20The%20size%20and%20%0Apower%20demands%20shrank%2C%20too.%20Suddenly%2C%20it%20seemed%20less%20crazy%20to%20put%20an%20%0Aaccelerometer%20on%20your%20body.%09%09%3C%2Fp%3E%3Cp%3E%0AFyfe%20guessed%20that%20there%20would%20be%20plenty%20of%20interest%20in%20something%20like%20a%20%0Apersonal%20speedometer%2C%20a%20wearable%20instrument%20that%20displayed%20how%20far%20you%E2%80%99d%0A%20gone%20and%20your%20average%20speed.%20So%20he%20tried%20to%20invent%20one.%20%E2%80%9CI%20worked%20on%20it%0A%20every%20weekend%20for%20three%20years%2C%E2%80%9D%20Fyfe%20says.%20He%20put%20accelerometers%20into%20a%0A%20molded%20plastic%20insert.%20The%20insert%20fit%20into%20a%20shoe%2C%20and%20data%20were%20%0Atransmitted%20wirelessly%20to%20a%20sports%20watch.%20But%20there%20was%20a%20problem.%20The%20%0Anumbers%20produced%20by%20a%20motion%20sensor%20don%E2%80%99t%20necessarily%20say%20anything%20about%0A%20a%20runner%E2%80%99s%20pace%20and%20distance.%20They%20give%20you%20the%20acceleration%20of%20a%20%0Arunner%E2%80%99s%20foot%20%E2%80%94%20that%E2%80%99s%20all.%20Some%20method%20%E2%80%94%20a%20formula%20or%20algorithm%20%E2%80%94%20is%20%0Aneeded%20to%20translate%20the%20data%20into%20the%20information%20you%20want%2C%20and%20the%20%0Amethod%20must%20work%20for%20almost%20everybody%20under%20a%20wide%20range%20of%20conditions%3A%20%0Astopping%20and%20starting%2C%20jumping%20over%20a%20curb%2C%20limping%20because%20of%20an%20%0Ainjury.%20Developing%20these%20algorithms%20took%20up%20most%20of%20Fyfe%E2%80%99s%20time%20during%20%0Athe%20years%20he%20perfected%20his%20system.%09%09%3C%2Fp%3E%3Cp%3E%0AThanks%20to%20faster%20computers%20and%20clever%20mathematical%20techniques%2C%20Fyfe%20and%20%0Aother%20inventors%20are%20turning%20messy%20data%20from%20cheap%20sensors%20into%20%0Ameaningful%20information.%20%E2%80%9CThe%20real%20expertise%20you%20need%20is%20signal%20%0Aprocessing%20and%20statistical%20analysis%2C%E2%80%9D%20says%20James%20Park%2C%20the%20chief%20%0Aexecutive%20and%20co-founder%20of%20Fitbit%2C%20a%20company%20that%20makes%20a%20tracker%20%0Areleased%20late%20last%20year.%20The%20Fitbit%20tracker%20is%20two%20inches%20long%2C%20half%20an%20%0Ainch%20wide%20and%20shaped%20like%20a%20thick%20paperclip.%20It%20tracks%20movement%2C%20and%20if%20%0Ayou%20wear%20it%20in%20a%20little%20elastic%20wristband%20at%20night%2C%20it%20can%20also%20track%20%0Ayour%20hours%20of%20sleep.%20(You%20are%20not%20completely%20still%20when%20sleeping.%20Your%20%0Apattern%20of%20movement%2C%20however%2C%20can%20be%20correlated%20with%20sleeping%20and%20%0Awaking%2C%20just%20as%20the%20acceleration%20of%20a%20runner%E2%80%99s%20foot%20reveals%20speed.)%20Park%0A%20and%20his%20partner%2C%20Eric%20Friedman%2C%20first%20showed%20their%20prototype%20at%20a%20San%20%0AFrancisco%20business%20conference%20in%20the%20summer%20of%202008.%20Five%20weeks%20later%2C%20%0APark%20and%20Friedman%2C%20who%20are%20both%2033%2C%20had%20%242%20million%20in%20venture%20capital%2C%20%0Aand%20they%20were%20flying%20back%20and%20forth%20to%20Singapore%20to%20arrange%20production.%20%0ALast%20winter%20they%20shipped%20their%20first%20devices.%09%09%3C%2Fp%3E%3Cp%3E%0AAt%20nearly%20the%20same%20time%2C%20Philips%2C%20the%20consumer%20electronics%20company%2C%20%0Abegan%20selling%20its%20own%20tiny%20accelerometer-based%20self-tracker%2C%20called%20%0ADirectLife%2C%20which%2C%20like%20the%20Fitbit%2C%20is%20meant%20to%20be%20carried%20on%20the%20body%20%0Aat%20all%20times.%20Zeo%2C%20a%20company%20based%20in%20Newton%2C%20Mass.%2C%20released%20a%20tracker%20%0Acontained%20in%20a%20small%20headband%2C%20which%20picks%20up%20electrical%20signals%20from%20%0Athe%20brain%2C%20and%20uses%20them%20to%20compile%20the%20kind%20of%20detailed%20record%20of%20light%0A%20sleep%2C%20deep%20sleep%20and%20REM%20sleep%20that%2C%20until%20now%2C%20was%20available%20only%20if%20%0Ayou%20spent%20the%20night%20in%20a%20sleep-research%20clinic.%20Lately%20I%E2%80%99ve%20been%20running%0A%20into%20people%20who%20say%20they%20wear%20it%20every%20night.%20And%20Nike%20recently%20%0Aannounced%20that%20its%20Nike%2B%20system%2C%20one%20of%20the%20first%20personal%20speedometers%2C%0A%20has%20been%20used%20by%20more%20than%202.5%20million%20runners%20since%20its%20release%20in%20%0A2006.%09%09%3C%2Fp%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:05:45) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (12.0ms)
+Completed in 87ms (View: 18, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 15:06:10) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 43ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:06:29) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 48ms (View: 5, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:06:30) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 47ms (View: 13, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:06:43) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 30ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 15:27:34) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:27:35) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 53ms (View: 16, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 15:31:24) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Rendering /documents/edit.js.erb
+Completed in 143ms (View: 6, DB: 0) | 200 OK [http://localhost/documents/2/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:32:09) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean-Paul Sartre, in \"Being and Nothingness\" outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. <br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (46.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:32:09', "contents" = 'Jean-Paul Sartre, in "Being and Nothingness" outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. <br>' WHERE "id" = 2[0m
+Completed in 94ms (View: 5, DB: 47) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean-Paul%20Sartre%2C%20in%20%22Being%20and%20Nothingness%22%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:32:09) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 61ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:32:54) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “;Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility. <br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (3.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:32:54', "contents" = 'Jean‐Paul Sartre, in “;Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility. <br>' WHERE "id" = 2[0m
+Completed in 49ms (View: 4, DB: 4) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9C%3BBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:32:54) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (12.0ms)
+Completed in 69ms (View: 18, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:33:39) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take a<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:33:39', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take a<br>' WHERE "id" = 2[0m
+Completed in 34ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20a%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:33:39) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 45ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:34:24) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no s<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:34:24', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no s<br>' WHERE "id" = 2[0m
+Completed in 51ms (View: 6, DB: 2) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20s%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:34:24) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 140ms (View: 18, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:35:09) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. <br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:35:09', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. <br>' WHERE "id" = 2[0m
+Completed in 60ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:35:09) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (41.0ms)
+Completed in 89ms (View: 45, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:35:54) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I'm 6'4\", or at least that I was born 6'4\". However, I can put lifts in my shoes, in hopes of appearing 6'5\", I can <br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:35:54', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I''m 6''4", or at least that I was born 6''4". However, I can put lifts in my shoes, in hopes of appearing 6''5", I can <br>' WHERE "id" = 2[0m
+Completed in 67ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%27m%206%274%22%2C%20or%20at%20least%20that%20I%20was%20born%206%274%22.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%275%22%2C%20I%20can%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:35:55) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (13.0ms)
+Completed in 68ms (View: 18, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:36:39) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I'm 6'4\", or at least that I was born 6'4\". However, I can put lifts in my shoes, in hopes of appearing 6'5\", I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation <br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:36:39', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I''m 6''4", or at least that I was born 6''4". However, I can put lifts in my shoes, in hopes of appearing 6''5", I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation <br>' WHERE "id" = 2[0m
+Completed in 297ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%27m%206%274%22%2C%20or%20at%20least%20that%20I%20was%20born%206%274%22.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%275%22%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:36:40) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 49ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:37:24) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I'm 6'4\", or at least that I was born 6'4\". However, I can put lifts in my shoes, in hopes of appearing 6'5\", I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:37:24', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I''m 6''4", or at least that I was born 6''4". However, I can put lifts in my shoes, in hopes of appearing 6''5", I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don<br>' WHERE "id" = 2[0m
+Completed in 84ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%27m%206%274%22%2C%20or%20at%20least%20that%20I%20was%20born%206%274%22.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%275%22%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:37:25) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 46ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:37:39) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:37:39', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>' WHERE "id" = 2[0m
+Completed in 73ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:37:40) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (8.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (13.0ms)
+Completed in 45ms (View: 10, DB: 9) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:38:24) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 39ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:38:25) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (8.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (16.0ms)
+Completed in 58ms (View: 15, DB: 8) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:39:10) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 194ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:39:10) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 46ms (View: 13, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:39:55) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 30ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:39:55) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (11.0ms)
+Completed in 59ms (View: 16, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:40:39) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:40:40) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 45ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:41:24) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 42ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:41:25) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 48ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:42:09) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches.<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 15ms (View: 2, DB: 0) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:42:09) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (4.0ms)
+Completed in 22ms (View: 6, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:42:55) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Even<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:42:55', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Even<br>' WHERE "id" = 2[0m
+Completed in 79ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%20Even%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:42:55) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 41ms (View: 9, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:42:56) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Even-hand<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:42:56', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Even-hand<br>' WHERE "id" = 2[0m
+Completed in 26ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%20Even-hand%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:42:56) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 15:43:20) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. <br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-04 22:43:20', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. <br>' WHERE "id" = 2[0m
+Completed in 32ms (View: 2, DB: 2) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 15:43:21) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 28ms (View: 8, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 16:02:00) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (83.0ms)
+Completed in 123ms (View: 119, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 16:02:00) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 100ms (View: 34, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 16:02:24) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 19ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 16:02:24) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 97ms (View: 24, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 16:02:30) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 274ms (View: 184, DB: 2) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 16:02:49) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐bring back fadeIn and fadeOut<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 27ms (View: 4, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90bring%20back%20fadeIn%20and%20fadeOut%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 18:56:00) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (15.0ms)
+Completed in 33ms (View: 29, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 18:56:00) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 36ms (View: 8, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 18:56:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Rendering /documents/edit.js.erb
+Completed in 40ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/2/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 18:56:52) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Test—you know—yeah.<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument Update (40.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-05 01:56:52', "contents" = 'Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Test—you know—yeah.<br>' WHERE "id" = 2[0m
+Completed in 75ms (View: 4, DB: 40) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%20Test%E2%80%94you%20know%E2%80%94yeah.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 18:56:52) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 47ms (View: 11, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 18:57:21) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Test—you know—yeah.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 25ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%20Test%E2%80%94you%20know%E2%80%94yeah.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 18:57:21) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 39ms (View: 8, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 18:57:30) [GET]
+  Parameters: {"id"=>"2", "document"=>{"title"=>"Document 2.1", "contents"=>"Jean‐Paul Sartre, in “Being and Nothingness” outlines his philosophy of absolute freedom. This absolute freedom is not to be confused with absolute ability. That is, Sartre does not mean to suggest that man can walk through walls or hear dog whistles, or any other such physical impossibility.&nbsp; What he means to say is that no one and no thing can take away his absolute agency. At any time, in any given situation, he has not merely the possibility, but rather the necessity, of choosing. There is no situation of his to which a man does not give a free interpretation or make a free choice. THIS is what Sartre means by absolute freedom. So I cannot change that I’m 6’4“;, or at least that I was born 6’4”. However, I can put lifts in my shoes, in hopes of appearing 6’5“;, I can surround myself with taller individuals to feel shorter, with shorter individuals to emphasis my height, with no individuals to avoid being tall or short in relation to anyone else. There are countless choices available to me with regard to my height, and my interpretation of its significance, even if I don’t have the choice of being any height but what I am in feet and inches. Test—you know—yeah.<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+Completed in 30ms (View: 4, DB: 0) | 200 OK [http://localhost/documents/2/save.js?_method=put&document[title]=Document%202.1&document[contents]=Jean%E2%80%90Paul%20Sartre%2C%20in%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20outlines%20his%20philosophy%20of%20absolute%20freedom.%20This%20absolute%20freedom%20is%20not%20to%20be%20confused%20with%20absolute%20ability.%20That%20is%2C%20Sartre%20does%20not%20mean%20to%20suggest%20that%20man%20can%20walk%20through%20walls%20or%20hear%20dog%20whistles%2C%20or%20any%20other%20such%20physical%20impossibility.%26nbsp%3B%20What%20he%20means%20to%20say%20is%20that%20no%20one%20and%20no%20thing%20can%20take%20away%20his%20absolute%20agency.%20At%20any%20time%2C%20in%20any%20given%20situation%2C%20he%20has%20not%20merely%20the%20possibility%2C%20but%20rather%20the%20necessity%2C%20of%20choosing.%20There%20is%20no%20situation%20of%20his%20to%20which%20a%20man%20does%20not%20give%20a%20free%20interpretation%20or%20make%20a%20free%20choice.%20THIS%20is%20what%20Sartre%20means%20by%20absolute%20freedom.%20So%20I%20cannot%20change%20that%20I%E2%80%99m%206%E2%80%994%E2%80%9C%3B%2C%20or%20at%20least%20that%20I%20was%20born%206%E2%80%994%E2%80%9D.%20However%2C%20I%20can%20put%20lifts%20in%20my%20shoes%2C%20in%20hopes%20of%20appearing%206%E2%80%995%E2%80%9C%3B%2C%20I%20can%20surround%20myself%20with%20taller%20individuals%20to%20feel%20shorter%2C%20with%20shorter%20individuals%20to%20emphasis%20my%20height%2C%20with%20no%20individuals%20to%20avoid%20being%20tall%20or%20short%20in%20relation%20to%20anyone%20else.%20There%20are%20countless%20choices%20available%20to%20me%20with%20regard%20to%20my%20height%2C%20and%20my%20interpretation%20of%20its%20significance%2C%20even%20if%20I%20don%E2%80%99t%20have%20the%20choice%20of%20being%20any%20height%20but%20what%20I%20am%20in%20feet%20and%20inches.%20Test%E2%80%94you%20know%E2%80%94yeah.%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 20:48:38) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 17ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:48:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 49ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 20:48:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering /documents/edit.js.erb
+Completed in 25ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/1/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 20:56:30) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 16ms (View: 9, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:56:31) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 76ms (View: 17, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 20:57:10) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:57:10) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 69ms (View: 12, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 20:57:30) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:57:31) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 36ms (View: 8, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 20:57:35) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 54ms (View: 16, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 20:57:43) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (6.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-05 03:57:43', "contents" = 'TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>‐see what happens when document contents overflow<br>' WHERE "id" = 14[0m
+Completed in 142ms (View: 6, DB: 6) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E%E2%80%90see%20what%20happens%20when%20document%20contents%20overflow%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:57:44) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (12.0ms)
+Completed in 101ms (View: 19, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 20:57:55) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (58.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-05-05 03:57:55', "contents" = 'TODO:<br>‐need to think about entering navigate mode temporarily when new doc is being created so status msg can be seen (or create status msg mode)<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 94ms (View: 3, DB: 58) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90need%20to%20think%20about%20entering%20navigate%20mode%20temporarily%20when%20new%20doc%20is%20being%20created%20so%20status%20msg%20can%20be%20seen%20(or%20create%20status%20msg%20mode)%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:57:55) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (6.0ms)
+Completed in 42ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 20:58:15) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-05 03:58:15', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 87ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:58:15) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (11.0ms)
+Completed in 104ms (View: 17, DB: 6) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 20:58:28) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 95ms (View: 60, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 20:58:29) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 65ms (View: 15, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 20:58:33) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 36ms (View: 4, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-04 21:00:07) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-04 21:00:07) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (5.0ms)
+Completed in 36ms (View: 9, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-04 21:00:09) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 30ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-04 21:00:18) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐md5 generation<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 28ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90md5%20generation%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]

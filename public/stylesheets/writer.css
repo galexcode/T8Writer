@@ -1,3 +1,9 @@
+@font-face {
+	font-family: 'Junction test';
+	src: url('Junction_02.ttf');
+	src: local('Junction Regular'), local('Junction'),
+		url('Junction_02.ttf') format('truetype');
+}
 #T8Writer div, #T8Writer p, #T8Writer form, #T8Writer textarea, #T8Writer ul, #T8Writer li, #T8Writer a, #T8Writer h2,
 #T8Writer h3, #T8Writer h4, #T8Writer input, #T8Writer label, #T8Writer button, #T8Writer dl, #T8Writer dt, #T8Writer dd {
 	background: transparent;
@@ -5,7 +11,7 @@
 	clear: none;
 	color: #666;
 	float: none;
-	font-family: Junction,Arial,sans-serif;
+	font-family: "Junction",Arial,sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: normal;

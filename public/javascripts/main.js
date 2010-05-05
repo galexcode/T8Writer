@@ -21,7 +21,7 @@
 			// if a foot mark or back-tick is found;
 			if (current_char == "\'" || current_char == "\`") {
 				// check if this is likely meant to be an apostrophe
-				if (i != 0 && current_str.substr(i-1,1) != " " && current_str.substr(i-1,1) != "\"" && i != current_str.length-1 && current_str.substr(i+1,1) != " " && current_str[i+1] != "\"") {
+				if (i !== 0 && current_str.substr(i-1,1) !== " " && current_str.substr(i-1,1) != "\"" && i != current_str.length-1 && current_str.substr(i+1,1) !== " " && current_str[i+1] != "\"") {
 					// right single quote (apostrophe)
 					current_str = current_str.substring(0,i) + "\u2019" + current_str.substring(i+1,current_str.length);
 				} else {
@@ -89,8 +89,8 @@
 		}
 	};
 	Array.prototype.filter = function(fn, thisObj) {
-		var scope = thisObj || window;
-		var a = [];
+		var scope = thisObj || window,
+			a = [];
 		for ( var i=0, j=this.length; i < j; ++i ) {
 			if ( !fn.call(scope, this[i], i, this) ) {
 				continue;
@@ -122,7 +122,7 @@
 				function(el) {
 					el.call(scope,o);
 				}
-			)
+			);
 		}
 	};
 
@@ -140,6 +140,7 @@
 		load_observer: new Observer(), // listen for the initial script to be loaded
 		exit_observer: new Observer(), // listen for exit function completion
 		auto_save: undefined,
+		fade: undefined,
 		idle_counter: undefined,
 		cursor_position: undefined,
 
@@ -193,6 +194,7 @@
 				"messages": document.getElementById("T8Writer_Messages"),
 
 				// controls
+				"controls": document.getElementById("T8Writer_Controls"),
 				"save": document.getElementById("T8Writer_Save"),
 				"revert": document.getElementById("T8Writer_Revert"),
 				"email": document.getElementById("T8Writer_Email"),
@@ -256,7 +258,7 @@
 		 */
 		exit: function() {
 			clearInterval(Writer.auto_save);
-			clearInterval(Writer.auto_punctuate);
+			clearInterval(Writer.idle_counter);
 			
 			// create new document with title and user's id
 			function proceed() {
@@ -286,6 +288,8 @@
 
 		autoPunctuate: function() {
 			var text_nodes, i;
+
+			Writer.Utilities.captureCursor();
 			// TODO: this childNodes[0] thing is not sustainable!
 			text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
 			for (i = 0; i < text_nodes.length; i++) {
@@ -398,8 +402,8 @@
 			var evt = e || window.event;
 			if (evt.keyCode == 13) {
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
-				var command = Writer.Elements["command_prompt"].value;
-				for (var i in Writer.Modes.enterCommand.commands) {
+				var command = Writer.Elements["command_prompt"].value, i;
+				for (i in Writer.Modes.enterCommand.commands) {
 					if (command.indexOf(i) != -1) {
 						// hide command prompt form
 						Writer.Elements["command_form"].style.display = "none";
@@ -593,7 +597,6 @@
 		help: function() {
 			var closeHelp = function() {
 				Writer.Elements["help_info"].style.display = "none";
-				Writer.Modes.navigate();
 				Writer.Utilities.removeEvent(
 					document,
 					"keypress",
@@ -615,15 +618,6 @@
 				"keypress",
 				captureKey
 			);
-		},
-
-		// this is when we're accessing the "chrome", i.e. actions outside of the text field
-		navigate: function() {
-			/*if (document.getElementById("T8Writer_NewDocument").style.display == "block")
-				document.getElementById("T8Writer_NewDocument").style.display = "none";*/
-
-			clearInterval(Writer.idle_counter);
-			clearInterval(Writer.auto_save);
 		},
 
 		selectDocument: function(){
@@ -667,11 +661,13 @@
 		attachEffects: function() {	
 			document.getElementById("T8Writer_Contents").onblur = function(){
 				Writer.autoPunctuate();
-				//Writer.Effects.fadeInExtras(1500);
-				Writer.Modes.navigate();
+				Writer.Effects.fadeInExtras(1500);
+
+				clearInterval(Writer.idle_counter);
+				clearInterval(Writer.auto_save);
 			};
 			document.getElementById("T8Writer_Contents").onfocus = function(e){
-				//Writer.Effects.fadeOutExtras(3000);
+				Writer.Effects.fadeOutExtras(3000);
 				Writer.Modes.write();
 			};
 		},
@@ -681,15 +677,22 @@
 			var extras = [
 				document.getElementById("T8Writer_Title"),
 				Writer.Elements["documents"],
-				Writer.Elements["messages"]
+				Writer.Elements["messages"],
+				Writer.Elements["controls"]
 			],
 			end_opacity = 1, // we finish at fully opaque
-			interval,
 			j;
+
+			try {
+				clearInterval(Writer.fade);
+			}
+			catch (err) {
+				
+			}
 			// add .5% opacity 20x (every 1/20th of supplied duration)
-			interval = setInterval(function(){
+			Writer.fade = setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
-					clearInterval(interval);
+					clearInterval(Writer.fade);
 					return;
 				}
 				for (j = 0; j < extras.length; j++) {
@@ -703,15 +706,22 @@
 			var extras = [
 				document.getElementById("T8Writer_Title"),
 				Writer.Elements["documents"],
-				Writer.Elements["messages"]
+				Writer.Elements["messages"],
+				Writer.Elements["controls"]
 			],
 			end_opacity = 0, // we finish at fully transparent
-			interval,
 			j;
+
+			try {
+				clearInterval(Writer.fade);
+			}
+			catch (err) {
+
+			}
 			// subtract .5% opacity 20x (every 1/20th of supplied duration)
-			interval = setInterval(function(){
+			Writer.fade = setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
-					clearInterval(interval);
+					clearInterval(Writer.fade);
 					return;
 				}
 				for (j = 0; j < extras.length; j++) {

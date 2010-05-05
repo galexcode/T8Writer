@@ -1,5 +1,5 @@
 <% documents.each do |document| %>
     <li>
-        <a href="#documents/<%= document.id %>/edit" onclick="T8Writer.openDocument(<%= document.id %>);return false;"><%= document.title %></a>
+        <a href="#documents/<%= document.id %>/edit" onclick="T8Writer.openDocument(<%= document.id %>);return false;" tabindex="2"><%= document.title %></a>
     </li>
 <% end %>
