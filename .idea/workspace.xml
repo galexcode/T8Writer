@@ -48,7 +48,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="714" column="30" selection-start="22856" selection-end="22856" vertical-scroll-proportion="11.828523">
+            <state line="868" column="41" selection-start="27144" selection-end="27144" vertical-scroll-proportion="0.46519524">
               <folding />
             </state>
           </provider>
@@ -93,11 +93,11 @@
         <option value="$PROJECT_DIR$/app/controllers/documents_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/documents/edit.js.erb" />
         <option value="$PROJECT_DIR$/app/views/users/documents.js.erb" />
-        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/documents/_index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/writer/_show.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
+        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
       </list>
     </option>
   </component>
@@ -655,7 +655,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="714" column="30" selection-start="22856" selection-end="22856" vertical-scroll-proportion="11.828523">
+        <state line="868" column="41" selection-start="27144" selection-end="27144" vertical-scroll-proportion="0.46519524">
           <folding />
         </state>
       </provider>

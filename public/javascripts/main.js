@@ -126,6 +126,13 @@
 		}
 	};
 
+	validateArgTypes = function(args,types) {
+		for (var i = 0; i < args.length; i++) {
+			if (typeof args[i] !== types[i])
+				return false;
+		}
+	};
+
 
 
 
@@ -149,6 +156,9 @@
 		 * @param key random (but unique) md5 hash representing user. passed in by bookmarklet
 		 */
 		init: function(key) {
+			if ( !validateArgTypes( [key],["string"] ) )
+				return false;
+
 			Writer.key = key;
 			// create container element #T8Writer, so we can easily remove
 			// entire plugin from DOM
@@ -223,6 +233,9 @@
 		 * @param id document ID (integer)
 		 */
 		openDocument: function(id) {
+			if ( !validateArgTypes( [id],["number"] ) )
+				return false;
+
 			clearInterval(Writer.auto_save);
 			// create new instance of Document class
 			Writer.current_document = new Document(id);
@@ -237,6 +250,9 @@
 		 * @param title (string), passed in from 'create' command
 		 */
 		createDocument: function(title) {
+			if ( !validateArgTypes( [title],["string"] ) )
+				return false;
+
 			// this is what we do once any unsaved document has been saved
 			function proceed() {
 				// create new document with title and user's id
@@ -306,6 +322,9 @@
 	 * @param title (string) the title we gave the new document
 	 */
 	Writer.createDocument.success = function(id,title) {
+		if ( !validateArgTypes( [id,title],["number","string"] ) )
+			return false;
+
 		// status message
 		Writer.Utilities.statusMsg("Successfully created document &lsquo;"+Writer.createDocument.title+"&rsquo;",true,3000);
 		// create instance of Document class to mirror backend
@@ -326,6 +345,9 @@
 	 * TODO: logging!
 	 */
 	Writer.createDocument.errors = function(errs) {
+		if ( !validateArgTypes( [errs],["string"] ) )
+			return false;
+
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to create " +
 			Writer.createDocument.title + ": "+errs+".",true,3000);
@@ -342,6 +364,9 @@
 		 * @param clearIt = (boolean) indicates whether to clear the status after timeout
 		 */
 		statusMsg: function(msg,clearIt,timeout) {
+			if ( !validateArgTypes( [msg,clearIt],["string","boolean"] ) )
+				return false;
+
 			// status message
 			Writer.Elements["messages"].innerHTML = msg;
 
@@ -375,6 +400,9 @@
 		 * @param sUrl = (string) url of JS file to load
 		 */
 		loadScript: function(sUrl) {
+			if ( !validateArgTypes( [sUrl],["string"] ) )
+				return false;
+
 			var script = document.createElement("script");
 				script.setAttribute("type","text/javascript");
 				script.setAttribute("src",sUrl);
@@ -387,6 +415,9 @@
 		 * @param lHref (string) url of stylesheet to load
 		 */
 		loadStyle: function(lHref) {
+			if ( !validateArgTypes( [lHref],["string"] ) )
+				return false;
+
 			var link = document.createElement("link");
 				link.setAttribute("type","text/css");
 				link.setAttribute("rel","stylesheet");
@@ -461,6 +492,9 @@
 		// addEvent and removeEvent courtesy of Peter Paul Koch
 		// http://www.quirksmode.org/blog/archives/2005/10/_and_the_winner_1.html
 		addEvent: function(obj,type,fn) {
+			if ( !validateArgTypes( [obj,type,fn],["object","string","function"] ) )
+				return false;
+
 			if (obj.addEventListener)
 				obj.addEventListener( type, fn, false );
 			else if (obj.attachEvent)
@@ -472,6 +506,9 @@
 		},
 
 		removeEvent: function(obj,type,fn) {
+			if ( !validateArgTypes( [obj,type,fn],["object","string","function"] ) )
+				return false;
+
 			if (obj.removeEventListener)
 				obj.removeEventListener( type, fn, false );
 			else if (obj.detachEvent)
@@ -493,6 +530,9 @@
 
 		// TODO: "coords" is actually coords AND relevant node. better name? separate args?
 		resetCursor: function(coords) {
+			if ( !validateArgTypes( [coords],["object"] ) )
+				return false;
+
 			document.getElementById("T8Writer_Contents").focus();
 			// timeout while we wait for cursor to be positioned normally after focus so there's no conflict here
 			setTimeout(function(){
@@ -540,6 +580,9 @@
 		 * @param node. HTMLNode. The node among whose children we want to find text nodes
 		 */
 		getTextNodes: function(node) {
+			if ( !validateArgTypes( [node],["object"] ) )
+				return false;
+
 			var text_nodes = [], i;
 			for (i = 0; i < node.childNodes.length; i++) {
 				if (node.childNodes[i].nodeType == 3)
@@ -648,14 +691,17 @@
 			Writer.current_document.save(true);
 		},
 		"create": function(command){
+			if ( !validateArgTypes( [command],["string"] ) )
+				return false;
+
 			// title = everything after "create "
 			var title = command.substring(command.indexOf("create")+7,command.length);
 			Writer.createDocument(title);
 		},
 		"help": function() { Writer.Modes.help() },
-		"exit": function(){ Writer.exit(); },
-		"revert": function(){ Writer.current_document.revert(); },
-		"open": function(){}
+		"exit": function() { Writer.exit(); },
+		"revert": function() { Writer.current_document.revert(); },
+		"open": function() {}
 	};
 	Writer.Effects = {
 		attachEffects: function() {	
@@ -673,6 +719,9 @@
 		},
 
 		fadeInExtras: function(duration) {
+			if ( !validateArgTypes( [duration],["number"] ) )
+				return false;
+
 			// array of elements to fade in
 			var extras = [
 				document.getElementById("T8Writer_Title"),
@@ -702,6 +751,9 @@
 		},
 
 		fadeOutExtras: function(duration) {
+			if ( !validateArgTypes( [duration],["number"] ) )
+				return false;
+
 			// array of elements to fade in
 			var extras = [
 				document.getElementById("T8Writer_Title"),
@@ -747,6 +799,9 @@
 		 * @param doCache (boolean) indicates whether we should cache this save point
 		 */
 		save: function(doCache) {
+			if ( !validateArgTypes( [doCache],["boolean"] ) )
+				return false;
+
 			// status message
 			// TODO: since the Message area is separate from the Document class
 			// I should really handle this with observers
@@ -784,6 +839,9 @@
 			}
 		},
 		email: function(address) {
+			if ( !validateArgTypes( [address],["string"] ) )
+				return false;
+
 
 		}
 	};
@@ -808,6 +866,9 @@
 	 * @param errs Array? passed by Rails
 	 */
 	Document.prototype.save.errors = function(errs) {
+			if ( !validateArgTypes( [errs],["string"] ) )
+				return false;
+
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to save "+
 				Writer.current_document.title + ": "+errs+".",true,3000);
