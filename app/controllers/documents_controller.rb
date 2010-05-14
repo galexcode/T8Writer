@@ -5,7 +5,7 @@ class DocumentsController < ApplicationController
     @documents = Document.all
 
     respond_to do |format|
-      format.html { render :partial => "/documents/index.html.erb", :locals => {:documents => @documents}}
+      format.html { render :partial => "/documents/new.html.erb", :locals => {:documents => @documents}}
       format.xml  { render :xml => @documents }
     end
   end
@@ -16,7 +16,7 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html # new.html.erb
       format.xml  { render :xml => @document }
     end
   end

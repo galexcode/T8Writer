@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @users = User.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html # new.html.erb
       format.xml  { render :xml => @users }
     end
   end
@@ -16,19 +16,29 @@ class UsersController < ApplicationController
     @user = User.find(params[:id]) if params[:id]
 
     respond_to do |format|
-      format.html { render :template => "/users/show.html.erb" }
+      format.html { render :template => "/users/new.html.erb" }
       format.xml  { render :xml => @user }
     end
   end
 
   def documents
     @user = User.find_by_key(params[:key]) if params[:key]
-    @documents = @user.documents
-	respond_to do |format|
-		if (@documents.count > 0)
-			format.js { render :template => "/users/documents.js.erb" }
+
+	if @user.nil? and params[:key]
+		@user = User.new(:key => params[:key])
+    	if @user.save
+			render :js => "(function(){T8Writer.Modes.help();})();"
 		else
-			format.js { render :js => "(function(){T8Writer.Modes.help();})();" }
+			render :js => "throw new Error('unable to create new user');"
+		end
+	else
+		@documents = @user.documents
+		respond_to do |format|
+			if (@documents.count > 0)
+				format.js { render :template => "/users/documents.js.erb" }
+			else
+				format.js { render :js => "(function(){T8Writer.Modes.help();})();" }
+			end
 		end
 	end
   end
@@ -57,9 +67,11 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         flash[:notice] = 'User was successfully created.'
+		format.js { render :js => "alert('new user created');" }
         format.html { redirect_to(@user) }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
+		format.js { render :js => "alert('new user not created');" }
         format.html { render :action => "new" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end

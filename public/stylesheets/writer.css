@@ -4,8 +4,16 @@
 	src: local('Junction Regular'), local('Junction'),
 		url('Junction_02.ttf') format('truetype');
 }
-#T8Writer div, #T8Writer p, #T8Writer form, #T8Writer textarea, #T8Writer ul, #T8Writer li, #T8Writer a, #T8Writer h2,
-#T8Writer h3, #T8Writer h4, #T8Writer input, #T8Writer label, #T8Writer button, #T8Writer dl, #T8Writer dt, #T8Writer dd {
+
+/* RESET STYLES ------------------------- */
+#T8Writer div,
+#T8Writer p,
+#T8Writer form, #T8Writer input, #T8Writer label,  #T8Writer textarea,
+#T8Writer ul, #T8Writer li,
+#T8Writer a,
+#T8Writer h2,#T8Writer h3, #T8Writer h4,
+#T8Writer button,
+#T8Writer dl, #T8Writer dt, #T8Writer dd {
 	background: transparent;
 	border: 0;
 	clear: none;
@@ -25,9 +33,12 @@
 	text-transform: none;
 	width: auto;
 }
-#T8Writer ul, #T8Writer li {
+#T8Writer ul,
+#T8Writer li {
 	list-style-type: none;
 }
+
+/* SELECTED TEXT ------------------------- */
 ::-moz-selection {
 	background: #d5d5d5;
 }
@@ -35,6 +46,7 @@
 	background: #d5d5d5;
 }
 
+/* OVERLAY ------------------------- */
 #T8Writer #T8Writer_Overlay {
 	background: rgba(255,255,255,0.8);
 	bottom: 0;
@@ -44,6 +56,8 @@
 	top: 0;
 	z-index: 9999;
 }
+
+/* MAIN APPLICATION BODY ------------------------- */
 	#T8Writer #T8Writer_Container {
 		background: rgba(255,255,255,0.9);
 		border: 2px solid rgba(204,204,204,0.8);
@@ -56,10 +70,14 @@
 		-moz-border-radius: 20px;
 		-moz-box-shadow: 0 0 120px #b5b5b5;
 	}
+
+/* DOCUMENT TITLE ------------------------- */
 		#T8Writer #T8Writer_Title {
 			font-size: 21px;
 			margin: 40px 60px;
 		}
+
+/* FORM (used for positioning) ------------------------- */
 		#T8Writer #T8Writer_Form {
 			background: transparent;
 			bottom: 60px;
@@ -68,10 +86,14 @@
 			right: 60px;
 			top: 80px;
 		}
+
+/* DOCUMENT LIST ------------------------- */
 			#T8Writer #T8Writer_Documents {
 				border: 1px dotted #d8d8d8;
 				float: right;
 				margin-bottom: 20px;
+				max-height: 159px;
+				overflow: auto;
 				width: 228px;
 			}
 				#T8Writer #T8Writer_Documents li {
@@ -84,13 +106,16 @@
 						display: block;
 						text-decoration: none;
 					}
-					#T8Writer #T8Writer_Documents a:hover, #T8Writer #T8Writer_Documents a:focus {
+					#T8Writer #T8Writer_Documents a:hover,
+					#T8Writer #T8Writer_Documents a:focus {
 						background-color: #f6f6f6;
 						color: #666;
 					}
 				#T8Writer #T8Writer_Documents li:last-child {
 					border: 0;
 				}
+
+/* DOCUMENT CONTENTS ------------------------- */
 			#T8Writer #T8Writer_Contents {
 				background: transparent;
 				border: 1px dotted #d8d8d8;
@@ -111,6 +136,8 @@
 				#T8Writer #T8Writer_Contents em {
 					font-style: italic;
 				}
+
+/* MESSAGE FIELD ------------------------- */
 			#T8Writer #T8Writer_Messages {
 				border: 1px dotted #d8d8d8;
 				clear: right;
@@ -120,6 +147,8 @@
 				min-height: 60px;
 				width: 228px;
 			}
+
+/* CONTROLS (buttons)  ------------------------- */
 			#T8Writer #T8Writer_Controls {
 				float: right;
 				margin-left: 20px;
@@ -157,7 +186,10 @@
 					color: #ccc;
 					outline: 0;
 				}
-		#T8Writer #T8Writer_NewDocument, #T8Writer #T8Writer_Command {
+
+/* NEW DOCUMENT and COMMAND PROMPT inputs ------------------------- */
+		#T8Writer #T8Writer_NewDocument,
+		#T8Writer #T8Writer_Command {
 			background: #f5f5f5;
 			border: 2px solid #e5e5e5;
 			color: #666;
@@ -178,11 +210,13 @@
 			right: 310px;
 			top: 80px;
 		}
-			#T8Writer #T8Writer_NewDocument label, #T8Writer #T8Writer_Command label {
+			#T8Writer #T8Writer_NewDocument label,
+			#T8Writer #T8Writer_Command label {
 				display: block;
 				margin-bottom: 5px;
 			}
-			#T8Writer #T8Writer_NewDocTitle,  #T8Writer #T8Writer_CommandPrompt {
+			#T8Writer #T8Writer_NewDocTitle,
+			#T8Writer #T8Writer_CommandPrompt {
 				background-color: #FFF;
 				border: 2px solid #999;
 				border-radius: 5px;
@@ -204,7 +238,10 @@
 				padding: 4px 5px;
 				-moz-border-radius: 5px;
 			}
-		#T8Writer #exitT8Writer, #T8Writer #closeT8WriterHelp {
+
+/* CLOSE BUTTONS ------------------------- */
+		#T8Writer #exitT8Writer,
+		#T8Writer #closeT8WriterHelp {
 			color: #CCC;
 			cursor: pointer;
 			display: block;
@@ -220,9 +257,12 @@
 			top: 20px;
 			width: 40px;
 		}
-		#T8Writer #exitT8Writer:focus, #T8Writer #exitT8Writer:hover {
+		#T8Writer #exitT8Writer:focus,
+		#T8Writer #exitT8Writer:hover {
 			color: #999;
 		}
+
+/* HELP PANEL ------------------------- */
 	#T8Writer #T8Writer_HelpInfo {
 		background: rgba(0, 0, 0, 0.8);
 		border-radius: 0 0 20px 20px;
@@ -237,7 +277,8 @@
 		#T8Writer #closeT8WriterHelp {
 			top: 10px;
 		}
-		#T8Writer #closeT8WriterHelp:focus, #T8Writer #closeT8WriterHelp:hover {
+		#T8Writer #closeT8WriterHelp:focus,
+		#T8Writer #closeT8WriterHelp:hover {
 			color: #e5e5e5;
 		}
 		#T8Writer #T8Writer_HelpInfo h3 {
@@ -252,7 +293,8 @@
 			font-size: 13px;
 			font-weight: bold;
 		}
-		#T8Writer #T8Writer_HelpInfo p, #T8Writer #T8Writer_HelpInfo dl {
+		#T8Writer #T8Writer_HelpInfo p,
+		#T8Writer #T8Writer_HelpInfo dl {
 			color: #ccc;
 			font-size: 13px;
 			margin-bottom: 10px;
