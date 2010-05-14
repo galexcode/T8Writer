@@ -1,5 +1,17 @@
-<% documents.each do |document| %>
+<% documents[0..3].each do |document| %>
     <li>
         <a href="#documents/<%= document.id %>/edit" onclick="T8Writer.openDocument(<%= document.id %>);return false;" tabindex="2"><%= document.title %></a>
     </li>
+<% end %>
+<% if documents.count > 4 %>
+	<li>
+		<a tabindex="2">more&hellip;</a>
+		<ul id="T8Writer_AddlDocs">
+			<% documents[4..documents.count].each do |document| %>
+				<li>
+					<a href="#documents/<%= document.id %>/edit" onclick="T8Writer.openDocument(<%= document.id %>);return false;" tabindex="2"><%= document.title %></a>
+				</li>
+			<% end %>
+		</ul>
+	</li>
 <% end %>

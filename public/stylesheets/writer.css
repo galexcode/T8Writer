@@ -9,6 +9,7 @@
 #T8Writer div,
 #T8Writer p,
 #T8Writer form, #T8Writer input, #T8Writer label,  #T8Writer textarea,
+#T8Writer select, #T8Writer option,
 #T8Writer ul, #T8Writer li,
 #T8Writer a,
 #T8Writer h2,#T8Writer h3, #T8Writer h4,
@@ -111,9 +112,34 @@
 						background-color: #f6f6f6;
 						color: #666;
 					}
+					#T8Writer #T8Writer_Documents a:not([href]) {
+						background: #fff url('/images/dropdown_arrow.png') no-repeat 185px center;
+						color: #aaa;
+						font-style: italic;
+						text-indent: 10px;
+					}
+					#T8Writer #T8Writer_Documents a:not([href]):hover,
+					#T8Writer #T8Writer_Documents a:not([href]):focus {
+						background-color: #fff;
+						color: #aaa;
+					}
 				#T8Writer #T8Writer_Documents li:last-child {
 					border: 0;
 				}
+					#T8Writer #T8Writer_AddlDocs {
+						background-color: #fff;
+						border: 1px solid #d8d8d8;
+						display: none;
+						position: absolute;
+						right: 0;
+						top: 160px;
+						width: 228px;
+						z-index: 10000;
+					}
+					#T8Writer #T8Writer_Documents li:last-child:hover #T8Writer_AddlDocs,
+					#T8Writer #T8Writer_Documents li:last-child:focus #T8Writer_AddlDocs {
+						display: block;
+					}
 
 /* DOCUMENT CONTENTS ------------------------- */
 			#T8Writer #T8Writer_Contents {
