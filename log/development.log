@@ -26957,3 +26957,681 @@ Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 14:59:41)
   [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 13) [0m
 Rendering /documents/edit.js.erb
 Completed in 39ms (View: 11, DB: 1) | 200 OK [http://localhost/documents/13/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:09:34) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:09:34) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 54ms (View: 13, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:10:38) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:10:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 53ms (View: 13, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:11:40) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:11:40) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (10.0ms)
+Completed in 54ms (View: 14, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:13:02) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:13:02) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (8.0ms)
+Completed in 53ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:13:51) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:13:51) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (14.0ms)
+Completed in 81ms (View: 24, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:14:37) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 163ms (View: 8, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:14:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 41ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:15:00) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:15:00) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 48ms (View: 14, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:15:21) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:15:21) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (7.0ms)
+Completed in 47ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:16:32) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:16:32) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (9.0ms)
+Completed in 54ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#new to html (for 127.0.0.1 at 2010-05-14 15:41:15) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+Rendering writer/new.html.erb
+Completed in 35ms (View: 1, DB: 0) | 200 OK [http://localhost/writer/new.html]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:45:43) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:45:43) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+  [4;36;1mUser Create (1.0ms)[0m   [0;1mINSERT INTO "users" ("updated_at", "key", "password", "created_at") VALUES('2010-05-14 22:45:43', '57820f15b258f5504a80276b5a96ad91', NULL, '2010-05-14 22:45:43')[0m
+Completed in 43ms (View: 3, DB: 2) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 15:46:03) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"undefined"}
+  [4;35;1mDocument Create (2.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 22:46:03', 'my thoughts', 0, NULL, '2010-05-14 22:46:03')[0m
+Completed in 52ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=undefined&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 15:46:03) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 18) [0m
+Rendering /documents/edit.js.erb
+Completed in 30ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/18/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:46:04) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 4) [0m
+Completed in 55ms (View: 4, DB: 2) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 15:46:48) [GET]
+  Parameters: {"id"=>"18", "document"=>{"title"=>"my thoughts", "contents"=>"so, here’s what I’m thinking:<br><br>First, let’s do the hokey‐pokey. Then, let’s turn ourselves about. Also, let’s get it on.<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 18) [0m
+  [4;36;1mDocument Update (42.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-14 22:46:48', "contents" = 'so, here’s what I’m thinking:<br><br>First, let’s do the hokey‐pokey. Then, let’s turn ourselves about. Also, let’s get it on.<br>' WHERE "id" = 18[0m
+Completed in 76ms (View: 4, DB: 43) | 200 OK [http://localhost/documents/18/save.js?_method=put&document[title]=my%20thoughts&document[contents]=so%2C%20here%E2%80%99s%20what%20I%E2%80%99m%20thinking%3A%3Cbr%3E%3Cbr%3EFirst%2C%20let%E2%80%99s%20do%20the%20hokey%E2%80%90pokey.%20Then%2C%20let%E2%80%99s%20turn%20ourselves%20about.%20Also%2C%20let%E2%80%99s%20get%20it%20on.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:46:48) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 4) [0m
+Completed in 37ms (View: 3, DB: 1) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:49:17) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:49:17) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 4) [0m
+Completed in 39ms (View: 3, DB: 1) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 15:49:37) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"undefined"}
+  [4;35;1mDocument Create (1.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 22:49:37', 'my thoughts', 0, NULL, '2010-05-14 22:49:37')[0m
+Completed in 98ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/new.js?user_id=undefined&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 15:49:37) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 19) [0m
+Rendering /documents/edit.js.erb
+Completed in 24ms (View: 6, DB: 0) | 200 OK [http://localhost/documents/19/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:49:37) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 4) [0m
+Completed in 39ms (View: 3, DB: 0) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:52:19) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (2.0ms)
+Completed in 19ms (View: 11, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:52:20) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 4) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 4) [0m
+Rendered documents/_index (5.0ms)
+Completed in 47ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 15:52:30) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"4"}
+  [4;36;1mDocument Create (1.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 22:52:30', 'my thoughts', 4, NULL, '2010-05-14 22:52:30')[0m
+Completed in 36ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/new.js?user_id=4&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 15:52:30) [GET]
+  Parameters: {"id"=>"20"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 20) [0m
+Rendering /documents/edit.js.erb
+Completed in 25ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/20/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:52:30) [GET]
+  Parameters: {"key"=>"57820f15b258f5504a80276b5a96ad91"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '57820f15b258f5504a80276b5a96ad91') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 4) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 4) [0m
+Rendered documents/_index (11.0ms)
+Completed in 64ms (View: 16, DB: 3) | 200 OK [http://localhost/user_documents.js?key=57820f15b258f5504a80276b5a96ad91]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 15:52:45) [GET]
+  Parameters: {"id"=>"20", "document"=>{"title"=>"my thoughts", "contents"=>"these are my thoughts. you dig?<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 20) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-14 22:52:45', "contents" = 'these are my thoughts. you dig?<br>' WHERE "id" = 20[0m
+Completed in 41ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/20/save.js?_method=put&document[title]=my%20thoughts&document[contents]=these%20are%20my%20thoughts.%20you%20dig%3F%3Cbr%3E]
+
+
+Processing WriterController#new to html (for 127.0.0.1 at 2010-05-14 15:58:18) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering writer/new.html.erb
+Completed in 77ms (View: 4, DB: 0) | 200 OK [http://localhost/writer/new.html]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 15:58:29) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:58:29) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+  [4;35;1mUser Create (2.0ms)[0m   [0mINSERT INTO "users" ("updated_at", "key", "password", "created_at") VALUES('2010-05-14 22:58:29', 'a5ea306d9f4809a05a2e5b5f1ca2eb46', NULL, '2010-05-14 22:58:29')[0m
+Completed in 41ms (View: 3, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 15:58:51) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"undefined"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 22:58:51', 'my thoughts', 0, NULL, '2010-05-14 22:58:51')[0m
+Completed in 57ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=undefined&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 15:58:51) [GET]
+  Parameters: {"id"=>"21"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 21) [0m
+Rendering /documents/edit.js.erb
+Completed in 26ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/21/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:58:51) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (8.0ms)
+Completed in 55ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 15:59:19) [GET]
+  Parameters: {"id"=>"21", "document"=>{"title"=>"my thoughts", "contents"=>"I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 21) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-05-14 22:59:19', "contents" = 'I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br>' WHERE "id" = 21[0m
+Completed in 52ms (View: 4, DB: 3) | 200 OK [http://localhost/documents/21/save.js?_method=put&document[title]=my%20thoughts&document[contents]=I%20just%20wanted%20to%20share%20some%20of%20the%20thoughts%20that%20I%20have%20about%20this%20blog%20here%20at%20twelve8.net.%20Mostly%2C%20I%20think%20it%E2%80%99s%20great%2C%20but%20I%20do%20have%20some%20complaints.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:59:19) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;35;1mUser Load (27.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (9.0ms)
+Completed in 284ms (View: 13, DB: 29) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 15:59:58) [GET]
+  Parameters: {"id"=>"21", "document"=>{"title"=>"my thoughts", "contents"=>"I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br><br>what else? nothing. time to create a new document.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 21) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-05-14 22:59:58', "contents" = 'I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br><br>what else? nothing. time to create a new document.<br>' WHERE "id" = 21[0m
+Completed in 40ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/21/save.js?_method=put&document[title]=my%20thoughts&document[contents]=I%20just%20wanted%20to%20share%20some%20of%20the%20thoughts%20that%20I%20have%20about%20this%20blog%20here%20at%20twelve8.net.%20Mostly%2C%20I%20think%20it%E2%80%99s%20great%2C%20but%20I%20do%20have%20some%20complaints.%3Cbr%3E%3Cbr%3Ewhat%20else%3F%20nothing.%20time%20to%20create%20a%20new%20document.%3Cbr%3E]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 15:59:58) [GET]
+  Parameters: {"title"=>"'my thoughts 2'", "user_id"=>"5"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 22:59:58', '''my thoughts 2''', 5, NULL, '2010-05-14 22:59:58')[0m
+Completed in 38ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=5&title=%27my%20thoughts%202%27]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 15:59:58) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (9.0ms)
+Completed in 46ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:00:04) [GET]
+  Parameters: {"id"=>"21", "document"=>{"title"=>"my thoughts", "contents"=>"I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br><br>&nbsp;what else? nothing. time to create a new document.<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 21) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-05-14 23:00:04', "contents" = 'I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br><br>&nbsp;what else? nothing. time to create a new document.<br>' WHERE "id" = 21[0m
+Completed in 43ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/21/save.js?_method=put&document[title]=my%20thoughts&document[contents]=I%20just%20wanted%20to%20share%20some%20of%20the%20thoughts%20that%20I%20have%20about%20this%20blog%20here%20at%20twelve8.net.%20Mostly%2C%20I%20think%20it%E2%80%99s%20great%2C%20but%20I%20do%20have%20some%20complaints.%3Cbr%3E%3Cbr%3E%26nbsp%3Bwhat%20else%3F%20nothing.%20time%20to%20create%20a%20new%20document.%3Cbr%3E]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 16:00:04) [GET]
+  Parameters: {"title"=>"'my thoughts 2'", "user_id"=>"5"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 23:00:04', '''my thoughts 2''', 5, NULL, '2010-05-14 23:00:04')[0m
+Completed in 37ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=5&title=%27my%20thoughts%202%27]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:00:04) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (11.0ms)
+Completed in 51ms (View: 15, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:00:11) [GET]
+  Parameters: {"id"=>"21", "document"=>{"title"=>"my thoughts", "contents"=>"I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br><br>&nbsp;what else? nothing. time to create a new document.<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 21) [0m
+Completed in 26ms (View: 4, DB: 0) | 200 OK [http://localhost/documents/21/save.js?_method=put&document[title]=my%20thoughts&document[contents]=I%20just%20wanted%20to%20share%20some%20of%20the%20thoughts%20that%20I%20have%20about%20this%20blog%20here%20at%20twelve8.net.%20Mostly%2C%20I%20think%20it%E2%80%99s%20great%2C%20but%20I%20do%20have%20some%20complaints.%3Cbr%3E%3Cbr%3E%26nbsp%3Bwhat%20else%3F%20nothing.%20time%20to%20create%20a%20new%20document.%3Cbr%3E]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 16:00:11) [GET]
+  Parameters: {"title"=>"'my thoughts 2'", "user_id"=>"5"}
+  [4;35;1mDocument Create (2.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 23:00:11', '''my thoughts 2''', 5, NULL, '2010-05-14 23:00:11')[0m
+Completed in 38ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=5&title=%27my%20thoughts%202%27]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:00:11) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (9.0ms)
+Completed in 53ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:00:20) [GET]
+  Parameters: {"id"=>"21", "document"=>{"title"=>"my thoughts", "contents"=>"I just wanted to share some of the thoughts that I have about this blog here at twelve8.net. Mostly, I think it’s great, but I do have some complaints.<br><br>&nbsp;what else? nothing. time to create a new document.<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 21) [0m
+Completed in 31ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/21/save.js?_method=put&document[title]=my%20thoughts&document[contents]=I%20just%20wanted%20to%20share%20some%20of%20the%20thoughts%20that%20I%20have%20about%20this%20blog%20here%20at%20twelve8.net.%20Mostly%2C%20I%20think%20it%E2%80%99s%20great%2C%20but%20I%20do%20have%20some%20complaints.%3Cbr%3E%3Cbr%3E%26nbsp%3Bwhat%20else%3F%20nothing.%20time%20to%20create%20a%20new%20document.%3Cbr%3E]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 16:00:22) [GET]
+  Parameters: {"id"=>"22"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 22) [0m
+Rendering /documents/edit.js.erb
+Completed in 214ms (View: 10, DB: 1) | 200 OK [http://localhost/documents/22/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:00:22) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (8.0ms)
+Completed in 48ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:00:43) [GET]
+  Parameters: {"id"=>"22", "document"=>{"title"=>"'my thoughts 2'", "contents"=>""}}
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 22) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-05-14 23:00:43', "contents" = '' WHERE "id" = 22[0m
+Completed in 39ms (View: 3, DB: 5) | 200 OK [http://localhost/documents/22/save.js?_method=put&document[title]=%27my%20thoughts%202%27&document[contents]=]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:00:43) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (10.0ms)
+Completed in 44ms (View: 13, DB: 4) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:00:49) [GET]
+  Parameters: {"id"=>"22", "document"=>{"title"=>"'my thoughts 2'", "contents"=>""}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 22) [0m
+Completed in 35ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/22/save.js?_method=put&document[title]=%27my%20thoughts%202%27&document[contents]=]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:00:49) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (10.0ms)
+Completed in 53ms (View: 17, DB: 1) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:00:56) [GET]
+  Parameters: {"id"=>"22", "document"=>{"title"=>"'my thoughts 2'", "contents"=>""}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 22) [0m
+Completed in 40ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/22/save.js?_method=put&document[title]=%27my%20thoughts%202%27&document[contents]=]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:00:56) [GET]
+  Parameters: {"key"=>"a5ea306d9f4809a05a2e5b5f1ca2eb46"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = 'a5ea306d9f4809a05a2e5b5f1ca2eb46') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 5) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 5) [0m
+Rendered documents/_index (11.0ms)
+Completed in 54ms (View: 16, DB: 2) | 200 OK [http://localhost/user_documents.js?key=a5ea306d9f4809a05a2e5b5f1ca2eb46]
+
+
+Processing WriterController#new to html (for 127.0.0.1 at 2010-05-14 16:03:02) [GET]
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6f526327a625e442a0377313bcf19f5a') LIMIT 1[0m
+Rendering writer/new.html.erb
+Completed in 82ms (View: 6, DB: 1) | 200 OK [http://localhost/writer/new.html]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 16:03:11) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:03:11) [GET]
+  Parameters: {"key"=>"6f526327a625e442a0377313bcf19f5a"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6f526327a625e442a0377313bcf19f5a') LIMIT 1[0m
+  [4;35;1mUser Create (1.0ms)[0m   [0mINSERT INTO "users" ("updated_at", "key", "password", "created_at") VALUES('2010-05-14 23:03:11', '6f526327a625e442a0377313bcf19f5a', NULL, '2010-05-14 23:03:11')[0m
+Completed in 39ms (View: 4, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6f526327a625e442a0377313bcf19f5a]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 16:03:18) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"undefined"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 23:03:18', 'my thoughts', 0, NULL, '2010-05-14 23:03:18')[0m
+Completed in 61ms (View: 5, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=undefined&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 16:03:18) [GET]
+  Parameters: {"id"=>"25"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 25) [0m
+Rendering /documents/edit.js.erb
+Completed in 147ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/25/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:03:19) [GET]
+  Parameters: {"key"=>"6f526327a625e442a0377313bcf19f5a"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6f526327a625e442a0377313bcf19f5a') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 6) [0m
+Rendered documents/_index (14.0ms)
+Completed in 63ms (View: 16, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6f526327a625e442a0377313bcf19f5a]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:03:42) [GET]
+  Parameters: {"id"=>"25", "document"=>{"title"=>"my thoughts", "contents"=>""}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 25) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-05-14 23:03:42', "contents" = '' WHERE "id" = 25[0m
+Completed in 37ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/25/save.js?_method=put&document[title]=my%20thoughts&document[contents]=]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 16:09:03) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 20ms (View: 11, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:09:04) [GET]
+  Parameters: {"key"=>"6f526327a625e442a0377313bcf19f5a"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6f526327a625e442a0377313bcf19f5a') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 6) [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 6) [0m
+Rendered documents/_index (13.0ms)
+Completed in 54ms (View: 17, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6f526327a625e442a0377313bcf19f5a]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 16:09:09) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"6"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 23:09:09', 'my thoughts', 6, NULL, '2010-05-14 23:09:09')[0m
+Completed in 48ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=6&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 16:09:09) [GET]
+  Parameters: {"id"=>"26"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 26) [0m
+Rendering /documents/edit.js.erb
+Completed in 34ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/26/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:09:09) [GET]
+  Parameters: {"key"=>"6f526327a625e442a0377313bcf19f5a"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6f526327a625e442a0377313bcf19f5a') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 6) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 6) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 6) [0m
+Rendered documents/_index (14.0ms)
+Completed in 54ms (View: 18, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6f526327a625e442a0377313bcf19f5a]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 16:09:38) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:09:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 1) [0m
+Rendered documents/_index (11.0ms)
+Completed in 50ms (View: 16, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#new to html (for 127.0.0.1 at 2010-05-14 16:09:54) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '2a79446c20885f1f69fd6ff66b293c3a') LIMIT 1[0m
+Rendering writer/new.html.erb
+Completed in 109ms (View: 3, DB: 0) | 200 OK [http://localhost/writer/new.html]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-05-14 16:09:58) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:09:59) [GET]
+  Parameters: {"key"=>"2a79446c20885f1f69fd6ff66b293c3a"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '2a79446c20885f1f69fd6ff66b293c3a') LIMIT 1[0m
+  [4;36;1mUser Create (2.0ms)[0m   [0;1mINSERT INTO "users" ("updated_at", "key", "password", "created_at") VALUES('2010-05-14 23:09:59', '2a79446c20885f1f69fd6ff66b293c3a', NULL, '2010-05-14 23:09:59')[0m
+Completed in 39ms (View: 3, DB: 2) | 200 OK [http://localhost/user_documents.js?key=2a79446c20885f1f69fd6ff66b293c3a]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-05-14 16:10:05) [GET]
+  Parameters: {"title"=>"my thoughts", "user_id"=>"7"}
+  [4;35;1mDocument Create (2.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-05-14 23:10:05', 'my thoughts', 7, NULL, '2010-05-14 23:10:05')[0m
+Completed in 73ms (View: 6, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=7&title=my%20thoughts]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-05-14 16:10:06) [GET]
+  Parameters: {"id"=>"27"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 27) [0m
+Rendering /documents/edit.js.erb
+Completed in 26ms (View: 7, DB: 1) | 200 OK [http://localhost/documents/27/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:10:06) [GET]
+  Parameters: {"key"=>"2a79446c20885f1f69fd6ff66b293c3a"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '2a79446c20885f1f69fd6ff66b293c3a') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 7) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 7) [0m
+Rendered documents/_index (10.0ms)
+Completed in 88ms (View: 15, DB: 2) | 200 OK [http://localhost/user_documents.js?key=2a79446c20885f1f69fd6ff66b293c3a]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-05-14 16:10:31) [GET]
+  Parameters: {"id"=>"27", "document"=>{"title"=>"my thoughts", "contents"=>"these are my thoughts<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 27) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-05-14 23:10:31', "contents" = 'these are my thoughts<br>' WHERE "id" = 27[0m
+Completed in 88ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/27/save.js?_method=put&document[title]=my%20thoughts&document[contents]=these%20are%20my%20thoughts%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-05-14 16:10:32) [GET]
+  Parameters: {"key"=>"2a79446c20885f1f69fd6ff66b293c3a"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '2a79446c20885f1f69fd6ff66b293c3a') LIMIT 1[0m
+Rendering /users/documents.js.erb
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 7) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "documents" WHERE ("documents".user_id = 7) [0m
+Rendered documents/_index (10.0ms)
+Completed in 50ms (View: 15, DB: 2) | 200 OK [http://localhost/user_documents.js?key=2a79446c20885f1f69fd6ff66b293c3a]

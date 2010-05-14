@@ -220,10 +220,22 @@
 
 
 			// attach events
-			Writer.Elements["save"].onclick = Writer.Modes.enterCommand.commands["save"];
-			Writer.Elements["revert"].onclick = Writer.Modes.enterCommand.commands["revert"];
-			Writer.Elements["create"].onclick = Writer.Modes.createDocument;
-			Writer.Elements["help"].onclick = Writer.Modes.help;
+			Writer.Elements["save"].onclick = function() {
+				Writer.Modes.enterCommand.commands["save"]();
+				return false;
+			};
+			Writer.Elements["revert"].onclick = function() {
+				Writer.Modes.enterCommand.commands["revert"]();
+				return false;
+			};
+			Writer.Elements["create"].onclick = function() {
+				Writer.Modes.createDocument();
+				return false;
+			};
+			Writer.Elements["help"].onclick = function() {
+				Writer.Modes.help();
+				return false;
+			};
 
 			// X button
 			Writer.Elements["exit"].onclick = T8Writer.exit;

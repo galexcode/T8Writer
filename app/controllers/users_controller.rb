@@ -27,18 +27,18 @@ class UsersController < ApplicationController
 	if @user.nil? and params[:key]
 		@user = User.new(:key => params[:key])
     	if @user.save
-			render :js => "(function(){T8Writer.Modes.help();})();"
+			render :js => "(function(){T8Writer.Modes.help();T8Writer.user_id = #{@user.id};})();"
 		else
 			render :js => "throw new Error('unable to create new user');"
 		end
 	else
 		@documents = @user.documents
 		respond_to do |format|
-			if (@documents.count > 0)
+#			if (@documents.count > 0)
 				format.js { render :template => "/users/documents.js.erb" }
-			else
-				format.js { render :js => "(function(){T8Writer.Modes.help();})();" }
-			end
+#			else
+#				format.js { render :js => "(function(){T8Writer.Modes.help();})();" }
+#			end
 		end
 	end
   end
