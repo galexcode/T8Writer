@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 			render :js => "throw new Error('unable to create new user');"
 		end
 	else
-		@documents = @user.documents
+		@documents = @user.documents.find(:all, :order => "updated_at DESC")
 		respond_to do |format|
 #			if (@documents.count > 0)
 				format.js { render :template => "/users/documents.js.erb" }

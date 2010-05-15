@@ -45,10 +45,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="documents.js.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="documents.js.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/users/documents.js.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="0.08226691">
+            <state line="3" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="-2.0454545">
               <folding />
             </state>
           </provider>
@@ -63,28 +63,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="36" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="users_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="92" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0">
+            <state line="34" column="75" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_index.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_index.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/documents/_index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="10" selection-start="267" selection-end="267" vertical-scroll-proportion="-4.7727275">
+            <state line="9" column="42" selection-start="360" selection-end="360" vertical-scroll-proportion="0.24680074">
               <folding />
             </state>
           </provider>
@@ -130,10 +121,10 @@
         <option value="$PROJECT_DIR$/app/views/writer/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/writer_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/users/documents.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/documents/_index.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/writer.css" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/app/controllers/users_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/documents/_index.html.erb" />
       </list>
     </option>
   </component>
@@ -638,13 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/document.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -673,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/documents/_index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="267" selection-end="267" vertical-scroll-proportion="-4.7727275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/writer.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="105" column="74" selection-start="2284" selection-end="2284" vertical-scroll-proportion="0.0">
@@ -701,23 +678,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/documents_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="7" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/writer/show.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="92" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/writer/_show.html.erb">
@@ -736,7 +699,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/documents.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="0.08226691">
+        <state line="3" column="0" selection-start="215" selection-end="215" vertical-scroll-proportion="-2.0454545">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/documents_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="7" selection-start="1176" selection-end="1176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/users_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="75" selection-start="894" selection-end="894" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/documents/_index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="42" selection-start="360" selection-end="360" vertical-scroll-proportion="0.24680074">
           <folding />
         </state>
       </provider>
