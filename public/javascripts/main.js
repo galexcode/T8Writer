@@ -252,7 +252,7 @@
 		openDocument: function(id) {
 			console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) );
 
-			clearInterval(Writer.auto_save);
+			window.clearInterval(Writer.auto_save);
 			// create new instance of Document class
 			Writer.current_document = new Document(id);
 			// status message
@@ -288,8 +288,8 @@
 		 * close the damn thing
 		 */
 		exit: function() {
-			clearInterval(Writer.auto_save);
-			clearInterval(Writer.idle_counter);
+			window.clearInterval(Writer.auto_save);
+			window.clearInterval(Writer.idle_counter);
 			
 			// create new document with title and user's id
 			function proceed() {
@@ -312,7 +312,7 @@
 		},
 
 		autoSave: function() {
-			 Writer.auto_save = setInterval(function(){
+			 Writer.auto_save = window.setInterval(function(){
 				Writer.current_document.save();
 			 },45000);
 		},
@@ -384,7 +384,7 @@
 
 			if (clearIt) {
 				// clear status after timeout seconds
-				setTimeout(function(){
+				window.setTimeout(function(){
 					if (Writer.Elements["messages"])
 						Writer.Elements["messages"].innerHTML = "";
 				},timeout);
@@ -605,7 +605,7 @@
 			Writer.Utilities.addEvent(document, "keypress", function(){
 				counter = 0;
 			});
-			Writer.idle_counter = setInterval(function(){
+			Writer.idle_counter = window.setInterval(function(){
 				counter += 1;
 				if (counter == 5) {
 					Writer.autoPunctuate();
@@ -678,8 +678,8 @@
 		},
 
 		enterCommand: function() {
-			clearInterval(Writer.idle_counter);
-			clearInterval(Writer.auto_save);
+			window.clearInterval(Writer.idle_counter);
+			window.clearInterval(Writer.auto_save);
 
 			Writer.Utilities.captureCursor();
 			// show command prompt form
@@ -714,8 +714,8 @@
 				Writer.autoPunctuate();
 				Writer.Effects.fadeInExtras(1500);
 
-				clearInterval(Writer.idle_counter);
-				clearInterval(Writer.auto_save);
+				window.clearInterval(Writer.idle_counter);
+				window.clearInterval(Writer.auto_save);
 			};
 			document.getElementById("T8Writer_Contents").onfocus = function(e){
 				Writer.Effects.fadeOutExtras(3000);
@@ -737,15 +737,15 @@
 			j;
 
 			try {
-				clearInterval(Writer.fade);
+				window.clearInterval(Writer.fade);
 			}
 			catch (err) {
 				
 			}
 			// add .5% opacity 20x (every 1/20th of supplied duration)
-			Writer.fade = setInterval(function(){
+			Writer.fade = window.setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
-					clearInterval(Writer.fade);
+					window.clearInterval(Writer.fade);
 					return;
 				}
 				for (j = 0; j < extras.length; j++) {
@@ -768,15 +768,15 @@
 			j;
 
 			try {
-				clearInterval(Writer.fade);
+				window.clearInterval(Writer.fade);
 			}
 			catch (err) {
 
 			}
 			// subtract .5% opacity 20x (every 1/20th of supplied duration)
-			Writer.fade = setInterval(function(){
+			Writer.fade = window.setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
-					clearInterval(Writer.fade);
+					window.clearInterval(Writer.fade);
 					return;
 				}
 				for (j = 0; j < extras.length; j++) {
