@@ -712,59 +712,29 @@
 		attachEffects: function() {	
 			document.getElementById("T8Writer_Contents").onblur = function(){
 				Writer.autoPunctuate();
-				Writer.Effects.fadeInExtras(1500);
+				Writer.Effects.fadeExtras(1500,"in");
 
 				window.clearInterval(Writer.idle_counter);
 				window.clearInterval(Writer.auto_save);
 			};
 			document.getElementById("T8Writer_Contents").onfocus = function(e){
-				Writer.Effects.fadeOutExtras(3000);
+				Writer.Effects.fadeExtras(3000,"out");
 				Writer.Modes.write();
 			};
 		},
 
-		fadeInExtras: function(duration) {
-			console.log( "Function fadeInExtras " + validateArgTypes( [duration],["number"] ) );
+		fadeExtras: function(duration,in_or_out) {
+			console.log( "Function fadeExtras " + validateArgTypes( [duration,in_or_out],["number","string"] ) );
 
-			// array of elements to fade in
+			// array of elements to fade in/out
 			var extras = [
 				document.getElementById("T8Writer_Title"),
 				Writer.Elements["documents"],
 				Writer.Elements["messages"],
 				Writer.Elements["controls"]
 			],
-			end_opacity = 1, // we finish at fully opaque
-			j;
-
-			try {
-				window.clearInterval(Writer.fade);
-			}
-			catch (err) {
-				
-			}
-			// add .5% opacity 20x (every 1/20th of supplied duration)
-			Writer.fade = window.setInterval(function(){
-				if (parseFloat(extras[0].style.opacity) == end_opacity) {
-					window.clearInterval(Writer.fade);
-					return;
-				}
-				for (j = 0; j < extras.length; j++) {
-					extras[j].style.opacity = parseFloat(extras[j].style.opacity) + 0.05;
-				}
-			},(duration / 20));
-		},
-
-		fadeOutExtras: function(duration) {
-			console.log( "Function fadeOutExtras " + validateArgTypes( [duration],["number"] ) );
-
-			// array of elements to fade in
-			var extras = [
-				document.getElementById("T8Writer_Title"),
-				Writer.Elements["documents"],
-				Writer.Elements["messages"],
-				Writer.Elements["controls"]
-			],
-			end_opacity = 0, // we finish at fully transparent
+			end_opacity = in_or_out == "in" ? 1 : 0,
+			increment = in_or_out == "in" ? 0.05 : -0.05,
 			j;
 
 			try {
@@ -773,14 +743,14 @@
 			catch (err) {
 
 			}
-			// subtract .5% opacity 20x (every 1/20th of supplied duration)
+			// add or subtract .5% opacity 20x (every 1/20th of supplied duration)
 			Writer.fade = window.setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
 					window.clearInterval(Writer.fade);
 					return;
 				}
 				for (j = 0; j < extras.length; j++) {
-					extras[j].style.opacity = parseFloat(extras[j].style.opacity) - 0.05;
+					extras[j].style.opacity = parseFloat(extras[j].style.opacity) + increment;
 				}
 			},(duration / 20));
 		}
