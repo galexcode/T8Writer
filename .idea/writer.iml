@@ -42,6 +42,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="mysql" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source from="config/database.yml" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rack" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source manual="true" />
@@ -84,6 +90,7 @@
     <orderEntry type="library" name="[gem] rack (v1.0.1, D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1)" level="application" />
     <orderEntry type="library" name="[gem] sqlite3-ruby (v1.2.5, D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-ruby-1.2.5-x86-mswin32)" level="application" />
     <orderEntry type="library" name="[gem] rack (v1.1.0, D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.1.0)" level="application" />
+    <orderEntry type="library" name="[gem] mysql (v2.8.1, D:/Ruby/lib/ruby/gems/1.8/gems/mysql-2.8.1-x86-mswin32)" level="application" />
   </component>
 </module>
 
