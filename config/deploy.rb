@@ -6,7 +6,7 @@ set :project, 'T8Writer'
 set :application, 'writer.twelve8.net'
 set :applicationdir, "/home/#{user}/#{application}  "
 
-set :repository,  "http://github.com/kjacobson/T8Writer.git"
+set :repository,  "git://github.com/kjacobson/T8Writer.git"
 
 set :deploy_to, applicationdir
 set :deploy_via, :export
