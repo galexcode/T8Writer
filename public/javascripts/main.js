@@ -163,7 +163,8 @@
 		 * @param key random (but unique) md5 hash representing user. passed in by bookmarklet
 		 */
 		init: function(key,domain) {
-			if (window.console) console.log( "Function init " + validateArgTypes( [key,domain],["string","string"] ) );
+			try { console.log( "Function init " + validateArgTypes( [key,domain],["string","string"] ) ); }
+			catch(err) {}
 
 			Writer.domain = domain;
 
@@ -253,7 +254,8 @@
 		 * @param id document ID (integer)
 		 */
 		openDocument: function(id) {
-			if (window.console) console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) );
+			try { console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) ); }
+			catch(err) {}
 
 			window.clearInterval(Writer.auto_save);
 			// create new instance of Document class
@@ -269,7 +271,8 @@
 		 * @param title (string), passed in from 'create' command
 		 */
 		createDocument: function(title) {
-			if (window.console) console.log( "Function createDocument " + validateArgTypes( [title],["string"] ) );
+			try { console.log( "Function createDocument " + validateArgTypes( [title],["string"] ) ); }
+			catch(err) {}
 
 			// this is what we do once any unsaved document has been saved
 			function proceed() {
@@ -340,7 +343,8 @@
 	 * @param title (string) the title we gave the new document
 	 */
 	Writer.createDocument.success = function(id,title) {
-		if (window.console) console.log( "Function createDocument.success " + validateArgTypes( [id,title],["number","string"] ) );
+		try { console.log( "Function createDocument.success " + validateArgTypes( [id,title],["number","string"] ) ); }
+		catch(err) {}
 
 		// status message
 		Writer.Utilities.statusMsg("Successfully created document &lsquo;"+Writer.createDocument.title+"&rsquo;",true,3000);
@@ -362,7 +366,8 @@
 	 * TODO: logging!
 	 */
 	Writer.createDocument.errors = function(errs) {
-		if (window.console) console.log( validateArgTypes( [errs],["string"] ) );
+		try { console.log( validateArgTypes( [errs],["string"] ) ); }
+		catch(err) {}
 
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to create " +
@@ -380,7 +385,8 @@
 		 * @param clearIt = (boolean) indicates whether to clear the status after timeout
 		 */
 		statusMsg: function(msg,clearIt,timeout) {
-			if (window.console) console.log( "Function statusMsg " + validateArgTypes( [msg,clearIt],["string","boolean"] ) );
+			try { console.log( "Function statusMsg " + validateArgTypes( [msg,clearIt],["string","boolean"] ) ); }
+			catch(err) {}
 
 			// status message
 			Writer.Elements["messages"].innerHTML = msg;
@@ -415,7 +421,8 @@
 		 * @param sUrl = (string) url of JS file to load
 		 */
 		loadScript: function(sUrl) {
-			if (window.console) console.log( "Function loadScript " + validateArgTypes( [sUrl],["string"] ) );
+			try { console.log( "Function loadScript " + validateArgTypes( [sUrl],["string"] ) ); }
+			catch(err) {}
 
 			var script = document.createElement("script");
 				script.setAttribute("type","text/javascript");
@@ -429,7 +436,8 @@
 		 * @param lHref (string) url of stylesheet to load
 		 */
 		loadStyle: function(lHref) {
-			if (window.console) console.log( "Function loadStyle " + validateArgTypes( [lHref],["string"] ) );
+			try { console.log( "Function loadStyle " + validateArgTypes( [lHref],["string"] ) ); }
+			catch(err) {}
 
 			var link = document.createElement("link");
 				link.setAttribute("type","text/css");
@@ -505,7 +513,8 @@
 		// addEvent and removeEvent courtesy of Peter Paul Koch
 		// http://www.quirksmode.org/blog/archives/2005/10/_and_the_winner_1.html
 		addEvent: function(obj,type,fn) {
-			if (window.console) console.log( "Function addEvent " + validateArgTypes( [obj,type,fn],["object","string","function"] ) );
+			try { console.log( "Function addEvent " + validateArgTypes( [obj,type,fn],["object","string","function"] ) ); }
+			catch(err) {}
 
 			if (obj.addEventListener)
 				obj.addEventListener( type, fn, false );
@@ -518,7 +527,8 @@
 		},
 
 		removeEvent: function(obj,type,fn) {
-			if (window.console) console.log( "Function removeEvent " + validateArgTypes( [obj,type,fn],["object","string","function"] ) );
+			try { console.log( "Function removeEvent " + validateArgTypes( [obj,type,fn],["object","string","function"] ) ); }
+			catch(err) {}
 
 			if (obj.removeEventListener)
 				obj.removeEventListener( type, fn, false );
@@ -541,7 +551,8 @@
 
 		// TODO: "coords" is actually coords AND relevant node. better name? separate args?
 		resetCursor: function(coords) {
-			if (window.console) console.log( "Function resetCursor " + validateArgTypes( [coords],["object"] ) );
+			try { console.log( "Function resetCursor " + validateArgTypes( [coords],["object"] ) ); }
+			catch(err) {}
 
 			document.getElementById("T8Writer_Contents").focus();
 			// timeout while we wait for cursor to be positioned normally after focus so there's no conflict here
@@ -590,7 +601,8 @@
 		 * @param node. HTMLNode. The node among whose children we want to find text nodes
 		 */
 		getTextNodes: function(node) {
-			if (window.console) console.log( "Function getTextNodes " + validateArgTypes( [node],["object"] ) );
+			try { console.log( "Function getTextNodes " + validateArgTypes( [node],["object"] ) ); }
+			catch(err) {}
 
 			var text_nodes = [], i;
 			for (i = 0; i < node.childNodes.length; i++) {
@@ -700,7 +712,8 @@
 			Writer.current_document.save(true);
 		},
 		"create": function(command){
-			if (window.console) console.log( "Function commands.create " + validateArgTypes( [command],["string"] ) );
+			try { console.log( "Function commands.create " + validateArgTypes( [command],["string"] ) ); }
+			catch(err) {}
 
 			// title = everything after "create "
 			var title = command.substring(command.indexOf("create")+7,command.length);
@@ -727,7 +740,8 @@
 		},
 
 		fadeExtras: function(duration,in_or_out) {
-			if (window.console) console.log( "Function fadeExtras " + validateArgTypes( [duration,in_or_out],["number","string"] ) );
+			try {console.log( "Function fadeExtras " + validateArgTypes( [duration,in_or_out],["number","string"] ) ); }
+			catch(err) {}
 
 			// array of elements to fade in/out
 			var extras = [
@@ -775,7 +789,8 @@
 		 * @param doCache (boolean) indicates whether we should cache this save point
 		 */
 		save: function(doCache) {
-			if (window.console) console.log( "Function document.save " + validateArgTypes( [doCache],["boolean"] ) );
+			try { console.log( "Function document.save " + validateArgTypes( [doCache],["boolean"] ) ); }
+			catch(err) {}
 
 			// status message
 			// TODO: since the Message area is separate from the Document class
@@ -814,7 +829,8 @@
 			}
 		},
 		email: function(address) {
-			if (window.console) console.log( "Function document.email " + validateArgTypes( [address],["string"] ) );
+			try { console.log( "Function document.email " + validateArgTypes( [address],["string"] ) ); }
+			catch(err) {}
 
 
 		}
@@ -840,7 +856,8 @@
 	 * @param errs Array? passed by Rails
 	 */
 	Document.prototype.save.errors = function(errs) {
-			if (window.console) console.log( "Function document.save.errors " + validateArgTypes( [errs],["string"] ) );
+		try { console.log( "Function document.save.errors " + validateArgTypes( [errs],["string"] ) ); }
+		catch(err) {}
 
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to save "+

@@ -27,19 +27,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="56" selection-start="5018" selection-end="5018" vertical-scroll-proportion="0.0">
+            <state line="876" column="0" selection-start="28166" selection-end="28166" vertical-scroll-proportion="0.8395722">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/writer/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="463" selection-start="621" selection-end="621" vertical-scroll-proportion="0.31914893">
+            <state line="8" column="441" selection-start="121" selection-end="121" vertical-scroll-proportion="-5.4545455">
               <folding />
             </state>
           </provider>
@@ -96,8 +96,8 @@
         <option value="$PROJECT_DIR$/config/environment.rb" />
         <option value="$PROJECT_DIR$/config/database.yml" />
         <option value="$PROJECT_DIR$/config/deploy.rb" />
-        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/app/views/writer/new.html.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/main.js" />
       </list>
     </option>
   </component>
@@ -713,16 +713,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+    <entry file="file://$PROJECT_DIR$/app/views/writer/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="56" selection-start="5018" selection-end="5018" vertical-scroll-proportion="0.0">
+        <state line="8" column="441" selection-start="121" selection-end="121" vertical-scroll-proportion="-5.4545455">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/writer/new.html.erb">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="463" selection-start="621" selection-end="621" vertical-scroll-proportion="0.31914893">
+        <state line="876" column="0" selection-start="28166" selection-end="28166" vertical-scroll-proportion="0.8395722">
           <folding />
         </state>
       </provider>
