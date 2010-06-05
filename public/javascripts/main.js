@@ -143,6 +143,7 @@
 	 * referenced from outside as T8Writer
 	 */
 	var Writer = {
+		domain: undefined,
 		// user properties
 		key: undefined,
 		user_id: undefined,
@@ -161,8 +162,10 @@
 		 * this function gets called by bookmarklet
 		 * @param key random (but unique) md5 hash representing user. passed in by bookmarklet
 		 */
-		init: function(key) {
+		init: function(key,domain) {
 			console.log( "Function init " + validateArgTypes( [key],["string"] ) );
+
+			Writer.domain = domain;
 
 			Writer.key = key;
 			// create container element #T8Writer, so we can easily remove
@@ -173,8 +176,8 @@
 
 			Writer.load_observer.subscribe(Writer.onLoad);  // notify onLoad() function when show.js loads
 			Writer.exit_observer.subscribe(T8Exit); // notify T8Exit() function when exit is called
-			Writer.Utilities.loadScript('http://localhost:3000/writer/show.js');
-			Writer.Utilities.loadStyle('http://localhost:3000/stylesheets/writer.css');
+			Writer.Utilities.loadScript('http://' + domain + '/writer/show.js');
+			Writer.Utilities.loadStyle('http://' + domain + '/stylesheets/writer.css');
 
 			Writer.Utilities.updateTitle();
 		},
@@ -258,7 +261,7 @@
 			// status message
 			Writer.Utilities.statusMsg("Loading document&hellip;",false);
 			// load document to be edited, passing in ID
-			Writer.Utilities.loadScript('http://localhost:3000/documents/'+id+'/edit.js');
+			Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/'+id+'/edit.js');
 		},
 
 		/**
@@ -271,7 +274,7 @@
 			// this is what we do once any unsaved document has been saved
 			function proceed() {
 				// create new document with title and user's id
-				Writer.Utilities.loadScript('http://localhost:3000/documents/new.js?user_id='+Writer.user_id+"&title="+encodeURIComponent(title));	
+				Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/new.js?user_id='+Writer.user_id+"&title="+encodeURIComponent(title));
 			}
 			// check to see if there's an open document...
 			// ...if so, save it before creating a new one.
@@ -674,7 +677,7 @@
 			Writer.Elements["documents"].innerHTML = "";
 			// open list of user's documents.
 			// to call this selectDocument MODE is maybe a little artificial
-			Writer.Utilities.loadScript('http://localhost:3000/user_documents.js?key='+Writer.key);
+			Writer.Utilities.loadScript('http://' + Writer.domain + '/user_documents.js?key='+Writer.key);
 		},
 
 		enterCommand: function() {
@@ -792,7 +795,7 @@
 			}
 
 			// tell the server to save it
-			Writer.Utilities.loadScript('http://localhost:3000/documents/'+this.id+'/save.js?_method=put&document[title]='+encodeURIComponent(this.title)+'&document[contents]='+encodeURIComponent(this.contents));
+			Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/'+this.id+'/save.js?_method=put&document[title]='+encodeURIComponent(this.title)+'&document[contents]='+encodeURIComponent(this.contents));
 		},
 		revert: function() {
 			// if we have a cached version of this document (we should!), retrieve it

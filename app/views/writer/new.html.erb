@@ -3,7 +3,15 @@
 	</head>
 	<body>
 		<p>
-			<a href="javascript:function%20loadScript(sUrl){var%20script=document.createElement('script');script.setAttribute('id','T8Writer_Init');script.setAttribute('type','text/javascript');script.setAttribute('src',sUrl);document.body.appendChild(script);}loadScript('http://localhost:3000/javascripts/main.js');var%20test_for_t8=setInterval(function(){if(typeof%20T8Writer!=='undefined'){clearInterval(test_for_t8);T8Writer.init('<%= @md5 %>');}},20);">
+			<%
+				if RAILS_ENV == 'production'
+					domain = 't8writer.heroku.com'
+				else
+					domain = 'localhost:3000'
+				end
+			%>
+			<p><%= RAILS_ENV %>
+			<a href="javascript:function%20loadScript(sUrl){var%20script=document.createElement('script');script.setAttribute('id','T8Writer_Init');script.setAttribute('type','text/javascript');script.setAttribute('src',sUrl);document.body.appendChild(script);}loadScript('http://<%= domain %>/javascripts/main.js');var%20test_for_t8=setInterval(function(){if(typeof%20T8Writer!=='undefined'){clearInterval(test_for_t8);T8Writer.init('<%= @md5 %>'<%= domain %>'');}},20);">
 				T8Writer
 			</a>
 		</p>
