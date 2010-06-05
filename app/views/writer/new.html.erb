@@ -10,7 +10,7 @@
 					domain = 'localhost:3000'
 				end
 			%>
-			<a href="javascript:function%20loadScript(sUrl){var%20script=document.createElement('script');script.setAttribute('id','T8Writer_Init');script.setAttribute('type','text/javascript');script.setAttribute('src',sUrl);document.body.appendChild(script);}loadScript('http://<%= domain %>/javascripts/main.js');var%20test_for_t8=setInterval(function(){if(typeof%20T8Writer!=='undefined'){clearInterval(test_for_t8);T8Writer.init('<%= @md5 %>'<%= domain %>'');}},20);">
+			<a href="javascript:function%20loadScript(sUrl){var%20script=document.createElement('script');script.setAttribute('id','T8Writer_Init');script.setAttribute('type','text/javascript');script.setAttribute('src',sUrl);document.body.appendChild(script);}loadScript('http://<%= domain %>/javascripts/main.js');var%20test_for_t8=setInterval(function(){if(typeof%20T8Writer!=='undefined'){clearInterval(test_for_t8);T8Writer.init('<%= @md5 %>','<%= domain %>');}},20);">
 				T8Writer
 			</a>
 		</p>
