@@ -28476,3 +28476,380 @@ Processing UsersController#documents (for 127.0.0.1 at 2010-06-05 15:48:27) [GET
 Rendering /users/documents.js.erb
 Rendered documents/_index (5.0ms)
 Completed in 46ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-06 16:58:42) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (14.0ms)
+Completed in 156ms (View: 94, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 16:58:43) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (40.0ms)
+Completed in 323ms (View: 108, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-06 16:58:52) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 94ms (View: 11, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-06 17:00:38) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 31ms (View: 20, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 17:00:39) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (45.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (34.0ms)
+Completed in 199ms (View: 55, DB: 46) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-06 17:00:42) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 923ms (View: 11, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-06 17:03:02) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 17:03:02) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 46ms (View: 11, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-06 17:03:05) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 29ms (View: 6, DB: 0) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-06 17:03:18) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-06 17:03:30) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+Rendering /documents/edit.js.erb
+Completed in 40ms (View: 10, DB: 0) | 200 OK [http://localhost/documents/3/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 17:03:36) [GET]
+  Parameters: {"id"=>"3", "document"=>{"title"=>"Document 3", "contents"=>"Document <strong>3</strong>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/3/save.js?_method=put&document[title]=Document%203&document[contents]=Document%20%3Cstrong%3E3%3C%2Fstrong%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 17:03:36) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 59ms (View: 22, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 17:03:45) [GET]
+  Parameters: {"id"=>"3", "document"=>{"title"=>"Document 3", "contents"=>"Document <strong>3</strong>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+Completed in 40ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/3/save.js?_method=put&document[title]=Document%203&document[contents]=Document%20%3Cstrong%3E3%3C%2Fstrong%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 17:03:46) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 47ms (View: 11, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 17:04:11) [GET]
+  Parameters: {"id"=>"3", "document"=>{"title"=>"Document 3", "contents"=>"Documen<span style=\"font-weight: bold;\">t some ghitnga</span><strong><br></strong>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-07 00:04:11', "contents" = 'Documen<span style="font-weight: bold;">t some ghitnga</span><strong><br></strong>' WHERE "id" = 3[0m
+Completed in 35ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/3/save.js?_method=put&document[title]=Document%203&document[contents]=Documen%3Cspan%20style%3D%22font-weight%3A%20bold%3B%22%3Et%20some%20ghitnga%3C%2Fspan%3E%3Cstrong%3E%3Cbr%3E%3C%2Fstrong%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 17:04:11) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (14.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 91ms (View: 12, DB: 14) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 17:04:18) [GET]
+  Parameters: {"id"=>"3", "document"=>{"title"=>"Document 3", "contents"=>"Documen<span style=\"font-weight: bold;\">t some ghitnga</span><strong><br></strong>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 3) [0m
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/3/save.js?_method=put&document[title]=Document%203&document[contents]=Documen%3Cspan%20style%3D%22font-weight%3A%20bold%3B%22%3Et%20some%20ghitnga%3C%2Fspan%3E%3Cstrong%3E%3Cbr%3E%3C%2Fstrong%3E]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-06 18:01:09) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 17ms (View: 10, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:01:09) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 48ms (View: 11, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-06-06 18:01:19) [GET]
+  Parameters: {"title"=>"being and nothingness", "user_id"=>"1"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-06-07 01:01:19', 'being and nothingness', 1, NULL, '2010-06-07 01:01:19')[0m
+Completed in 81ms (View: 5, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=1&title=being%20and%20nothingness]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-06 18:01:19) [GET]
+  Parameters: {"id"=>"33"}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+Rendering /documents/edit.js.erb
+Completed in 37ms (View: 9, DB: 0) | 200 OK [http://localhost/documents/33/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:01:19) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (9.0ms)
+Completed in 57ms (View: 17, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:02:05) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “;Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought.&nbsp; <br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:02:05', "contents" = 'Jean‐Paul Sartre’s “;Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought.&nbsp; <br>' WHERE "id" = 33[0m
+Completed in 35ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9C%3BBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%26nbsp%3B%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:02:05) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (8.0ms)
+Completed in 70ms (View: 17, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:02:50) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical onesl tha<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:02:50', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical onesl tha<br>' WHERE "id" = 33[0m
+Completed in 36ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20onesl%20tha%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:02:50) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 50ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:03:34) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and a <br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:03:34', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and a <br>' WHERE "id" = 33[0m
+Completed in 88ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20a%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:03:35) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 48ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:04:08) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII.<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:04:08', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII.<br>' WHERE "id" = 33[0m
+Completed in 42ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:04:08) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 49ms (View: 11, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:04:19) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. <br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:04:19', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. <br>' WHERE "id" = 33[0m
+Completed in 35ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:04:19) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 50ms (View: 11, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:04:38) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral <br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:04:38', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral <br>' WHERE "id" = 33[0m
+Completed in 36ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:04:38) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 49ms (View: 11, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:04:52) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, the <br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:04:52', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, the <br>' WHERE "id" = 33[0m
+Completed in 35ms (View: 4, DB: 3) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20the%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:04:53) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 50ms (View: 12, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:04:56) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre me<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:04:56', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre me<br>' WHERE "id" = 33[0m
+Completed in 38ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20me%3Cbr%3E]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:04:56) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre me <br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:04:56', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre me <br>' WHERE "id" = 33[0m
+Completed in 120ms (View: 96, DB: 2) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20me%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:04:56) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (4.0ms)
+Completed in 43ms (View: 11, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:05:03) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:05:04', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about.<br>' WHERE "id" = 33[0m
+Completed in 47ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20may%20be%20more%20coy%20about.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:05:04) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (4.0ms)
+Completed in 41ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:05:04) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+Completed in 20ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20may%20be%20more%20coy%20about.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:05:04) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 40ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:05:21) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about.<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+Completed in 29ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20may%20be%20more%20coy%20about.%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:05:22) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 54ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:05:23) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about. <br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (3.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:05:23', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about. <br>' WHERE "id" = 33[0m
+Completed in 82ms (View: 5, DB: 4) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20may%20be%20more%20coy%20about.%20%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-06 18:05:23) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 58ms (View: 15, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-06 18:05:32) [GET]
+  Parameters: {"id"=>"33", "document"=>{"title"=>"being and nothingness", "contents"=>"Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about.<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 33) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-07 01:05:32', "contents" = 'Jean‐Paul Sartre’s “Being and Nothingness” is a wholly engaging, if difficult, work of philosophical thought. This is the opus of a man perhaps better known for his literary triumphs—Nausea, No Exit—than for his philosophical ones; that this is so is a disservice to Sartre, who is truly a remarkable thinker and whose philosophy of existentialism came as a breath of fresh air and an important guide during the crisis of WWII. Though Kantians will no doubt critique his seeming lack of moral prescription, there is indeed no lack, though Sartre may be more coy about.<br>' WHERE "id" = 33[0m
+Completed in 55ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/33/save.js?_method=put&document[title]=being%20and%20nothingness&document[contents]=Jean%E2%80%90Paul%20Sartre%E2%80%99s%20%E2%80%9CBeing%20and%20Nothingness%E2%80%9D%20is%20a%20wholly%20engaging%2C%20if%20difficult%2C%20work%20of%20philosophical%20thought.%20This%20is%20the%20opus%20of%20a%20man%20perhaps%20better%20known%20for%20his%20literary%20triumphs%E2%80%94Nausea%2C%20No%20Exit%E2%80%94than%20for%20his%20philosophical%20ones%3B%20that%20this%20is%20so%20is%20a%20disservice%20to%20Sartre%2C%20who%20is%20truly%20a%20remarkable%20thinker%20and%20whose%20philosophy%20of%20existentialism%20came%20as%20a%20breath%20of%20fresh%20air%20and%20an%20important%20guide%20during%20the%20crisis%20of%20WWII.%20Though%20Kantians%20will%20no%20doubt%20critique%20his%20seeming%20lack%20of%20moral%20prescription%2C%20there%20is%20indeed%20no%20lack%2C%20though%20Sartre%20may%20be%20more%20coy%20about.%3Cbr%3E]

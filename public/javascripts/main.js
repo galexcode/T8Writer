@@ -751,21 +751,27 @@
 				Writer.Elements["controls"]
 			],
 			end_opacity = in_or_out == "in" ? 1 : 0,
+			start_opacity = in_or_out == "in" ? 0 : 1,
 			increment = in_or_out == "in" ? 0.05 : -0.05,
-			j;
+			i, j;
 
 			try {
 				window.clearInterval(Writer.fade);
+				if (parseFloat(extras[0].style.opacity) != start_opacity) {
+					for (i = 0; i < extras.length; i++) {
+						extras[i].style.opacity = start_opacity;
+					}
+				}
 			}
-			catch (err) {
+			catch (err) { }
 
-			}
 			// add or subtract .5% opacity 20x (every 1/20th of supplied duration)
 			Writer.fade = window.setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
 					window.clearInterval(Writer.fade);
 					return;
 				}
+				
 				for (j = 0; j < extras.length; j++) {
 					extras[j].style.opacity = parseFloat(extras[j].style.opacity) + increment;
 				}
