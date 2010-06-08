@@ -145,18 +145,23 @@
 	var Writer = {
 		domain: undefined,
 		// user properties
-		key: undefined,
-		user_id: undefined,
+		key: undefined, user_id: undefined,
 		// document properties
-		current_document: undefined,
-		cursor_position: undefined,
+		current_document: undefined, cursor_position: undefined,
 		// observers
 		load_observer: new Observer(), // listen for the initial script to be loaded
 		exit_observer: new Observer(), // listen for exit function completion
 		// intervals
-		auto_save: undefined,
-		fade: undefined,
-		idle_counter: undefined,
+		auto_save: undefined, fade: undefined, idle_counter: undefined,
+
+		Config: {
+			autoSaveFrequency: 45000,
+			fadeIncrements: 20, // every fadeInLength / fadeIncrements ms, fade 100 / fadeIncrements percent
+			fadeInLength: 1500,
+			fadeOutLength: 4500,
+			secondsUntilIdle: 5,
+			statusMsgDuration: 3000
+		},
 
 		/**
 		 * this function gets called by bookmarklet
@@ -319,8 +324,8 @@
 
 		autoSave: function() {
 			 Writer.auto_save = window.setInterval(function(){
-				Writer.current_document.save();
-			 },45000);
+				Writer.current_document.save(false);
+			 }, Writer.Config.autoSaveFrequency);
 		},
 
 		autoPunctuate: function() {
@@ -347,7 +352,7 @@
 		catch(err) {}
 
 		// status message
-		Writer.Utilities.statusMsg("Successfully created document &lsquo;"+Writer.createDocument.title+"&rsquo;",true,3000);
+		Writer.Utilities.statusMsg("Successfully created document &lsquo;"+Writer.createDocument.title+"&rsquo;",true);
 		// create instance of Document class to mirror backend
 		Writer.current_document = new Document(id);
 		Writer.current_document.id = id;
@@ -371,7 +376,7 @@
 
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to create " +
-			Writer.createDocument.title + ": "+errs+".",true,3000);
+			Writer.createDocument.title + ": "+ errs +".",true);
 	};
 
 
@@ -384,7 +389,7 @@
 		 * @param msg = (string) message to be displayed in status box
 		 * @param clearIt = (boolean) indicates whether to clear the status after timeout
 		 */
-		statusMsg: function(msg,clearIt,timeout) {
+		statusMsg: function(msg,clearIt) {
 			try { console.log( "Function statusMsg " + validateArgTypes( [msg,clearIt],["string","boolean"] ) ); }
 			catch(err) {}
 
@@ -396,7 +401,7 @@
 				window.setTimeout(function(){
 					if (Writer.Elements["messages"])
 						Writer.Elements["messages"].innerHTML = "";
-				},timeout);
+				}, Writer.Config.statusMsgDuration);
 			}
 		},
 
@@ -456,7 +461,7 @@
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
 				var command = Writer.Elements["command_prompt"].value, i;
 				for (i in Writer.Modes.enterCommand.commands) {
-					if (command.indexOf(i) != -1) {
+					if (command.indexOf(i) === 0) {
 						// hide command prompt form
 						Writer.Elements["command_form"].style.display = "none";
 
@@ -464,6 +469,8 @@
 						Writer.Modes.write();
 						// reset cursor (we captured cursor position before entering command line mode)
 						Writer.Utilities.resetCursor(Writer.cursor_position);
+					} else {
+						// TODO: handle syntax errors, etc.
 					}
 				}
 				Writer.Utilities.cancelDefault(e);
@@ -622,7 +629,7 @@
 			});
 			Writer.idle_counter = window.setInterval(function(){
 				counter += 1;
-				if (counter == 5) {
+				if (counter == Writer.Config.secondsUntilIdle) {
 					Writer.autoPunctuate();
 					counter = 0;
 				}
@@ -722,25 +729,40 @@
 		"help": function() { Writer.Modes.help() },
 		"exit": function() { Writer.exit(); },
 		"revert": function() { Writer.current_document.revert(); },
-		"open": function() {}
+
+		/*
+		 * not implemented yet
+		 */
+		"pdf": function() {},
+		"txt": function() {},
+		"open": function() {},
+		"email": function(command) {
+//			try { console.log( "Function commands.email " + validateArgTypes( [command],["string"] ) ); }
+//			catch(err) {}
+//
+//			// address = everthing after "email to "
+//			var address = command.substring(command.indexOf("email to")+9,command.length);
+//			Writer.current_docment.email();
+		}
 	};
 	Writer.Effects = {
 		attachEffects: function() {	
 			document.getElementById("T8Writer_Contents").onblur = function(){
 				Writer.autoPunctuate();
-				Writer.Effects.fadeExtras(1500,"in");
+				Writer.Effects.fadeExtras(Writer.Config.fadeInLength,"in");
 
 				window.clearInterval(Writer.idle_counter);
 				window.clearInterval(Writer.auto_save);
 			};
 			document.getElementById("T8Writer_Contents").onfocus = function(e){
-				Writer.Effects.fadeExtras(3000,"out");
+				// wait a little bit before beginning fadeout
+				Writer.Effects.fadeExtras(Writer.Config.fadeOutLength,"out");
 				Writer.Modes.write();
 			};
 		},
 
 		fadeExtras: function(duration,in_or_out) {
-			try {console.log( "Function fadeExtras " + validateArgTypes( [duration,in_or_out],["number","string"] ) ); }
+			try { console.log( "Function fadeExtras " + validateArgTypes( [duration,in_or_out],["number","string"] ) ); }
 			catch(err) {}
 
 			// array of elements to fade in/out
@@ -752,8 +774,12 @@
 			],
 			end_opacity = in_or_out == "in" ? 1 : 0,
 			start_opacity = in_or_out == "in" ? 0 : 1,
-			increment = in_or_out == "in" ? 0.05 : -0.05,
+			increment = 100 / Writer.Config.fadeIncrements / 100,
 			i, j;
+
+			if (in_or_out == "out")
+				increment = (-increment);
+			console.log(increment);
 
 			try {
 				window.clearInterval(Writer.fade);
@@ -765,7 +791,7 @@
 			}
 			catch (err) { }
 
-			// add or subtract .5% opacity 20x (every 1/20th of supplied duration)
+			// e.g., add or subtract .5% opacity 20x (every 1/20th of supplied duration)
 			Writer.fade = window.setInterval(function(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
 					window.clearInterval(Writer.fade);
@@ -775,7 +801,7 @@
 				for (j = 0; j < extras.length; j++) {
 					extras[j].style.opacity = parseFloat(extras[j].style.opacity) + increment;
 				}
-			},(duration / 20));
+			},(duration / Writer.Config.fadeIncrements));
 		}
 	};
 
@@ -828,10 +854,10 @@
 				document.getElementById("T8Writer_Contents").innerHTML = this.cache.contents;
 
 				// status message
-				Writer.Utilities.statusMsg("Successfully reverted document.",true,3000);
+				Writer.Utilities.statusMsg("Successfully reverted document.",true);
 			} else {
 				// status message
-				Writer.Utilities.statusMsg("Document has not been changed since last save.",true,3000);
+				Writer.Utilities.statusMsg("Document has not been changed since last save.",true);
 			}
 		},
 		email: function(address) {
@@ -847,7 +873,7 @@
 	 */
 	Document.prototype.save.success = function() {
 		// status message
-		Writer.Utilities.statusMsg(T8Writer.current_document.title + ' successfully saved.',true,3000);
+		Writer.Utilities.statusMsg(T8Writer.current_document.title + ' successfully saved.',true);
 
 		// tell anyone who's listening that document has been saved
 		Writer.current_document.observer.fire();
@@ -867,7 +893,7 @@
 
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to save "+
-				Writer.current_document.title + ": "+errs+".",true,3000);
+				Writer.current_document.title + ": "+errs+".",true);
 	};
 	window["T8Writer"] = Writer;
 	// really only left in here for debugging purposes
