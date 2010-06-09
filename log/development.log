@@ -29053,3 +29053,801 @@ Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 21:59:23) [GET
 Rendering /users/documents.js.erb
 Rendered documents/_index (5.0ms)
 Completed in 50ms (View: 12, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-07 22:09:20) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:09:20) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (4.0ms)
+Completed in 39ms (View: 8, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-07 22:09:23) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 34ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:10:08) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>- autocomplete commands, use tab to complete document names in \"open\" command<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:10:08', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>- autocomplete commands, use tab to complete document names in "open" command<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 49ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-%20what%20am%20I%20thinking%20of%3F%3Cbr%3E-%20autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%22open%22%20command%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:10:08) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (7.0ms)
+Completed in 69ms (View: 17, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:10:15) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>- autocomplete commands, use tab to complete document names in “;open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:10:15', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>- autocomplete commands, use tab to complete document names in “;open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 51ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-%20what%20am%20I%20thinking%20of%3F%3Cbr%3E-%20autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9C%3Bopen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:10:16) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 47ms (View: 11, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:10:45) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>-&nbsp; autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:10:45', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>-&nbsp; autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 49ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-%20what%20am%20I%20thinking%20of%3F%3Cbr%3E-%26nbsp%3B%20autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:10:46) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (4.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (8.0ms)
+Completed in 75ms (View: 17, DB: 5) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:11:00) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>- what am I thinking of?<br>-&nbsp; autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 27ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-%20what%20am%20I%20thinking%20of%3F%3Cbr%3E-%26nbsp%3B%20autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:11:01) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 48ms (View: 11, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:11:30) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:11:30', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 37ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:11:31) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (8.0ms)
+Completed in 69ms (View: 17, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:11:31) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 40ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:11:31) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (4.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 77ms (View: 16, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:11:45) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>-export documents to PDF,<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:11:45', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>-export documents to PDF,<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 57ms (View: 6, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E-export%20documents%20to%20PDF%2C%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:11:46) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 136ms (View: 14, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:12:02) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:12:02', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 33ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:12:03) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 42ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:12:15) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 28ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:12:15) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 52ms (View: 12, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:12:30) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>-error/exception<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:12:30', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>-error/exception<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 55ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E-error%2Fexception%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:12:31) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 70ms (View: 14, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:12:36) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:12:36', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 37ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:12:37) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 56ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:12:47) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 39ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:12:47) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 52ms (View: 12, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:00) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>-investigate punctuation correc<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:13:00', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>-investigate punctuation correc<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 61ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E-investigate%20punctuation%20correc%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:01) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (124.0ms)
+Completed in 169ms (View: 130, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:04) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:13:04', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>' WHERE "id" = 14[0m
+Completed in 59ms (View: 6, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:05) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 69ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:15) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrolling, overflow)<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 28ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrolling%2C%20overflow)%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:16) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 51ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:22) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrollin<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:13:22', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-deal with low resolution (scrollin<br>' WHERE "id" = 14[0m
+Completed in 38ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-deal%20with%20low%20resolution%20(scrollin%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:24) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (2.0ms)
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:32) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for t<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (3.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:13:32', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for t<br>' WHERE "id" = 14[0m
+Completed in 53ms (View: 6, DB: 4) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20t%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:33) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 55ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:43) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:13:43', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 58ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:43) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 56ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:45) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 160ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:45) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 53ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:13:49) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-what am I thinking of?<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-what%20am%20I%20thinking%20of%3F%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:13:50) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 52ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:00) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-wh<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:14:00', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-wh<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 108ms (View: 6, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-wh%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:01) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 57ms (View: 14, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:05) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:14:05', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 34ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:05) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 68ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:06) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 29ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:07) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (7.0ms)
+Completed in 91ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:16) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 28ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:16) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (4.0ms)
+Completed in 136ms (View: 9, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:17) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 44ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:17) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 52ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:28) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 41ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:28) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (4.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (9.0ms)
+Completed in 83ms (View: 21, DB: 5) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:30) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 26ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:30) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 55ms (View: 14, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:35) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 26ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:35) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 55ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:46) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-l<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (2.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:14:46', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-l<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 41ms (View: 4, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-l%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:46) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 52ms (View: 12, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:50) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-keep title from fading out<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:14:50', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-keep title from fading out<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 166ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-keep%20title%20from%20fading%20out%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:50) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (7.0ms)
+Completed in 58ms (View: 14, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:51) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-keep title from fading out while<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:14:51', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>-keep title from fading out while<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 34ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E-keep%20title%20from%20fading%20out%20while%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:52) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 54ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:14:57) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:14:57', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>' WHERE "id" = 14[0m
+Completed in 34ms (View: 3, DB: 2) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:14:57) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 54ms (View: 13, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:01) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 46ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:01) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 55ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:02) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 22ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:02) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (4.0ms)
+Completed in 33ms (View: 8, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:13) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 40ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:13) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 169ms (View: 12, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:15) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 39ms (View: 5, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:15) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (4.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (10.0ms)
+Completed in 83ms (View: 22, DB: 5) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:19) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 40ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:20) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (4.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (9.0ms)
+Completed in 77ms (View: 19, DB: 5) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:31) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 41ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:31) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 51ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:35) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 28ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:35) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 51ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:36) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br><br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (1.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:15:36', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br><br>' WHERE "id" = 14[0m
+Completed in 35ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:37) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 51ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:43) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>-minify code<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:15:43', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>-minify code<br>' WHERE "id" = 14[0m
+Completed in 40ms (View: 3, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E-minify%20code%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:43) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 55ms (View: 14, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:43) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>-minify code<br>"}}
+  [4;35;1mDocument Load (0.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 21ms (View: 2, DB: 0) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E-minify%20code%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:44) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 46ms (View: 10, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:44) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>‐minify code<br>"}}
+  [4;36;1mDocument Load (0.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;35;1mDocument Update (1.0ms)[0m   [0mUPDATE "documents" SET "updated_at" = '2010-06-08 05:15:44', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>‐minify code<br>' WHERE "id" = 14[0m
+Completed in 24ms (View: 2, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E%E2%80%90minify%20code%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:44) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (3.0ms)
+Completed in 32ms (View: 8, DB: 1) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:46) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>‐minify code<br>"}}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 48ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E%E2%80%90minify%20code%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:46) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 51ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:15:47) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐keep title from fading out while being edited<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>‐minify code<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Completed in 29ms (View: 4, DB: 1) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90keep%20title%20from%20fading%20out%20while%20being%20edited%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E%E2%80%90minify%20code%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:15:48) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 55ms (View: 13, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-07 22:19:05) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:19:06) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (3.0ms)
+Completed in 36ms (View: 8, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-07 22:19:08) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 26ms (View: 6, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing DocumentsController#save (for 127.0.0.1 at 2010-06-07 22:19:29) [GET]
+  Parameters: {"id"=>"14", "document"=>{"title"=>"TODO list 2<br>", "contents"=>"TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>‐minify code<br>"}}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+  [4;36;1mDocument Update (2.0ms)[0m   [0;1mUPDATE "documents" SET "updated_at" = '2010-06-08 05:19:29', "contents" = 'TODO:<br>‐decouple keyboard event listeners and functions they call<br>‐email documents<br>‐export documents to PDF, txt<br>‐investigate punctuation correction bugginess<br>‐error/exception handling for command line<br>‐autocomplete commands, use tab to complete document names in “open” cmd<br>‐smooth out keyboard navigation<br>-@media queries for sizing<br>‐minify code<br>' WHERE "id" = 14[0m
+Completed in 49ms (View: 5, DB: 3) | 200 OK [http://localhost/documents/14/save.js?_method=put&document[title]=TODO%20list%202%3Cbr%3E&document[contents]=TODO%3A%3Cbr%3E%E2%80%90decouple%20keyboard%20event%20listeners%20and%20functions%20they%20call%3Cbr%3E%E2%80%90email%20documents%3Cbr%3E%E2%80%90export%20documents%20to%20PDF%2C%20txt%3Cbr%3E%E2%80%90investigate%20punctuation%20correction%20bugginess%3Cbr%3E%E2%80%90error%2Fexception%20handling%20for%20command%20line%3Cbr%3E%E2%80%90autocomplete%20commands%2C%20use%20tab%20to%20complete%20document%20names%20in%20%E2%80%9Copen%E2%80%9D%20cmd%3Cbr%3E%E2%80%90smooth%20out%20keyboard%20navigation%3Cbr%3E-%40media%20queries%20for%20sizing%3Cbr%3E%E2%80%90minify%20code%3Cbr%3E]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-07 22:19:30) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (7.0ms)
+Completed in 79ms (View: 16, DB: 5) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-08 19:57:50) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 17ms (View: 9, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-08 19:57:51) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (4.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 56ms (View: 12, DB: 7) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-06-08 20:08:39) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-06-08 20:08:39) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 48ms (View: 11, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-06-08 20:08:41) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 14) [0m
+Rendering /documents/edit.js.erb
+Completed in 38ms (View: 9, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]

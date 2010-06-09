@@ -740,13 +740,13 @@
 //			try { console.log( "Function commands.email " + validateArgTypes( [command],["string"] ) ); }
 //			catch(err) {}
 //
-//			// address = everthing after "email to "
+//			// address = everything after "email to "
 //			var address = command.substring(command.indexOf("email to")+9,command.length);
 //			Writer.current_docment.email();
 		}
 	};
 	Writer.Effects = {
-		attachEffects: function() {	
+		attachEffects: function() {
 			document.getElementById("T8Writer_Contents").onblur = function(){
 				Writer.autoPunctuate();
 				Writer.Effects.fadeExtras(Writer.Config.fadeInLength,"in");
