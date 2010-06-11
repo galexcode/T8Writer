@@ -13,7 +13,7 @@ class DocumentsController < ApplicationController
   # GET /documents/1
   # GET /documents/1.xml
   def show
-    @document = Document.find(params[:id])
+    @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,7 +43,7 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1/edit
   def edit
-    @document = Document.find(params[:id])
+    @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
     respond_to do |format|
       format.html # edit.html.erb
       format.js { render :template => "/documents/edit.js.erb" }
@@ -68,7 +68,7 @@ class DocumentsController < ApplicationController
   end
 
   def save
-    @document = Document.find(params[:id])
+    @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
     respond_to do |format|
       if @document.update_attributes(params[:document])
         format.js { render :js => "(function(){T8Writer.current_document.save.success();})();" }
@@ -81,7 +81,7 @@ class DocumentsController < ApplicationController
   # PUT /documents/1
   # PUT /documents/1.xml
   def update
-    @document = Document.find(params[:id])
+    @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
 
     respond_to do |format|
       if @document.update_attributes(params[:document])
@@ -98,7 +98,7 @@ class DocumentsController < ApplicationController
   # DELETE /documents/1
   # DELETE /documents/1.xml
   def destroy
-    @document = Document.find(params[:id])
+    @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
     @document.destroy
 
     respond_to do |format|

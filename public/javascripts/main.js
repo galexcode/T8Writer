@@ -262,7 +262,7 @@
 			try { console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) ); }
 			catch(err) {}
 
-			window.clearInterval(Writer.auto_save);
+			window.clearTimeout(Writer.auto_save);
 			// create new instance of Document class
 			Writer.current_document = new Document(id);
 			// status message
@@ -299,20 +299,24 @@
 		 * close the damn thing
 		 */
 		exit: function() {
-			window.clearInterval(Writer.auto_save);
-			window.clearInterval(Writer.idle_counter);
-			
-			// create new document with title and user's id
 			function proceed() {
 				// restore title
 				document.title = document.title.substring(0,document.title.indexOf(" __/---/\u203E\u203E"));
+
+				try {
+					window.clearTimeout(Writer.auto_save);
+					window.clearTimeout(Writer.idle_counter);
+					window.clearTimeout(Writer.fade);
+				}
+				catch(err) {}
+
 				// remove #T8Writer (wrapper) element
 				document.body.removeChild(Writer.Elements["self"]);
 				// Delete all JS variables (e.g. window["T8Writer"])   
 				Writer.exit_observer.fire();
 			}
 			// check to see if there's an open document...
-			// ...if so, save it before creating a new one.
+			// ...if so, save it before exiting
 			if (typeof Writer.current_document !== "undefined") {
 				// run proceed() function once save has finished
 				Writer.current_document.observer.subscribe(proceed);
@@ -323,8 +327,9 @@
 		},
 
 		autoSave: function() {
-			 Writer.auto_save = window.setInterval(function(){
+			 Writer.auto_save = window.setTimeout(function saveInterval(){
 				Writer.current_document.save(false);
+				Writer.auto_save = window.setTimeout(saveInterval, Writer.Config.autoSaveFrequency);
 			 }, Writer.Config.autoSaveFrequency);
 		},
 
@@ -335,7 +340,7 @@
 			// TODO: this childNodes[0] thing is not sustainable!
 			text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
 			for (i = 0; i < text_nodes.length; i++) {
-				text_nodes[i].nodeValue = text_nodes[i].nodeValue.punctuate();	
+				text_nodes[i].nodeValue = text_nodes[i].nodeValue.punctuate();
 			}
 
 			Writer.Utilities.resetCursor(Writer.cursor_position);
@@ -627,12 +632,13 @@
 			Writer.Utilities.addEvent(document, "keypress", function(){
 				counter = 0;
 			});
-			Writer.idle_counter = window.setInterval(function(){
+			Writer.idle_counter = window.setTimeout(function idleInterval(){
 				counter += 1;
 				if (counter == Writer.Config.secondsUntilIdle) {
 					Writer.autoPunctuate();
 					counter = 0;
 				}
+				Writer.idle_counter = window.setTimeout(idleInterval,1000);
 			},1000);
 		}
 	};
@@ -700,8 +706,8 @@
 		},
 
 		enterCommand: function() {
-			window.clearInterval(Writer.idle_counter);
-			window.clearInterval(Writer.auto_save);
+			window.clearTimeout(Writer.idle_counter);
+			window.clearTimeout(Writer.auto_save);
 
 			Writer.Utilities.captureCursor();
 			// show command prompt form
@@ -751,8 +757,8 @@
 				Writer.autoPunctuate();
 				Writer.Effects.fadeExtras(Writer.Config.fadeInLength,"in");
 
-				window.clearInterval(Writer.idle_counter);
-				window.clearInterval(Writer.auto_save);
+				window.clearTimeout(Writer.idle_counter);
+				window.clearTimeout(Writer.auto_save);
 			};
 			document.getElementById("T8Writer_Contents").onfocus = function(e){
 				// wait a little bit before beginning fadeout
@@ -779,10 +785,9 @@
 
 			if (in_or_out == "out")
 				increment = (-increment);
-			console.log(increment);
 
 			try {
-				window.clearInterval(Writer.fade);
+				window.clearTimeout(Writer.fade);
 				if (parseFloat(extras[0].style.opacity) != start_opacity) {
 					for (i = 0; i < extras.length; i++) {
 						extras[i].style.opacity = start_opacity;
@@ -792,15 +797,17 @@
 			catch (err) { }
 
 			// e.g., add or subtract .5% opacity 20x (every 1/20th of supplied duration)
-			Writer.fade = window.setInterval(function(){
+			Writer.fade = window.setTimeout(function fadeInterval(){
 				if (parseFloat(extras[0].style.opacity) == end_opacity) {
-					window.clearInterval(Writer.fade);
+					window.clearTimeout(Writer.fade);
 					return;
 				}
 				
 				for (j = 0; j < extras.length; j++) {
 					extras[j].style.opacity = parseFloat(extras[j].style.opacity) + increment;
 				}
+
+				Writer.fade = window.setTimeout(fadeInterval,(duration / Writer.Config.fadeIncrements));
 			},(duration / Writer.Config.fadeIncrements));
 		}
 	};
@@ -900,8 +907,8 @@
 	window["T8Document"] = Document;
 
 	window["T8Exit"] = function() {
-		delete window["T8Writer"];
-		delete window["T8Document"];
+		window["T8Writer"] = undefined;
+		window["T8Document"] = undefined;
 		document.body.removeChild(
 			document.getElementById("T8Writer_Init")
 		);

@@ -1,7 +1,7 @@
 class WriterController < ApplicationController
 	def show
 		if !params[:key].nil?
-			@user = User.find_by_key(params[:key])
+			@user = User.find(:first, :conditons => ["key = ?", params[:key]])
 			render
 		end
 	end
@@ -16,9 +16,10 @@ class WriterController < ApplicationController
 			md5.to_s
 			return md5
 		end
-		@md5 = generate_key
-		while (!User.find_by_key(@md5).nil?)
-			@md5 = generate_key
+
+		md5 = generate_key
+		while (!User.find(:first, :conditons => ["key = ?", md5]).nil?)
+			md5 = generate_key
 		end
 		respond_to do |format|
 			format.html { render :template => 'writer/new.html.erb' }
