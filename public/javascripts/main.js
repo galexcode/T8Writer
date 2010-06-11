@@ -263,6 +263,10 @@
 			catch(err) {}
 
 			window.clearTimeout(Writer.auto_save);
+			window.clearTimeout(Writer.idle_counter);
+
+			Writer.Elements["new_document_form"].style.display = "none";
+
 			// create new instance of Document class
 			Writer.current_document = new Document(id);
 			// status message
