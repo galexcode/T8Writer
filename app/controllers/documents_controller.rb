@@ -1,4 +1,7 @@
 class DocumentsController < ApplicationController
+  #require 'rubygems'
+  #require 'sanitize'
+  
   # GET /documents
   # GET /documents.xml
   def index
@@ -70,7 +73,8 @@ class DocumentsController < ApplicationController
   def save
     @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
     respond_to do |format|
-      if @document.update_attributes(params[:document])
+	  new_doc = {:title => params[:document][:title], :contents => params[:document][:contents].gsub('<br>','&lt;br&gt;')}
+      if @document.update_attributes(new_doc)
         format.js { render :js => "(function(){T8Writer.current_document.save.success();})();" }
       else
         format.js { render :js => "(function(){T8Writer.current_document.save.errors('#{@document.errors})';})();" }

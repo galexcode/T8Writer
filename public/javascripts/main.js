@@ -238,11 +238,11 @@
 				return false;
 			};
 			Writer.Elements["create"].onclick = function() {
-				Writer.Modes.createDocument();
+				Writer.Modes.changeTo("createDocument");
 				return false;
 			};
 			Writer.Elements["help"].onclick = function() {
-				Writer.Modes.help();
+				Writer.Modes.changeTo("help");
 				return false;
 			};
 
@@ -251,7 +251,19 @@
 			// apply fadeIn and fadeOut functionality
 			Writer.Effects.attachEffects();
 			// load user's prior documents
-			Writer.Modes.selectDocument();
+			Writer.selectDocument();
+
+			Writer.Modes.changeTo("browse");
+		},
+
+		/**
+		 *  load/reload list of user's documents
+		 */
+		selectDocument: function() {
+			// clear current list
+			Writer.Elements["documents"].innerHTML = "";
+			// open list of user's documents.
+			Writer.Utilities.loadScript('http://' + Writer.domain + '/user_documents.js?key='+Writer.key);
 		},
 
 		/**
@@ -262,10 +274,11 @@
 			try { console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) ); }
 			catch(err) {}
 
-			window.clearTimeout(Writer.auto_save);
-			window.clearTimeout(Writer.idle_counter);
-
-			Writer.Elements["new_document_form"].style.display = "none";
+			Writer.Modes.changeTo("browse");
+//window.clearTimeout(Writer.auto_save);
+//window.clearTimeout(Writer.idle_counter);
+//
+//Writer.Elements["new_document_form"].style.display = "none";
 
 			// create new instance of Document class
 			Writer.current_document = new Document(id);
@@ -368,10 +381,12 @@
 		Writer.current_document.title = title;
 		// load our newly created document
 		Writer.openDocument(Writer.current_document.id);
-		// remove the title prompt
-		Writer.Elements["new_document_form"].style.display = "none";
+// remove the title prompt
+//Writer.Elements["new_document_form"].style.display = "none";
 		// reload user's prior documents
-		Writer.Modes.selectDocument();
+		Writer.selectDocument();
+		// enter writer mode
+		Writer.Modes.changeTo("write");
 	};
 
 	/**
@@ -475,7 +490,7 @@
 						Writer.Elements["command_form"].style.display = "none";
 
 						Writer.Modes.enterCommand.commands[i](command);
-						Writer.Modes.write();
+						Writer.Modes.changeTo("write");
 						// reset cursor (we captured cursor position before entering command line mode)
 						Writer.Utilities.resetCursor(Writer.cursor_position);
 					} else {
@@ -495,7 +510,7 @@
 			if(evt.keyCode == 460 || evt.charCode == 46) {
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForPeriod);
 				// command mode!
-				Writer.Modes.enterCommand();
+				Writer.Modes.changeTo("enterCommand");
 			}
 		},
 
@@ -651,75 +666,139 @@
 	 * defines modes of operation for T8Writer
 	 */
 	Writer.Modes = {
-		createDocument: function() {
-			Writer.Elements["new_document_form"].style.display = "block";
-			Writer.Elements["new_document_title"].select();
-			Writer.Elements["new_document_form"].onsubmit = function() {
-				var title = Writer.Elements["new_document_title"].value;
-				Writer.createDocument(title);
-				
-				return false;
-			};
+		current_mode: undefined,
+		changeTo: function(mode_name) {
+			if (typeof Writer.Modes.current_mode !== "undefined")
+				Writer.Modes.current_mode.off();
+
+			Writer.Modes.current_mode = Writer.Modes[mode_name];
+			Writer.Modes[mode_name].on();
 		},
 
-		write: function(){
-			if (typeof Writer.current_document === "undefined") {
-				Writer.Modes.createDocument();
-				return false;
+		browse: {
+			on: function() {
+				try {
+					console.log("browse");
+				}
+				catch(err) {}
+
+				Writer.Effects.fadeExtras(Writer.Config.fadeInLength,"in");
+
+				window.clearTimeout(Writer.idle_counter);
+				window.clearTimeout(Writer.auto_save);
+			},
+
+			off: function() {
+				return true;
 			}
-
-			Writer.Utilities.isIdle();
-			Writer.autoSave();
-			
-			// listen for command mode
-			Writer.Utilities.captureKeyCombo();
 		},
 
-		help: function() {
-			var closeHelp = function() {
-				Writer.Elements["help_info"].style.display = "none";
+		createDocument: {
+			on: function() {
+				try {
+					console.log("createDocument");
+				}
+				catch(err) {}
+
+				Writer.Elements["new_document_form"].style.display = "block";
+				Writer.Elements["new_document_title"].select();
+				Writer.Elements["new_document_form"].onsubmit = function() {
+					var title = Writer.Elements["new_document_title"].value;
+					Writer.createDocument(title);
+
+					return false;
+				};
+			},
+
+			off: function() {
+				Writer.Elements["new_document_form"].style.display = "none";
+			}
+		},
+
+		write: {
+			on: function() {
+				try {
+					console.log("write");
+				}
+				catch(err) {}
+
+				// wait a little bit before beginning fadeout
+				Writer.Effects.fadeExtras(Writer.Config.fadeOutLength,"out");
+
+				Writer.Utilities.isIdle();
+				Writer.autoSave();
+
+				// listen for command mode
+				Writer.Utilities.captureKeyCombo();
+			},
+
+			off: function() {
+				Writer.Utilities.removeEvent(document,"keydown",Writer.Utilities.listenForAlt);
+				Writer.autoPunctuate();
+
+				window.clearTimeout(Writer.auto_save);
+				window.clearTimeout(Writer.idle_counter);
+			}
+		},
+
+		help: {
+			captureKey: function(e) {
+				var evt = e || window.event;
+				if (evt.keyCode == 27) {
+					Writer.Modes.changeTo("browse");
+				}
+				Writer.Utilities.cancelDefault(e);
+			},
+			
+			on: function() {
+				try {
+					console.log("help");
+				}
+				catch(err) {}
+
+				Writer.Elements["help_info"].style.display = "block";
+				Writer.Elements["close_help"].onclick = function(){
+					Writer.Modes.changeTo("browse");
+				};
+
+				Writer.Utilities.addEvent(
+					document,
+					"keypress",
+					Writer.Modes.help.captureKey
+				);
+			},
+
+			off: function() {
 				Writer.Utilities.removeEvent(
 					document,
 					"keypress",
-					captureKey
+					Writer.Modes.help.captureKey
 				);
+
+				Writer.Elements["help_info"].style.display = "none";
+			}
+		},
+
+		enterCommand: {
+			on: function() {
+				//window.clearTimeout(Writer.idle_counter);
+				//window.clearTimeout(Writer.auto_save);
+
+				Writer.Utilities.captureCursor();
+				// show command prompt form
+				Writer.Elements["command_form"].style.display = "block";
+				Writer.Elements["command_prompt"].select();
+
+				Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
+				return false;
 			},
-			captureKey = function(e) {
-				var evt = e || window.event;
-				if (evt.keyCode == 27) {
-					closeHelp();
-				}
-				Writer.Utilities.cancelDefault(e);
-			};
 
-			Writer.Elements["help_info"].style.display = "block";
-			Writer.Elements["close_help"].onclick = closeHelp;
-			Writer.Utilities.addEvent(
-				document,
-				"keypress",
-				captureKey
-			);
-		},
+			off: function() {
+				// hide command prompt form
+				Writer.Elements["command_form"].style.display = "none";
 
-		selectDocument: function() {
-			// clear current list
-			Writer.Elements["documents"].innerHTML = "";
-			// open list of user's documents.
-			// to call this selectDocument MODE is maybe a little artificial
-			Writer.Utilities.loadScript('http://' + Writer.domain + '/user_documents.js?key='+Writer.key);
-		},
-
-		enterCommand: function() {
-			window.clearTimeout(Writer.idle_counter);
-			window.clearTimeout(Writer.auto_save);
-
-			Writer.Utilities.captureCursor();
-			// show command prompt form
-			Writer.Elements["command_form"].style.display = "block";
-			Writer.Elements["command_prompt"].select();
-			
-			Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
-			return false;
+				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
+			}
 		}
 	};
 	Writer.Modes.enterCommand.commands = {
@@ -736,7 +815,7 @@
 			var title = command.substring(command.indexOf("create")+7,command.length);
 			Writer.createDocument(title);
 		},
-		"help": function() { Writer.Modes.help() },
+		"help": function() { Writer.Modes.changeTo("help"); },
 		"exit": function() { Writer.exit(); },
 		"revert": function() { Writer.current_document.revert(); },
 
@@ -758,16 +837,15 @@
 	Writer.Effects = {
 		attachEffects: function() {
 			document.getElementById("T8Writer_Contents").onblur = function(){
-				Writer.autoPunctuate();
-				Writer.Effects.fadeExtras(Writer.Config.fadeInLength,"in");
-
-				window.clearTimeout(Writer.idle_counter);
-				window.clearTimeout(Writer.auto_save);
+				if (Writer.Modes.current_mode === Writer.Modes.write)
+					Writer.Modes.changeTo("browse");
 			};
-			document.getElementById("T8Writer_Contents").onfocus = function(e){
-				// wait a little bit before beginning fadeout
-				Writer.Effects.fadeExtras(Writer.Config.fadeOutLength,"out");
-				Writer.Modes.write();
+			document.getElementById("T8Writer_Contents").onfocus = function(){
+				if (typeof Writer.current_document === "undefined") {
+					Writer.Modes.changeTo("createDocument");
+				} else {
+					Writer.Modes.changeTo("write");
+				}
 			};
 		},
 
@@ -891,7 +969,7 @@
 
 		// reload user's prior documents
 		if (document.getElementById("T8Writer") !== null)
-			Writer.Modes.selectDocument();
+			Writer.selectDocument();
 	};
 
 	/**

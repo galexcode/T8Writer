@@ -48,6 +48,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="nokogiri" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="rack" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source manual="true" />
@@ -62,6 +68,12 @@
     <requirement>
       <requirement>
         <dependency name="rake" version="0" bound="GREATER_OR_EQUAL" />
+      </requirement>
+      <source manual="true" />
+    </requirement>
+    <requirement>
+      <requirement>
+        <dependency name="sanitize" version="0" bound="GREATER_OR_EQUAL" />
       </requirement>
       <source manual="true" />
     </requirement>
@@ -91,6 +103,8 @@
     <orderEntry type="library" name="[gem] sqlite3-ruby (v1.2.5, D:/Ruby/lib/ruby/gems/1.8/gems/sqlite3-ruby-1.2.5-x86-mswin32)" level="application" />
     <orderEntry type="library" name="[gem] rack (v1.1.0, D:/Ruby/lib/ruby/gems/1.8/gems/rack-1.1.0)" level="application" />
     <orderEntry type="library" name="[gem] mysql (v2.8.1, D:/Ruby/lib/ruby/gems/1.8/gems/mysql-2.8.1-x86-mswin32)" level="application" />
+    <orderEntry type="library" name="[gem] nokogiri (v1.4.1, D:/Ruby/lib/ruby/gems/1.8/gems/nokogiri-1.4.1-x86-mswin32)" level="application" />
+    <orderEntry type="library" name="[gem] sanitize (v1.2.1, D:/Ruby/lib/ruby/gems/1.8/gems/sanitize-1.2.1)" level="application" />
   </component>
 </module>
 
