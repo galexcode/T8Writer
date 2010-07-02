@@ -507,7 +507,7 @@
 		 */
 		listenForPeriod: function(e) {
 			var evt = e || window.event;
-			if(evt.keyCode == 460 || evt.charCode == 46) {
+			if(evt.keyCode == 460 || evt.keyCode === 190 || evt.charCode == 46) {
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForPeriod);
 				// command mode!
 				Writer.Modes.changeTo("enterCommand");
