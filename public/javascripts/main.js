@@ -275,10 +275,6 @@
 			catch(err) {}
 
 			Writer.Modes.changeTo("browse");
-//window.clearTimeout(Writer.auto_save);
-//window.clearTimeout(Writer.idle_counter);
-//
-//Writer.Elements["new_document_form"].style.display = "none";
 
 			// create new instance of Document class
 			Writer.current_document = new Document(id);
@@ -381,8 +377,6 @@
 		Writer.current_document.title = title;
 		// load our newly created document
 		Writer.openDocument(Writer.current_document.id);
-// remove the title prompt
-//Writer.Elements["new_document_form"].style.display = "none";
 		// reload user's prior documents
 		Writer.selectDocument();
 		// enter writer mode

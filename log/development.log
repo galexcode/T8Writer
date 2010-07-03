@@ -32566,3 +32566,267 @@ Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-01 22:02:42)
   [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE (id = '14') LIMIT 1[0m
 Rendering /documents/edit.js.erb
 Completed in 28ms (View: 8, DB: 2) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-07-03 10:30:08) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (27.0ms)
+Completed in 113ms (View: 109, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:30:08) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (4.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (28.0ms)
+Completed in 314ms (View: 82, DB: 5) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-07-03 10:30:19) [GET]
+  Parameters: {"title"=>"groovy", "user_id"=>"1"}
+  [4;36;1mDocument Create (1.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-07-03 17:30:20', 'groovy', 1, NULL, '2010-07-03 17:30:20')[0m
+Completed in 100ms (View: 3, DB: 1) | 200 OK [http://localhost/documents/new.js?user_id=1&title=groovy]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:30:20) [GET]
+  Parameters: {"id"=>"34"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE (id = '34') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+
+ActionView::TemplateError (private method `gsub' called for nil:NilClass) on line #7 of app/views/documents/edit.js.erb:
+4: 	// make title editable
+5: 	document.getElementById("T8Writer_Title").setAttribute("contenteditable","true");	
+6: 	// load document contents
+7: 	document.getElementById("T8Writer_Contents").innerHTML = "<%= escape_javascript(@document.contents.gsub('&lt;br&gt;','<br>')) %>";
+8: 	// update current_document Document instance
+9: 	T8Writer.current_document.title = T8Writer.current_document.cache.title = "<%= escape_javascript(@document.title) %>";
+10: 	T8Writer.current_document.contents = T8Writer.current_document.cache.contents = "<%= escape_javascript(@document.contents) %>";
+
+    app/views/documents/edit.js.erb:7
+    app/controllers/documents_controller.rb:52:in `edit'
+    app/controllers/documents_controller.rb:50:in `edit'
+    D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (123.0ms)
+Rendered rescues/_request_and_response (5.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:30:20) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 49ms (View: 12, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-07-03 10:32:00) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:32:00) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 62ms (View: 11, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-07-03 10:32:06) [GET]
+  Parameters: {"title"=>"groovy2", "user_id"=>"1"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-07-03 17:32:06', 'groovy2', 1, NULL, '2010-07-03 17:32:06')[0m
+Completed in 57ms (View: 5, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=1&title=groovy2]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:32:06) [GET]
+  Parameters: {"id"=>"35"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE (id = '35') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+
+ActionView::TemplateError (private method `gsub' called for nil:NilClass) on line #7 of app/views/documents/edit.js.erb:
+4: 	// make title editable
+5: 	document.getElementById("T8Writer_Title").setAttribute("contenteditable","true");	
+6: 	// load document contents
+7: 	document.getElementById("T8Writer_Contents").innerHTML = "<%= escape_javascript(@document.contents.gsub('&lt;br&gt;','<br>')) %>";
+8: 	// update current_document Document instance
+9: 	T8Writer.current_document.title = T8Writer.current_document.cache.title = "<%= escape_javascript(@document.title) %>";
+10: 	T8Writer.current_document.contents = T8Writer.current_document.cache.contents = "<%= escape_javascript(@document.contents) %>";
+
+    app/views/documents/edit.js.erb:7
+    app/controllers/documents_controller.rb:52:in `edit'
+    app/controllers/documents_controller.rb:50:in `edit'
+    D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    D:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    D:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (134.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:32:07) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 56ms (View: 12, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-07-03 10:33:51) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:33:51) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (9.0ms)
+Completed in 58ms (View: 16, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-07-03 10:33:56) [GET]
+  Parameters: {"title"=>"groovy3", "user_id"=>"1"}
+  [4;36;1mDocument Create (2.0ms)[0m   [0;1mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-07-03 17:33:56', 'groovy3', 1, NULL, '2010-07-03 17:33:56')[0m
+Completed in 49ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=1&title=groovy3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:33:57) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE (id = '36') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+Completed in 59ms (View: 23, DB: 2) | 200 OK [http://localhost/documents/36/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:33:57) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (3.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (132.0ms)
+Completed in 185ms (View: 139, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:34:02) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE (id = '14') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+Completed in 30ms (View: 5, DB: 2) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-07-03 10:34:54) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:34:54) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 50ms (View: 13, DB: 4) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:34:57) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE (id = '14') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+Completed in 38ms (View: 21, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-07-03 10:37:39) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (0.0ms)
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:37:39) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;35;1mDocument Load (2.0ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 53ms (View: 12, DB: 2) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:37:49) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mDocument Load (1.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE (id = '14') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+Completed in 39ms (View: 16, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]
+
+
+Processing WriterController#show to js (for 127.0.0.1 at 2010-07-03 10:38:00) [GET]
+  Parameters: {"id"=>"show"}
+Rendering writer/show
+Rendered writer/_show (1.0ms)
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/writer/show.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:38:00) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (3.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (5.0ms)
+Completed in 49ms (View: 11, DB: 3) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#new to js (for 127.0.0.1 at 2010-07-03 10:38:05) [GET]
+  Parameters: {"title"=>"groovy4", "user_id"=>"1"}
+  [4;35;1mDocument Create (2.0ms)[0m   [0mINSERT INTO "documents" ("updated_at", "title", "user_id", "contents", "created_at") VALUES('2010-07-03 17:38:05', 'groovy4', 1, NULL, '2010-07-03 17:38:05')[0m
+Completed in 46ms (View: 5, DB: 2) | 200 OK [http://localhost/documents/new.js?user_id=1&title=groovy4]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:38:06) [GET]
+  Parameters: {"id"=>"37"}
+  [4;36;1mDocument Load (2.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE (id = '37') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+Completed in 28ms (View: 4, DB: 2) | 200 OK [http://localhost/documents/37/edit.js]
+
+
+Processing UsersController#documents (for 127.0.0.1 at 2010-07-03 10:38:06) [GET]
+  Parameters: {"key"=>"6e062041a574a50256305cfb43b6b8f3"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."key" = '6e062041a574a50256305cfb43b6b8f3') LIMIT 1[0m
+  [4;36;1mDocument Load (6.0ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents".user_id = 1) ORDER BY updated_at DESC[0m
+Rendering /users/documents.js.erb
+Rendered documents/_index (6.0ms)
+Completed in 55ms (View: 13, DB: 6) | 200 OK [http://localhost/user_documents.js?key=6e062041a574a50256305cfb43b6b8f3]
+
+
+Processing DocumentsController#edit to js (for 127.0.0.1 at 2010-07-03 10:41:24) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mDocument Load (1.0ms)[0m   [0mSELECT * FROM "documents" WHERE (id = '14') LIMIT 1[0m
+Rendering /documents/edit.js.erb
+Completed in 69ms (View: 5, DB: 1) | 200 OK [http://localhost/documents/14/edit.js]

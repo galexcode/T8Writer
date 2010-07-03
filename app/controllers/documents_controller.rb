@@ -47,6 +47,7 @@ class DocumentsController < ApplicationController
   # GET /documents/1/edit
   def edit
     @document = Document.find(:first, :conditions => ["id = ?", params[:id]])
+		@contents = !@document.contents.nil? ? @document.contents.gsub('&lt;br&gt;','<br>') : @document.contents
     respond_to do |format|
       format.html # edit.html.erb
       format.js { render :template => "/documents/edit.js.erb" }

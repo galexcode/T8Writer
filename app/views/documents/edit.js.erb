@@ -4,7 +4,7 @@
 	// make title editable
 	document.getElementById("T8Writer_Title").setAttribute("contenteditable","true");	
 	// load document contents
-	document.getElementById("T8Writer_Contents").innerHTML = "<%= escape_javascript(@document.contents.gsub('&lt;br&gt;','<br>')) %>";
+	document.getElementById("T8Writer_Contents").innerHTML = "<%= escape_javascript(@contents) %>";
 	// update current_document Document instance
 	T8Writer.current_document.title = T8Writer.current_document.cache.title = "<%= escape_javascript(@document.title) %>";
 	T8Writer.current_document.contents = T8Writer.current_document.cache.contents = "<%= escape_javascript(@document.contents) %>";
