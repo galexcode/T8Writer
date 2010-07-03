@@ -203,9 +203,12 @@
 				"help_info": document.getElementById("T8Writer_HelpInfo"),
 				"close_help": document.getElementById("closeT8WriterHelp"),
 
-				// actions
+				// command prompt
 				"command_form": document.getElementById("T8Writer_Command"),
 				"command_prompt": document.getElementById("T8Writer_CommandPrompt"),
+				"command_prompt_errors": document.getElementById("T8Writer_CommandPrompt_Errors"),
+
+				// new document form
 				"new_document_form": document.getElementById("T8Writer_NewDocument"),
 				"new_document_title": document.getElementById("T8Writer_NewDocTitle"),
 
@@ -476,10 +479,23 @@
 		listenForEnter: function(e) {
 			var evt = e || window.event;
 			if (evt.keyCode == 13) {
-				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
 				var command = Writer.Elements["command_prompt"].value, i;
+
+				// if we're showing an error message, remove it
+				Writer.Elements["command_form"].className = "";
+
+				// if nothing is entered, close the command prompt
+				if (command === "") {
+					Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
+					
+					Writer.Modes.changeTo("write");
+					return false;
+				}
+
 				for (i in Writer.Modes.enterCommand.commands) {
 					if (command.indexOf(i) === 0) {
+						Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
+
 						// hide command prompt form
 						Writer.Elements["command_form"].style.display = "none";
 
@@ -487,8 +503,11 @@
 						Writer.Modes.changeTo("write");
 						// reset cursor (we captured cursor position before entering command line mode)
 						Writer.Utilities.resetCursor(Writer.cursor_position);
+
+						break;
 					} else {
-						// TODO: handle syntax errors, etc.
+						// We'll keep listening for enter
+						Writer.Modes.enterCommand.hasErrors("Sorry, that does not compute. Try again?");
 					}
 				}
 				Writer.Utilities.cancelDefault(e);
@@ -775,9 +794,6 @@
 
 		enterCommand: {
 			on: function() {
-				//window.clearTimeout(Writer.idle_counter);
-				//window.clearTimeout(Writer.auto_save);
-
 				Writer.Utilities.captureCursor();
 				// show command prompt form
 				Writer.Elements["command_form"].style.display = "block";
@@ -792,6 +808,9 @@
 				Writer.Elements["command_form"].style.display = "none";
 
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
+
+				// if we're showing an error message, remove it
+				Writer.Elements["command_form"].className = "";
 			}
 		}
 	};
@@ -828,6 +847,13 @@
 //			Writer.current_docment.email();
 		}
 	};
+
+	Writer.Modes.enterCommand.hasErrors = function(err) {
+		Writer.Elements["command_prompt_errors"].innerHTML = err;
+		Writer.Elements["command_form"].className = "hasErrors";
+	};
+
+
 	Writer.Effects = {
 		attachEffects: function() {
 			document.getElementById("T8Writer_Contents").onblur = function(){

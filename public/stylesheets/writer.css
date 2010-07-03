@@ -113,7 +113,7 @@
 					}
 					#T8Writer #T8Writer_Documents a:hover,
 					#T8Writer #T8Writer_Documents a:focus {
-						background-color: #f6f6f6;
+						background-color: #f3f3f3;
 						color: #666;
 					}
 					#T8Writer #T8Writer_Documents a:not([href]) {
@@ -264,7 +264,13 @@
 			}
 			#T8Writer #T8Writer_CommandPrompt {
 				margin: 0;
-				width: 522px;
+				width: 536px;
+			}
+			#T8Writer #T8Writer_Command.hasErrors #T8Writer_CommandPrompt {
+				border-radius: 5px 5px 0 0;
+				-moz-border-radius: 5px 5px 0 0;
+				-webkit-border-bottom-right-radius: 0;
+				-webkit-border-bottom-left-radius: 0;
 			}
 			#T8Writer #T8Writer_SubmitTitle {
 				background: -moz-linear-gradient(top, #fefefe, #ccc);
@@ -274,6 +280,22 @@
 				padding: 4px 5px;
 				-moz-border-radius: 5px;
 				-webkit-border-radius: 5px;
+			}
+			#T8Writer #T8Writer_CommandPrompt_Errors {
+				background-color: rgba(255,238,238,0.6);
+				border: 2px solid #d5cccc;
+				border-radius: 0 0 5px 5px;
+				color: #dd8888;
+				display: none;
+				margin: 5px 0 -15px;
+				padding: 8px 0;
+				text-align: center;
+				-moz-border-radius: 0 0 5px 5px;
+				-webkit-border-bottom-left-radius: 5px;
+				-webkit-border-bottom-right-radius: 5px;
+			}
+			#T8Writer #T8Writer_Command.hasErrors #T8Writer_CommandPrompt_Errors {
+				display: block;
 			}
 
 /* CLOSE BUTTONS ------------------------- */
