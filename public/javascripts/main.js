@@ -481,8 +481,7 @@
 			if (evt.keyCode == 13) {
 				var command = Writer.Elements["command_prompt"].value, i;
 
-				// if we're showing an error message, remove it
-				Writer.Elements["command_form"].className = "";
+				Writer.Modes.enterCommand.clearErrors();
 
 				// if nothing is entered, close the command prompt
 				if (command === "") {
@@ -809,8 +808,7 @@
 
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
 
-				// if we're showing an error message, remove it
-				Writer.Elements["command_form"].className = "";
+				Writer.Modes.enterCommand.clearErrors();
 			}
 		}
 	};
@@ -851,6 +849,17 @@
 	Writer.Modes.enterCommand.hasErrors = function(err) {
 		Writer.Elements["command_prompt_errors"].innerHTML = err;
 		Writer.Elements["command_form"].className = "hasErrors";
+		Writer.Elements["command_prompt"].select();
+
+		Writer.Elements["command_prompt"].onkeypress = function() {
+			Writer.Modes.enterCommand.clearErrors();
+		};
+	};
+	Writer.Modes.enterCommand.clearErrors = function() {
+		Writer.Elements["command_prompt"].onkeypress = undefined;
+
+		Writer.Elements["command_form"].className = "";
+		Writer.Elements["command_prompt_errors"].innerHTML = "";
 	};
 
 
