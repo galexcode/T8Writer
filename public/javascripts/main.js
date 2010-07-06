@@ -532,7 +532,8 @@
 		 */
 		listenForAlt: function(e) {
 			var evt = e || window.event;
-			if(evt.altKey) {
+			if ( (!navigator.platform.indexOf("Mac") >= 0 && evt.altKey) || 
+                             (navigator.platform.indexOf("Mac") >= 0 && evt.ctrlKey)) {
 				Writer.Utilities.removeEvent(document,"keydown",Writer.Utilities.listenForAlt);
 				Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForPeriod);
 			}
