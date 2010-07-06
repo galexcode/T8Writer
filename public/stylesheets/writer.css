@@ -47,6 +47,86 @@
 	background: #d5d5d5;
 }
 
+/* RESPONSIVE LAYOUT ------------------------- */
+		@media screen and (min-height: 800px) {
+			/* main application body */
+			#T8Writer #T8Writer_Container {
+				margin: 0 -480px;
+				width: 960px;
+			}
+				/* document title */
+				#T8Writer #T8Writer_Title {
+					margin: 40px 60px;
+				}
+				/* document form */
+				#T8Writer #T8Writer_Form {
+					bottom: 60px;
+					left: 60px;
+					right: 60px;
+					top: 80px;
+				}
+					/* document contents */
+					#T8Writer #T8Writer_Contents {
+						width: 578px;
+					}
+
+				/* new document form, command prompt */
+				#T8Writer #T8Writer_NewDocument,
+				#T8Writer #T8Writer_Command {
+					left: 60px;
+					top: 80px;
+				}
+					#T8Writer #T8Writer_CommandPrompt {
+						width: 536px;
+					}
+
+				/* exit buttons (x) */
+				#T8Writer #exitT8Writer,
+				#T8Writer #closeT8WriterHelp {
+					right: 15px;
+					top: 20px;
+				}
+		}
+		@media screen and (max-height: 799px) {
+			/* main application body */
+			#T8Writer #T8Writer_Container {
+				margin: 0 -400px;
+				width: 800px;
+			}
+				/* document title */
+				#T8Writer #T8Writer_Title {
+					margin: 20px 40px;
+				}
+				/* document form */
+				#T8Writer #T8Writer_Form {
+					bottom: 40px;
+					left: 40px;
+					right: 40px;
+					top: 60px;
+				}
+					/* document contents */
+					#T8Writer #T8Writer_Contents {
+						width: 458px;
+					}
+
+				/* new document form, command prompt */
+				#T8Writer #T8Writer_NewDocument,
+				#T8Writer #T8Writer_Command {
+					left: 40px;
+					top: 60px;
+				}
+					#T8Writer #T8Writer_CommandPrompt {
+						width: 416px;
+					}
+
+				/* exit buttons (x) */
+				#T8Writer #exitT8Writer,
+				#T8Writer #closeT8WriterHelp {
+					right: 10px;
+					top: 5px;
+				}
+		}
+
 /* OVERLAY ------------------------- */
 #T8Writer #T8Writer_Overlay {
 	background: rgba(255,255,255,0.8);
@@ -65,11 +145,9 @@
 		border-radius: 20px;
 		bottom: 20px;
 		box-shadow: 0 0 120px #b5b5b5;
-		margin: 0 -480px;
 		position: absolute;
 		right: 50%;
 		top: 20px;
-		width: 960px;
 		-moz-border-radius: 20px;
 		-webkit-border-radius: 20px;
 		-moz-box-shadow: 0 0 120px #b5b5b5;
@@ -79,17 +157,12 @@
 /* DOCUMENT TITLE ------------------------- */
 		#T8Writer #T8Writer_Title {
 			font-size: 21px;
-			margin: 40px 60px;
 		}
 
 /* FORM (used for positioning) ------------------------- */
 		#T8Writer #T8Writer_Form {
 			background: transparent;
-			bottom: 60px;
-			left: 60px;
 			position: absolute;
-			right: 60px;
-			top: 80px;
 		}
 
 /* DOCUMENT LIST ------------------------- */
@@ -161,7 +234,6 @@
 				outline: 0;
 				overflow-y: auto;
 				padding: 5px;
-				width: 578px;
 			}
 				#T8Writer #T8Writer_Contents strong {
 					font-weight: bold;
@@ -234,16 +306,12 @@
 		}
 		#T8Writer #T8Writer_NewDocument {
 			border-radius: 0 0 10px 0;
-			left: 60px;
-			top: 80px;
 			-moz-border-radius: 0 0 10px 0;
 			-webkit-border-radius: 0 0 10px 0;
 		}
 		#T8Writer #T8Writer_Command {
 			background: rgba(245,245,245,0.875);
-			left: 60px;
 			right: 310px;
-			top: 80px;
 		}
 			#T8Writer #T8Writer_NewDocument label,
 			#T8Writer #T8Writer_Command label {
@@ -264,7 +332,6 @@
 			}
 			#T8Writer #T8Writer_CommandPrompt {
 				margin: 0;
-				width: 536px;
 			}
 			#T8Writer #T8Writer_Command.hasErrors #T8Writer_CommandPrompt {
 				border-radius: 5px 5px 0 0;
@@ -310,10 +377,8 @@
 			height: 32px;
 			line-height: 16px;
 			position: absolute;
-			right: 15px;
 			text-align: center;
 			text-decoration: none;
-			top: 20px;
 			width: 40px;
 		}
 		#T8Writer #exitT8Writer:focus,
