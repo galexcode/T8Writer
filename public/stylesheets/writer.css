@@ -263,7 +263,8 @@
 					color: #999;
 				}
 				#T8Writer #T8Writer_Controls button {
-					background-color: #eee;
+					background: #eee;
+                                        background: -moz-linear-gradient(center top, #FEFEFE, #ECECEC);
 					border: 2px solid #e5e5e5;
 					border-radius: 5px;
 					color: #999;
@@ -275,6 +276,7 @@
 				}
 				#T8Writer #T8Writer_Controls button:focus,
 				#T8Writer #T8Writer_Controls button:active {
+                                        background: -moz-linear-gradient(center top, #ECECEC, #FEFEFE);
 					outline-color: #ccc;
 				}
 				#T8Writer #T8Writer_Controls button:hover,
