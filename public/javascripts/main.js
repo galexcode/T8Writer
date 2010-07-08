@@ -176,7 +176,18 @@
 			Writer.key = key;
 			// create container element #T8Writer, so we can easily remove
 			// entire plugin from DOM
-			var t8_writer = document.createElement("div");
+			// and show loading indicator
+			var t8_writer = document.createElement("div"),
+				loading = document.createElement("p"),
+				txt_node = document.createTextNode("Loading T8Writer\u2026");
+
+				loading.appendChild(txt_node);
+				loading.setAttribute("id","T8Writer_Loading");
+				loading.setAttribute("style","background:rgba(0,0,0,0.4);border-radius:0 0 5px 0;" +
+											"color:#fff;font-weight:bold;left:0;padding:5px 10px;" +
+											"position:fixed;top:0;-moz-border-radius:0 0 5px 0;" +
+											"-webkit-border-bottom-right-radius:5px;");
+				t8_writer.appendChild(loading);
 				t8_writer.setAttribute("id","T8Writer");
 				document.body.appendChild(t8_writer);
 
@@ -229,6 +240,8 @@
 				"help": document.getElementById("T8Writer_Help"),
 				"exit": document.getElementById("exitT8Writer")
 			};
+			// remove loading indicator
+			Writer.Elements["self"].removeChild(document.getElementById("T8Writer_Loading"));
 
 
 			// attach events
@@ -533,7 +546,7 @@
 		listenForAlt: function(e) {
 			var evt = e || window.event;
 			if ( (!navigator.platform.indexOf("Mac") >= 0 && evt.altKey) || 
-                             (navigator.platform.indexOf("Mac") >= 0 && evt.ctrlKey)) {
+                             navigator.platform.indexOf("Mac") >= 0 && evt.ctrlKey) {
 				Writer.Utilities.removeEvent(document,"keydown",Writer.Utilities.listenForAlt);
 				Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForPeriod);
 			}
