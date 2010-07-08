@@ -490,7 +490,8 @@
 		 * @param e
 		 */
 		listenForEnter: function(e) {
-			var evt = e || window.event;
+			var evt = e || window.event,
+				commandHasBeenFound = false;
 			if (evt.keyCode == 13) {
 				var command = Writer.Elements["command_prompt"].value, i;
 
@@ -506,6 +507,7 @@
 
 				for (i in Writer.Modes.enterCommand.commands) {
 					if (command.indexOf(i) === 0) {
+						commandHasBeenFound = true;
 						Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
 
 						// hide command prompt form
@@ -517,11 +519,13 @@
 						Writer.Utilities.resetCursor(Writer.cursor_position);
 
 						break;
-					} else {
-						// We'll keep listening for enter
-						Writer.Modes.enterCommand.hasErrors("Sorry, that does not compute. Try again?");
 					}
 				}
+				if (!commandHasBeenFound) {
+					// We'll keep listening for enter, and report an error
+					Writer.Modes.enterCommand.hasErrors("Sorry, that does not compute. Try again?");
+				}
+				
 				Writer.Utilities.cancelDefault(e);
 			}
 		},
@@ -875,6 +879,45 @@
 		Writer.Elements["command_form"].className = "";
 		Writer.Elements["command_prompt_errors"].innerHTML = "";
 	};
+
+//	Writer.Modes.enterCommand.autoComplete = function(val) {
+//		// we should build an empty array of matching commands
+//		var matching_commands = [],
+//			i;
+//		for (i in Writer.Modes.enterCommand.commands) {
+//			if (i.indexOf(val) === 0) {
+//				// if we find a command that may match, we should add it to the array
+//				matching_commands.push(i);
+//			}
+//		}
+//
+//		if (matching_commands.length === 0) {
+//			// if no matches, return false
+//			return false
+//		} else
+//		if (matching_commands.length === 1) {
+//			// if we only find one match, we should return it;
+//			return matching_commands[0];
+//		} else {
+//			// if we find multiple matches we should return all of the letters
+//			// that they share at the beginning of their names
+//
+//			// we know that all matching_commands share the letters in val
+//			// we need to start comparing the commands after val.length letters
+//			// we should make an incrementable string (shared_letters) with a start value of val
+//
+//			// we should loop through matching_commands
+//
+//			// for the first command, we should store the letter at val.length
+//			// for subsequent commands, we should check the letter against our stored letter
+//			// if at any point there is no letter at val.length, we should return shared_letters
+//
+//			// if at any point it does not match, we should return shared_letters
+//
+//			// else, if we successfully loop through all commands and find matches
+//			// for this letter, we should add it to shared_letters and loop back around
+//		}
+//	};
 
 
 	Writer.Effects = {
