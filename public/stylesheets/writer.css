@@ -36,7 +36,7 @@
 }
 #T8Writer ul,
 #T8Writer li {
-	list-style-type: none;
+	list-style: none;
 }
 
 /* SELECTED TEXT ------------------------- */
@@ -76,8 +76,11 @@
 					left: 60px;
 					top: 80px;
 				}
+				#T8Writer #T8Writer_Command {
+					right: 310px !important;
+				}
 					#T8Writer #T8Writer_CommandPrompt {
-						width: 536px;
+						width: 522px !important;
 					}
 
 				/* exit buttons (x) */
@@ -115,8 +118,11 @@
 					left: 40px;
 					top: 60px;
 				}
+				#T8Writer #T8Writer_Command {
+					right: 290px !important;
+				}
 					#T8Writer #T8Writer_CommandPrompt {
-						width: 416px;
+						width: 404px !important;
 					}
 
 				/* exit buttons (x) */

@@ -531,6 +531,18 @@
 		},
 
 		/**
+		 * capture pressing tab in command mode to complete command
+		 * @param e
+		 */
+		listenForTab: function(e) {
+		   var evt = e || window.event;
+			if (evt.keyCode === 9) {
+				Writer.Elements["command_prompt"].value = Writer.Modes.enterCommand.autoComplete(Writer.Elements["command_prompt"].value);
+				Writer.Utilities.cancelDefault(e);
+			}
+		},
+
+		/**
 		 * capture '.' keypress, signals launch of cmd mode (when 'alt' is held down)
 		 * @param e
 		 */
@@ -817,6 +829,7 @@
 				Writer.Elements["command_prompt"].select();
 
 				Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForEnter);
+				Writer.Utilities.addEvent(document,"keypress",Writer.Utilities.listenForTab);
 				return false;
 			},
 
@@ -824,6 +837,7 @@
 				// hide command prompt form
 				Writer.Elements["command_form"].style.display = "none";
 
+				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForTab);
 				Writer.Utilities.removeEvent(document,"keypress",Writer.Utilities.listenForEnter);
 
 				Writer.Modes.enterCommand.clearErrors();
@@ -880,44 +894,65 @@
 		Writer.Elements["command_prompt_errors"].innerHTML = "";
 	};
 
-//	Writer.Modes.enterCommand.autoComplete = function(val) {
-//		// we should build an empty array of matching commands
-//		var matching_commands = [],
-//			i;
-//		for (i in Writer.Modes.enterCommand.commands) {
-//			if (i.indexOf(val) === 0) {
-//				// if we find a command that may match, we should add it to the array
-//				matching_commands.push(i);
-//			}
-//		}
-//
-//		if (matching_commands.length === 0) {
-//			// if no matches, return false
-//			return false
-//		} else
-//		if (matching_commands.length === 1) {
-//			// if we only find one match, we should return it;
-//			return matching_commands[0];
-//		} else {
-//			// if we find multiple matches we should return all of the letters
-//			// that they share at the beginning of their names
-//
-//			// we know that all matching_commands share the letters in val
-//			// we need to start comparing the commands after val.length letters
-//			// we should make an incrementable string (shared_letters) with a start value of val
-//
-//			// we should loop through matching_commands
-//
-//			// for the first command, we should store the letter at val.length
-//			// for subsequent commands, we should check the letter against our stored letter
-//			// if at any point there is no letter at val.length, we should return shared_letters
-//
-//			// if at any point it does not match, we should return shared_letters
-//
-//			// else, if we successfully loop through all commands and find matches
-//			// for this letter, we should add it to shared_letters and loop back around
-//		}
-//	};
+	Writer.Modes.enterCommand.autoComplete = function(val) {
+		// we should build an empty array of matching commands
+		var matching_commands = [],
+			i;
+		for (i in Writer.Modes.enterCommand.commands) {
+			if (i.indexOf(val) === 0) {
+				// if we find a command that may match, we should add it to the array
+				matching_commands.push(i);
+			}
+		}
+
+		if (matching_commands.length === 0) {
+			// if no matches, return false
+			return false
+		} else
+		if (matching_commands.length === 1) {
+			// if we only find one match, we should return it;
+			return matching_commands[0];
+		} else {
+			// if we find multiple matches we should return all of the letters...
+			// ...that they share at the beginning of their names
+
+			// we know that all matching_commands share the letters in val
+			// we need to start comparing the commands after val.length letters
+			// we should make an incrementable string (shared_letters) with a start value of val
+			var shared_letters = val,
+				next_letter = "",
+				j, k = 0;
+
+			letters_loop: while (shared_letters.length < matching_commands[0].length) {
+				// we should loop through matching_commands
+				for (j = 0; j < matching_commands.length; j++) {
+					// if at any point there is no letter at shared_letters.length, we should break both loops
+					if (matching_commands[j].charAt(shared_letters.length) == "") {
+						break letters_loop;
+					}
+
+					// for the first command, we should store the letter at shared_letters.length
+					if (j === 0) {
+						next_letter = matching_commands[j].charAt(shared_letters.length);
+					} else {
+						// for subsequent commands, we should check the letter against our stored letter
+						if (matching_commands[j].charAt(shared_letters.length) != next_letter) {
+							// if at any point it does not match, we should break
+							break letters_loop;
+						}
+					}
+				}
+				// else, if we successfully loop through all commands and find matches...
+				// ...for this letter, we should add it to shared_letters and loop back around
+				shared_letters += next_letter;
+
+				// just in case something goes horribly wrong...
+				k++;
+				if (k > 50) break;
+			}
+			return shared_letters;
+		}
+	};
 
 
 	Writer.Effects = {
