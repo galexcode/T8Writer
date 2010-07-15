@@ -159,6 +159,14 @@
 		-moz-box-shadow: 0 0 120px #b5b5b5;
 		-webkit-box-shadow: 0 0 120px #b5b5b5;
 	}
+	#T8Writer #T8Writer_Container {
+		border-width: 0 2px;
+		border-radius: 0;
+		-moz-border-radius: 0;
+		-webkit-border-radius: 0;
+		bottom: 0;
+		top: 0;
+	}
 
 /* DOCUMENT TITLE ------------------------- */
 		#T8Writer #T8Writer_Title {
