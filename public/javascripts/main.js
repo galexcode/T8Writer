@@ -156,9 +156,9 @@
 
 		Config: {
 			autoSaveFrequency: 45000,
-			fadeIncrements: 20, // every fadeInLength / fadeIncrements ms, fade 100 / fadeIncrements percent
-			fadeInLength: 1500,
-			fadeOutLength: 4500,
+			fadeIncrements: 25, // every fadeInLength / fadeIncrements ms, fade 100 / fadeIncrements percent
+			fadeInLength: 250,
+			fadeOutLength: 500,
 			secondsUntilIdle: 5,
 			statusMsgDuration: 3000
 		},
@@ -263,116 +263,118 @@
 			};
 
 			// X button
-			Writer.Elements["exit"].onclick = T8Writer.exit;
+			Writer.Elements["exit"].onclick = Writer.Core.exit;
 			// apply fadeIn and fadeOut functionality
 			Writer.Effects.attachEffects();
 			// load user's prior documents
-			Writer.selectDocument();
+			Writer.Core.selectDocument();
 
 			Writer.Modes.changeTo("browse");
 		},
 
-		/**
-		 *  load/reload list of user's documents
-		 */
-		selectDocument: function() {
-			// clear current list
-			Writer.Elements["documents"].innerHTML = "";
-			// open list of user's documents.
-			Writer.Utilities.loadScript('http://' + Writer.domain + '/user_documents.js?key='+Writer.key);
-		},
+		Core: {
+			/**
+			 *  load/reload list of user's documents
+			 */
+			selectDocument: function() {
+				// clear current list
+				Writer.Elements["documents"].innerHTML = "";
+				// open list of user's documents.
+				Writer.Utilities.loadScript('http://' + Writer.domain + '/user_documents.js?key='+Writer.key);
+			},
 
-		/**
-		 *
-		 * @param id document ID (integer)
-		 */
-		openDocument: function(id) {
-			try { console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) ); }
-			catch(err) {}
-
-			Writer.Modes.changeTo("browse");
-
-			// create new instance of Document class
-			Writer.current_document = new Document(id);
-			// status message
-			Writer.Utilities.statusMsg("Loading document&hellip;",false);
-			// load document to be edited, passing in ID
-			Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/'+id+'/edit.js');
-		},
-
-		/**
-		 *
-		 * @param title (string), passed in from 'create' command
-		 */
-		createDocument: function(title) {
-			try { console.log( "Function createDocument " + validateArgTypes( [title],["string"] ) ); }
-			catch(err) {}
-
-			// this is what we do once any unsaved document has been saved
-			function proceed() {
-				// create new document with title and user's id
-				Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/new.js?user_id='+Writer.user_id+"&title="+encodeURIComponent(title));
-			}
-			// check to see if there's an open document...
-			// ...if so, save it before creating a new one.
-			if (typeof Writer.current_document !== "undefined") {
-				// run proceed() function once save has finished
-				Writer.current_document.observer.subscribe(proceed);
-				Writer.current_document.save();
-			} else {
-				proceed();
-			}
-		},
-
-		/**
-		 * close the damn thing
-		 */
-		exit: function() {
-			function proceed() {
-				// restore title
-				document.title = document.title.substring(0,document.title.indexOf(" __/---/\u203E\u203E"));
-
-				try {
-					window.clearTimeout(Writer.auto_save);
-					window.clearTimeout(Writer.idle_counter);
-					window.clearTimeout(Writer.fade);
-				}
+			/**
+			 *
+			 * @param id document ID (integer)
+			 */
+			openDocument: function(id) {
+				try { console.log( "Function openDocument " + validateArgTypes( [id],["number"] ) ); }
 				catch(err) {}
 
-				// remove #T8Writer (wrapper) element
-				document.body.removeChild(Writer.Elements["self"]);
-				// Delete all JS variables (e.g. window["T8Writer"])   
-				Writer.exit_observer.fire();
+				Writer.Modes.changeTo("browse");
+
+				// create new instance of Document class
+				Writer.current_document = new Document(id);
+				// status message
+				Writer.Utilities.statusMsg("Loading document&hellip;",false);
+				// load document to be edited, passing in ID
+				Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/'+id+'/edit.js');
+			},
+
+			/**
+			 *
+			 * @param title (string), passed in from 'create' command
+			 */
+			createDocument: function(title) {
+				try { console.log( "Function createDocument " + validateArgTypes( [title],["string"] ) ); }
+				catch(err) {}
+
+				// this is what we do once any unsaved document has been saved
+				function proceed() {
+					// create new document with title and user's id
+					Writer.Utilities.loadScript('http://' + Writer.domain + '/documents/new.js?user_id='+Writer.user_id+"&title="+encodeURIComponent(title));
+				}
+				// check to see if there's an open document...
+				// ...if so, save it before creating a new one.
+				if (typeof Writer.current_document !== "undefined") {
+					// run proceed() function once save has finished
+					Writer.current_document.observer.subscribe(proceed);
+					Writer.current_document.save();
+				} else {
+					proceed();
+				}
+			},
+
+			/**
+			 * close the damn thing
+			 */
+			exit: function() {
+				function proceed() {
+					// restore title
+					document.title = document.title.substring(0,document.title.indexOf(" __/---/\u203E\u203E"));
+
+					try {
+						window.clearTimeout(Writer.auto_save);
+						window.clearTimeout(Writer.idle_counter);
+						window.clearTimeout(Writer.fade);
+					}
+					catch(err) {}
+
+					// remove #T8Writer (wrapper) element
+					document.body.removeChild(Writer.Elements["self"]);
+					// Delete all JS variables (e.g. window["T8Writer"])
+					Writer.exit_observer.fire();
+				}
+				// check to see if there's an open document...
+				// ...if so, save it before exiting
+				if (typeof Writer.current_document !== "undefined") {
+					// run proceed() function once save has finished
+					Writer.current_document.observer.subscribe(proceed);
+					Writer.current_document.save();
+				} else {
+					proceed();
+				}
+			},
+
+			autoSave: function() {
+				 Writer.auto_save = window.setTimeout(function saveInterval(){
+					Writer.current_document.save(false);
+					Writer.auto_save = window.setTimeout(saveInterval, Writer.Config.autoSaveFrequency);
+				 }, Writer.Config.autoSaveFrequency);
+			},
+
+			autoPunctuate: function() {
+				var text_nodes, i;
+
+				Writer.Utilities.captureCursor();
+				// TODO: this childNodes[0] thing is not sustainable!
+				text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
+				for (i = 0; i < text_nodes.length; i++) {
+					text_nodes[i].nodeValue = text_nodes[i].nodeValue.punctuate();
+				}
+
+				Writer.Utilities.resetCursor(Writer.cursor_position);
 			}
-			// check to see if there's an open document...
-			// ...if so, save it before exiting
-			if (typeof Writer.current_document !== "undefined") {
-				// run proceed() function once save has finished
-				Writer.current_document.observer.subscribe(proceed);
-				Writer.current_document.save();
-			} else {
-				proceed();
-			}
-		},
-
-		autoSave: function() {
-			 Writer.auto_save = window.setTimeout(function saveInterval(){
-				Writer.current_document.save(false);
-				Writer.auto_save = window.setTimeout(saveInterval, Writer.Config.autoSaveFrequency);
-			 }, Writer.Config.autoSaveFrequency);
-		},
-
-		autoPunctuate: function() {
-			var text_nodes, i;
-
-			Writer.Utilities.captureCursor();
-			// TODO: this childNodes[0] thing is not sustainable!
-			text_nodes = Writer.Utilities.getTextNodes(document.getElementById("T8Writer_Contents"));
-			for (i = 0; i < text_nodes.length; i++) {
-				text_nodes[i].nodeValue = text_nodes[i].nodeValue.punctuate();
-			}
-
-			Writer.Utilities.resetCursor(Writer.cursor_position);
 		}
 	};
 
@@ -381,20 +383,20 @@
 	 * @param id (integer) ID of new document
 	 * @param title (string) the title we gave the new document
 	 */
-	Writer.createDocument.success = function(id,title) {
+	Writer.Core.createDocument.success = function(id,title) {
 		try { console.log( "Function createDocument.success " + validateArgTypes( [id,title],["number","string"] ) ); }
 		catch(err) {}
 
 		// status message
-		Writer.Utilities.statusMsg("Successfully created document &lsquo;"+Writer.createDocument.title+"&rsquo;",true);
+		Writer.Utilities.statusMsg("Successfully created document &lsquo;"+title+"&rsquo;",true);
 		// create instance of Document class to mirror backend
 		Writer.current_document = new Document(id);
 		Writer.current_document.id = id;
 		Writer.current_document.title = title;
 		// load our newly created document
-		Writer.openDocument(Writer.current_document.id);
+		Writer.Core.openDocument(Writer.current_document.id);
 		// reload user's prior documents
-		Writer.selectDocument();
+		Writer.Core.selectDocument();
 		// enter writer mode
 		Writer.Modes.changeTo("write");
 	};
@@ -402,15 +404,16 @@
 	/**
 	 * callback for failed document creation
 	 * @param errs Array? error message passed from Rails' unsuccessful creation
+	 * @param title (string) the title we attempted to give the new document
 	 * TODO: logging!
 	 */
-	Writer.createDocument.errors = function(errs) {
+	Writer.Core.createDocument.errors = function(errs, title) {
 		try { console.log( validateArgTypes( [errs],["string"] ) ); }
 		catch(err) {}
 
 		// status message
 		Writer.Utilities.statusMsg("The following errors occurred while attempting to create " +
-			Writer.createDocument.title + ": "+ errs +".",true);
+			title + ": "+ errs +".",true);
 	};
 
 
@@ -696,7 +699,7 @@
 			Writer.idle_counter = window.setTimeout(function idleInterval(){
 				counter += 1;
 				if (counter == Writer.Config.secondsUntilIdle) {
-					Writer.autoPunctuate();
+					Writer.Core.autoPunctuate();
 					counter = 0;
 				}
 				Writer.idle_counter = window.setTimeout(idleInterval,1000);
@@ -746,7 +749,7 @@
 				Writer.Elements["new_document_title"].select();
 				Writer.Elements["new_document_form"].onsubmit = function() {
 					var title = Writer.Elements["new_document_title"].value;
-					Writer.createDocument(title);
+					Writer.Core.createDocument(title);
 
 					return false;
 				};
@@ -768,7 +771,7 @@
 				Writer.Effects.fadeExtras(Writer.Config.fadeOutLength,"out");
 
 				Writer.Utilities.isIdle();
-				Writer.autoSave();
+				Writer.Core.autoSave();
 
 				// listen for command mode
 				Writer.Utilities.captureKeyCombo();
@@ -776,7 +779,7 @@
 
 			off: function() {
 				Writer.Utilities.removeEvent(document,"keydown",Writer.Utilities.listenForAlt);
-				Writer.autoPunctuate();
+				Writer.Core.autoPunctuate();
 
 				window.clearTimeout(Writer.auto_save);
 				window.clearTimeout(Writer.idle_counter);
@@ -856,10 +859,10 @@
 
 			// title = everything after "create "
 			var title = command.substring(command.indexOf("create")+7,command.length);
-			Writer.createDocument(title);
+			Writer.Core.createDocument(title);
 		},
 		"help": function() { Writer.Modes.changeTo("help"); },
-		"exit": function() { Writer.exit(); },
+		"exit": function() { Writer.Core.exit(); },
 		"revert": function() { Writer.current_document.revert(); },
 
 		/*
@@ -1090,7 +1093,7 @@
 
 		// reload user's prior documents
 		if (document.getElementById("T8Writer") !== null)
-			Writer.selectDocument();
+			Writer.Core.selectDocument();
 	};
 
 	/**
