@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 	if @user.nil? and params[:key]
 		@user = User.new(:key => params[:key])
     	if @user.save
-			render :js => "(function(){T8Writer.Modes.help();T8Writer.user_id = #{@user.id};})();"
+			render :js => "(function(){T8Writer.Modes.changeTo('help');T8Writer.user_id = #{@user.id};})();"
 		else
 			render :js => "throw new Error('unable to create new user');"
 		end
